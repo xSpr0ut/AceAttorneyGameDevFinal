@@ -11,14 +11,16 @@ public class DialogueSystem : MonoBehaviour
 
     private void Awake()
     {
-        instance = this;
+        if (instance != null && instance != this)
+        {
+            Destroy(gameObject);
+            return;
+        }
 
-        //Ensure only one singleton exists in the scene
-        if(instance == null)
-            instance = this;
-        else
-            DestroyImmediate(gameObject);
+        instance = this;
+        DontDestroyOnLoad(gameObject); // optional but recommended
     }
+
 
     void Start()
     {

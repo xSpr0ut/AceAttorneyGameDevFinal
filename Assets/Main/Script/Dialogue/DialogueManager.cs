@@ -147,7 +147,7 @@ public class DialogueManager : MonoBehaviour
             Choice c = story.currentChoices[i];
             GameObject buttonObj = Instantiate(choiceButtonPrefab, choicePanel);
             ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
-            btn.Init(c.text, i, OnChoiceSelected);
+            btn.Init(c.text, i, OnChoiceSelected); //spawn button
         }
     }
 

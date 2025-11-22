@@ -1,4 +1,3 @@
-
 #speaker Furina
 I am Furina, Focalors, the God of Justice!
 

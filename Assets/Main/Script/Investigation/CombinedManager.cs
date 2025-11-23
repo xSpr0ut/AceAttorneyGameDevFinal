@@ -24,6 +24,7 @@ public class CombinedManager : MonoBehaviour
     Character activeCharacter;
 
     [SerializeField] private GameObject dialogue;
+    [SerializeField] private GameObject L, T, M, Z;
 
     private void Awake()
     {
@@ -48,52 +49,25 @@ public class CombinedManager : MonoBehaviour
     private void Update()
     {
         if (!activeDialogue)
-        {
             return;
-        }
-
-        // 
-        if (Input.GetKeyDown(KeyCode.L))
-        {
-            PlayKnot("Letter");
-            Debug.Log("Letter");
-        }
-
-        if (Input.GetKeyDown(KeyCode.T))
-        {
-            PlayKnot("Table");
-            Debug.Log("Table");
-        }
-
-        if (Input.GetKeyDown(KeyCode.M))
-        {
-            PlayKnot("Medkit");
-            Debug.Log("Medkit");
-        }
-
-        if (Input.GetKeyDown(KeyCode.Z))
-        {
-            PlayKnot("Magazine");
-            Debug.Log("Magazine");
-        }
-        //
 
         if (Input.GetKeyDown(KeyCode.Space))
         {
             if (architect.isBuilding)
             {
-                architect.hurryUp = true;
+                if (!architect.hurryUp)
+                    architect.hurryUp = true;
+                else
+                    architect.ForceComplete();
             }
 
             else
             {
-                architect.ForceComplete();
+                AdvanceStory();
             }
-
-            return;
         }
 
-        AdvanceStory();
+        hideAndShow();
     }
 
     public void PlayKnot(string Name)
@@ -180,6 +154,55 @@ public class CombinedManager : MonoBehaviour
         if (activeCharacter != null)
         {
             activeCharacter.SetExpression(expression);
+        }
+    }
+
+    void hideAndShow()
+    {
+        if (dialogue.activeInHierarchy)
+        {
+            if (L != null)
+            {
+                L.SetActive(false);
+            }
+
+            if (T != null)
+            {
+                T.SetActive(false);
+            }
+
+            if (M != null)
+            {
+                M.SetActive(false);
+            }
+
+            if (Z != null)
+            {
+                Z.SetActive(false);
+            }
+        }
+
+        else
+        {
+            if (L != null)
+            {
+                L.SetActive(true);
+            }
+
+            if (T != null)
+            {
+                T.SetActive(true);
+            }
+
+            if (M != null)
+            {
+                M.SetActive(true);
+            }
+
+            if (Z != null)
+            {
+                Z.SetActive(true);
+            }
         }
     }
 }

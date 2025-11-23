@@ -25,6 +25,11 @@ public class CombinedManager : MonoBehaviour
 
     [SerializeField] private GameObject dialogue;
     [SerializeField] private GameObject L, T, M, Z;
+    [SerializeField] private GameObject SpriteL, SpriteT, SpriteM, SpriteZ;
+    public bool playingL = false;
+    public bool playingT = false;
+    public bool playingM = false;
+    public bool playingZ = false;
 
     private void Awake()
     {
@@ -44,6 +49,10 @@ public class CombinedManager : MonoBehaviour
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
         
         dialogue.SetActive(false);
+        SpriteL.SetActive(false); 
+        SpriteT.SetActive(false); 
+        SpriteM.SetActive(false); 
+        SpriteZ.SetActive(false);
     }
 
     private void Update()
@@ -78,6 +87,26 @@ public class CombinedManager : MonoBehaviour
             return;
         }
 
+        if (Name == "Letter")
+        {
+            SpriteL.SetActive(true);
+        }
+
+        if (Name == "Table")
+        {
+            SpriteT.SetActive(true);
+        }
+
+        if (Name == "Medkit")
+        {
+            SpriteM.SetActive(true);
+        }
+
+        if (Name == "Magazine")
+        {
+            SpriteZ.SetActive(true);
+        }
+
         story.ResetState();
         story.ChoosePathString(Name);
 
@@ -106,6 +135,10 @@ public class CombinedManager : MonoBehaviour
         activeDialogue = false;
 
         dialogue.SetActive(false);
+        SpriteL.SetActive(false);
+        SpriteT.SetActive(false);
+        SpriteM.SetActive(false);
+        SpriteZ.SetActive(false);
 
         Debug.Log("END OF STORY");
     }

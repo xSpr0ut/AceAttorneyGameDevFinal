@@ -25,6 +25,7 @@ public class ObjectToInvestigate : MonoBehaviour
         if (CombinedManager.Instance != null)
         {
             CombinedManager.Instance.PlayKnot(knotName);
+
             Destroy(this.gameObject);
         }
     }

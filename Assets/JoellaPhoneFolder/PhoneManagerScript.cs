@@ -7,6 +7,7 @@ public class PhoneManagerScript : MonoBehaviour
 {
 
     [SerializeField]private GameObject phonePanel;
+    [SerializeField]private GameObject dialogueSystem;
     private bool olafYuContact = false;
     private bool paparazziContact = false;
     private Boolean fanContact = false;
@@ -16,6 +17,7 @@ public class PhoneManagerScript : MonoBehaviour
     void Awake()
     {
         phonePanel.SetActive(false);
+        dialogueSystem.SetActive(false);
     }
 
     public void OpenPhone()

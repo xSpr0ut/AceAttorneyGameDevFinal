@@ -24,7 +24,7 @@ public class EvidenceController : MonoBehaviour
             else
             {
                 EvidenceTab.SetActive(true);
-                Debug.Log("poop");
+                //Debug.Log("poop");
             }
         }
     }

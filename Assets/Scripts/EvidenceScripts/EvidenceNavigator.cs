@@ -12,13 +12,12 @@ public class EvidenceNavigator : MonoBehaviour
     // data structures for evidence management
     [SerializeField] public List<GameObject> evidenceSlot; // 10 existing evidence slots
     public List<GameObject> evidence; // 1-10 existing acquired evidence
-    private int selectedEvidence;
+    public int selectedEvidence;
     //private EvidenceProperties prop; ignore this for now
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-
         selectedEvidence = 0;
         evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
     }

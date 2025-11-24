@@ -25,14 +25,14 @@ public class EvidenceNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (selectedEvidence != 0 && Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow))
+        if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
         {
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
             selectedEvidence--;
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
 
         }
-        if (selectedEvidence != evidence.Count - 1 && Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow))
+        if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
         {
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
             selectedEvidence++;

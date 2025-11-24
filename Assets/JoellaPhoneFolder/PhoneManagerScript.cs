@@ -1,3 +1,4 @@
+using System;
 using UnityEditor.Search;
 using UnityEngine;
 using UnityEngine.UI;
@@ -6,6 +7,10 @@ public class PhoneManagerScript : MonoBehaviour
 {
 
     [SerializeField]private GameObject phonePanel;
+    private bool olafYuContact = false;
+    private bool paparazziContact = false;
+    private Boolean fanContact = false;
+
 
     // ensures when the scene starts, the phone is off
     void Awake()

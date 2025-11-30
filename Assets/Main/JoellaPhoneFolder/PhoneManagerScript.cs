@@ -8,7 +8,7 @@ public class PhoneManagerScript : MonoBehaviour
 
     [SerializeField]private GameObject phonePanel;
     [SerializeField]private GameObject dialogueSystem;
-    private bool olafYuContact = false;
+    private bool olafKannaContact = false;
     private bool paparazziContact = false;
     private Boolean fanContact = false;
 
@@ -35,10 +35,33 @@ public class PhoneManagerScript : MonoBehaviour
     }
 
     // if phone is clicked on, phone screen will open
-    void OnMouseDown()
+    public void OnMouseDown()
     {
-        Debug.Log("Is Clicked");
         OpenPhone();
+    }
+
+    public void OnOlafButtonDown()
+    {
+        
+        dialogueSystem.SetActive(true);
+        ClosePhone();
+        
+    }
+
+    public void OnPaparazziButtonDown()
+    {
+        
+        dialogueSystem.SetActive(true);
+        ClosePhone();
+        
+    }
+
+    public void OnFanButtonDown()
+    {
+        
+        dialogueSystem.SetActive(true);
+        ClosePhone();
+        
     }
 
 

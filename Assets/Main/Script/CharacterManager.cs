@@ -46,4 +46,5 @@ public class CharacterManager : MonoBehaviour
         Debug.LogError("Character not found: " + name);
         return null;
     }
+    //hello
 }

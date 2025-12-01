@@ -1,0 +1,45 @@
+using System;
+using UnityEditor.Search;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class PhoneManagerScript : MonoBehaviour
+{
+
+    [SerializeField]private GameObject phonePanel;
+    [SerializeField]private GameObject dialogueSystem;
+    private bool olafYuContact = false;
+    private bool paparazziContact = false;
+    private Boolean fanContact = false;
+
+
+    // ensures when the scene starts, the phone is off
+    void Awake()
+    {
+        phonePanel.SetActive(false);
+        dialogueSystem.SetActive(false);
+    }
+
+    public void OpenPhone()
+    {
+        
+        phonePanel.SetActive(true);
+
+    }
+
+    public void ClosePhone()
+    {
+        
+        phonePanel.SetActive(false);
+
+    }
+
+    // if phone is clicked on, phone screen will open
+    void OnMouseDown()
+    {
+        Debug.Log("Is Clicked");
+        OpenPhone();
+    }
+
+
+}

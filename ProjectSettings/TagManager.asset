@@ -11,11 +11,7 @@ TagManager:
   - 
   - Water
   - UI
-<<<<<<< HEAD
-  - Character
-=======
-  - UI2
->>>>>>> master
+  - 
   - 
   - 
   - 
@@ -45,14 +41,5 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
-<<<<<<< HEAD
-=======
-  - name: UI1
-    uniqueID: 813929111
-    locked: 0
-  - name: UI2
-    uniqueID: 3392167441
-    locked: 0
->>>>>>> master
   m_RenderingLayers:
   - Default

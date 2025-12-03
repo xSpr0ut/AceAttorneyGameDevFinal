@@ -11,9 +11,23 @@ public class DialogueManager : MonoBehaviour
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
 
+    //Cross Examination
+    public Transform crossExaminationChoicePanel;
+    public Sprite nextStatement;
+    public Sprite previousStatement;
+
     Story story;
     TextArchitect architect;
 
+    //Dialogue Modes
+    public enum DialogueMode 
+    {
+        Normal,
+        CrossExamination
+    }
+
+    public DialogueMode currentMode = DialogueMode.Normal; //normal by default
+    
     void Start()
     {
         // Create Ink story
@@ -37,7 +51,6 @@ public class DialogueManager : MonoBehaviour
                     architect.hurryUp = true;
                 else
                     architect.ForceComplete();
-
                 return;
             }
 
@@ -62,6 +75,11 @@ public class DialogueManager : MonoBehaviour
         if (story.currentChoices.Count > 0)
         {
             ShowChoices();
+
+            // if(currentMode == DialogueMode.CrossExamination)
+            //     ShowCrossExaminationChoices();
+            // else if(currentMode == DialogueMode.Normal)
+            //     ShowChoices();
             return;
         }
 
@@ -74,6 +92,7 @@ public class DialogueManager : MonoBehaviour
         {
             string line = story.Continue();
             ApplyTags();
+
             architect.Build(line);
         }
     }
@@ -100,10 +119,20 @@ public class DialogueManager : MonoBehaviour
                 case "expression":
                     SetExpression(param);
                     break;
+                
+                case "goto":
+                    story.ChoosePathString("Lover_Lines");
+                    break;
 
-                // add more tag types here:
-                // case "emotion": ...
-                // case "portrait": ...
+                case "title":
+                    ShowTitle(param);
+                    break;
+                
+                case "mode":
+                    SetDialogueMode(param);
+                    break;
+
+                //Add more tags here
             }
         }
     }
@@ -130,6 +159,60 @@ public class DialogueManager : MonoBehaviour
         {
             activeCharacter.SetExpression(expression);
         }
+    }
+
+    void ShowTitle(string title)
+    {
+        //TitleCardUI.Instance.Show(title);
+    }
+
+    // -- Cross Examination Input -- //
+    void SetDialogueMode(string modeName)
+    {
+        if (modeName == "Normal")
+        {
+            currentMode = DialogueMode.Normal;
+        }
+        else if (modeName == "CrossExamination")
+        {
+            currentMode = DialogueMode.CrossExamination;
+        }
+
+        Debug.Log("Mode switched to: " + currentMode);
+    }
+
+    // -- Cross Examination Buttons -- //
+    void ShowCrossExaminationChoices()
+    {
+        crossExaminationChoicePanel.gameObject.SetActive(true);
+
+        // Clear out buttons
+        foreach (Transform child in crossExaminationChoicePanel)
+            Destroy(child.gameObject);
+        
+        // Create button for each choice
+        for(int i = 0; i < story.currentChoices.Count; i++)
+        {
+            Choice c = story.currentChoices[i];
+            GameObject buttonObj = Instantiate(choiceButtonPrefab, crossExaminationChoicePanel);
+            ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
+
+            // Remove text for buttons
+            TextMeshProUGUI label = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
+            if(label != null) label.gameObject.SetActive(false);
+
+            // Choose appropriate sprite based on Ink text
+            Image img = buttonObj.GetComponent<Image>();
+            if (c.text.Contains("Next"))
+                img.sprite = nextStatement;
+            
+            else if (c.text.Contains("Previous"))
+                img.sprite = previousStatement;
+            
+            // Still assign callback
+            btn.Init(c.text, i, OnChoiceSelected);
+        }
+
     }
 
     // ---- Choices ---- //

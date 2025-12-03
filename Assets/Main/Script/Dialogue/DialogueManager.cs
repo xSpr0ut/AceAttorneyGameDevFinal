@@ -45,7 +45,7 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void AdvanceStory()
+    public void AdvanceStory()
     {
         // If Ink has more text
         if (story.canContinue)

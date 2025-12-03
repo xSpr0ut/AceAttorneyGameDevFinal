@@ -72,7 +72,7 @@ Where were you on the day of the murder?
 #speaker Olaf
 I arrived at the gala as a guest and also to show my support for Madeline.
 
-As my sister is also present, I went to meet with her. 
+As my sister was also present, I went to meet with her. 
 
 I was with her at the bar when I heard a ruckus about Madeline being missing.
 

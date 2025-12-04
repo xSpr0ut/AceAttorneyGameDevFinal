@@ -6,10 +6,7 @@ public class EvidenceProperties : MonoBehaviour
 {
 
     public bool selected;
-    public int evidenceNo;
-    public Sprite evidenceSprite;
-    public string evidenceName;
-    public string evidenceDesc;
+    public EvidenceSO evidence;
 
     private Image slotColor;
     private Color colorHex;

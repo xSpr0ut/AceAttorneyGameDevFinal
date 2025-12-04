@@ -10,11 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6bf6f4a3f2127c4f855b939287896fa, type: 3}
-  m_Name: Bloody Hairpin
+  m_Name: Attorney's Badge
   m_EditorClassIdentifier: 
-  selected: 0
-  evidenceNo: -1
-  evidenceSprite: {fileID: 3843233276172815992, guid: 188f804198b1f1548a4307c3d3e93599, type: 3}
-  evidenceName: Bloody Hairpin
-  evidenceDesc: The murder weapon. Belonged to the victim. Has the fingerprints of
-    the victim, her lover, and her makeup artist.
+  selected: 1
+  evidenceNo: 0
+  evidenceSprite: {fileID: 21300000, guid: 86c84f8eb997fd145abc7887a42db51a, type: 3}
+  evidenceName: Attorney's Badge
+  evidenceDesc: It's very shiny. Proof that I'm a licensed attorney.

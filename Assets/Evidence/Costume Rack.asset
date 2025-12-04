@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Costume Rack
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
+  evidenceNo: -1
   evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceName: Costume Rack
+  evidenceDesc: A rack with many copies of signature dresses and wigs for Madeline
+    Bain and Nadine Kanna.

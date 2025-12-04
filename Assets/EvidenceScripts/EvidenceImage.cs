@@ -17,7 +17,7 @@ public class EvidenceImage : MonoBehaviour
     {
         int selected = navi.selectedEvidence;
 
-        Sprite evidenceImage = navi.evidence[selected].GetComponent<EvidenceProperties>().evidenceSprite;
+        Sprite evidenceImage = navi.evidence[selected].evidenceSprite;
         imageDisplay.sprite = evidenceImage;
     }
 }

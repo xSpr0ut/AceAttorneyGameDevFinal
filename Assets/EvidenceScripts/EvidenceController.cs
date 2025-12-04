@@ -28,12 +28,5 @@ public class EvidenceController : MonoBehaviour
             }
         }
     }
-    void AddEvidence(string name, string desc, Sprite sprite)
-    {
-        GameObject newEvidence = new GameObject(name);
-        newEvidence.GetComponent<EvidenceProperties>().evidenceName = name;
-        newEvidence.GetComponent<EvidenceProperties>().evidenceDesc = desc;
-        newEvidence.GetComponent<EvidenceProperties>().evidenceSprite = sprite;
-        navi.GetComponent<EvidenceNavigator>().evidence.Add(newEvidence);
-    }
+
 }

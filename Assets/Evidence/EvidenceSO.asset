@@ -10,11 +10,12 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: a6bf6f4a3f2127c4f855b939287896fa, type: 3}
-  m_Name: Bloody Hairpin
+  m_Name: EvidenceSO
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 3843233276172815992, guid: 188f804198b1f1548a4307c3d3e93599, type: 3}
-  evidenceName: Bloody Hairpin
-  evidenceDesc: The murder weapon. Belonged to the victim. Has the fingerprints of
-    the victim, her lover, and her makeup artist.
+  evidenceSprite: {fileID: 0}
+  evidenceName: Police Report
+  evidenceDesc: 'Nadine Kanna was arrested at approximately 6:45 PM, February 8th,
+    20XX, after a witness said she ran from the crime scene. Three others who were
+    on the scene were apprehended: Olaf Kanna, Kaylee Smith, and Eileen Lore.'

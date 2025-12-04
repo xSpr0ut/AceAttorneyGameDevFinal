@@ -13,7 +13,9 @@ MonoBehaviour:
   m_Name: Autopsy
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
+  evidenceNo: -1
   evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceName: Autopsy
+  evidenceDesc: The victim died at approximately 6:30 PM, February 8th, 20XX. She
+    instantly died from a stab wound to the carotid artery from a hairpin. Her knuckles
+    are slightly bruised and scratched.

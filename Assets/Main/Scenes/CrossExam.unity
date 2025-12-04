@@ -1369,8 +1369,8 @@ MonoBehaviour:
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   crossExaminationChoicePanel: {fileID: 1393817129}
-  nextStatement: {fileID: 21300000, guid: 08cdd927bb33e477e956507d9796c2ca, type: 3}
-  previousStatement: {fileID: 21300000, guid: 35d123e9578dd462db98b90cf50ab5fc, type: 3}
+  forwardPrefab: {fileID: 1462476386806894213, guid: 39fc71eaadf91479aa8ddaccc67b2f63, type: 3}
+  backwardPrefab: {fileID: 2829075342434951720, guid: 9058ecb6f29e94c0eaaa597c9df8f756, type: 3}
   currentMode: 0
 --- !u!1 &1327946327
 GameObject:
@@ -1554,7 +1554,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1393817129}
-  - component: {fileID: 1393817128}
   - component: {fileID: 1393817127}
   m_Layer: 5
   m_Name: CrossExam_Button_Parent
@@ -1577,32 +1576,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_HorizontalFit: 0
   m_VerticalFit: 2
---- !u!114 &1393817128
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1393817126}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59f8146938fff824cb5fd77236b75775, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_Padding:
-    m_Left: 0
-    m_Right: 0
-    m_Top: 0
-    m_Bottom: 0
-  m_ChildAlignment: 1
-  m_Spacing: 20
-  m_ChildForceExpandWidth: 0
-  m_ChildForceExpandHeight: 0
-  m_ChildControlWidth: 1
-  m_ChildControlHeight: 1
-  m_ChildScaleWidth: 1
-  m_ChildScaleHeight: 1
-  m_ReverseArrangement: 0
 --- !u!224 &1393817129
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1619,7 +1592,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -109}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1403444667
@@ -1855,8 +1828,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 26.56, y: -9.580002}
-  m_SizeDelta: {x: 663.12, y: 99.57}
+  m_AnchoredPosition: {x: 11.07, y: -9.580002}
+  m_SizeDelta: {x: 632.13, y: 99.57}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1504932049
 MonoBehaviour:
@@ -2463,7 +2436,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Lover
+  characterName: John
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
 --- !u!1 &2036296502
 GameObject:

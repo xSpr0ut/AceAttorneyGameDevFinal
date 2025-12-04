@@ -13,8 +13,8 @@ public class DialogueManager : MonoBehaviour
 
     //Cross Examination
     public Transform crossExaminationChoicePanel;
-    public Sprite nextStatement;
-    public Sprite previousStatement;
+    public GameObject forwardPrefab;
+    public GameObject backwardPrefab;
 
     Story story;
     TextArchitect architect;
@@ -74,12 +74,12 @@ public class DialogueManager : MonoBehaviour
         // If no more text but there are choices
         if (story.currentChoices.Count > 0)
         {
-            ShowChoices();
+            //ShowChoices();
 
-            // if(currentMode == DialogueMode.CrossExamination)
-            //     ShowCrossExaminationChoices();
-            // else if(currentMode == DialogueMode.Normal)
-            //     ShowChoices();
+            if(currentMode == DialogueMode.CrossExamination)
+                ShowCrossExaminationChoices();
+            else if(currentMode == DialogueMode.Normal)
+                ShowChoices();
             return;
         }
 
@@ -186,34 +186,54 @@ public class DialogueManager : MonoBehaviour
     {
         crossExaminationChoicePanel.gameObject.SetActive(true);
 
-        // Clear out buttons
+        // Clear out old buttons
         foreach (Transform child in crossExaminationChoicePanel)
             Destroy(child.gameObject);
-        
-        // Create button for each choice
-        for(int i = 0; i < story.currentChoices.Count; i++)
+
+        // One button per choice
+        for (int i = 0; i < story.currentChoices.Count; i++)
         {
             Choice c = story.currentChoices[i];
-            GameObject buttonObj = Instantiate(choiceButtonPrefab, crossExaminationChoicePanel);
+
+            // Decide WHICH prefab to use for this choice
+            GameObject prefabToUse = null;
+
+            if (c.text.Contains("Next"))
+            {
+                // This choice is the "go forward" option
+                prefabToUse = forwardPrefab;
+            }
+            else if (c.text.Contains("Previous"))
+            {
+                // This choice is the "go back" option
+                prefabToUse = backwardPrefab;
+            }
+            else
+            {
+                // Optional: fallback if you ever have some other text choice here
+                prefabToUse = choiceButtonPrefab;
+            }
+
+            // Instantiate the correct button prefab
+            GameObject buttonObj = Instantiate(prefabToUse, crossExaminationChoicePanel);
+
+            // Your custom script on the prefab
             ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
 
-            // Remove text for buttons
-            TextMeshProUGUI label = buttonObj.GetComponentInChildren<TextMeshProUGUI>();
-            if(label != null) label.gameObject.SetActive(false);
-
-            // Choose appropriate sprite based on Ink text
-            Image img = buttonObj.GetComponent<Image>();
-            if (c.text.Contains("Next"))
-                img.sprite = nextStatement;
-            
-            else if (c.text.Contains("Previous"))
-                img.sprite = previousStatement;
-            
-            // Still assign callback
-            btn.Init(c.text, i, OnChoiceSelected);
+            // Hook it up to Ink like usual
+            btn.Init(c.text, i, CrossExamChoiceSelected);
         }
-
     }
+
+    void CrossExamChoiceSelected(int choiceIndex)
+    {
+        crossExaminationChoicePanel.gameObject.SetActive(false);
+
+        story.ChooseChoiceIndex(choiceIndex);
+
+        AdvanceStory();
+    }
+
 
     // ---- Choices ---- //
     void ShowChoices()

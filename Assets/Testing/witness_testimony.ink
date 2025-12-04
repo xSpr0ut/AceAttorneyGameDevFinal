@@ -1,7 +1,7 @@
 -> Lover_WitnessTestimony
 
 == Lover_WitnessTestimony ==
-#speaker Lover
+#speaker John
 #mode Normal
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
 
@@ -19,7 +19,7 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 -> Lover_CrossExamination
 
 == Lover_CrossExamination ==
-#speaker Lover
+#speaker John
 #mode CrossExamination
 "Start of Cross Examination"
 

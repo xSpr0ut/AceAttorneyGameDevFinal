@@ -106,8 +106,7 @@ public class PhoneManagerScript : MonoBehaviour
 
     public void OnFanButtonDown()
     {
-        
-        dialogueSystem.SetActive(true);
+        PlayKnot("FanPhoneCall");
         ClosePhone();
         
     }

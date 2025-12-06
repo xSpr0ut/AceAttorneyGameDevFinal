@@ -16,6 +16,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject forwardPrefab;
     public GameObject backwardPrefab;
 
+    public string currentStatementKnot = "";
+
     Story story;
     TextArchitect architect;
 
@@ -126,6 +128,11 @@ public class DialogueManager : MonoBehaviour
 
                 case "title":
                     ShowTitle(param);
+                    break;
+                
+                //Track Current Line
+                case "statement":
+                    currentStatementKnot = param;
                     break;
                 
                 case "mode":

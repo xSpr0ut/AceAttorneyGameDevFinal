@@ -9,15 +9,25 @@ public class EvidenceImage : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        int selected = navi.selectedEvidence;
+        Sprite evidenceImage = navi.evidence[selected].evidenceSprite;
+
         imageDisplay = GetComponent<Image>();
+        imageDisplay.sprite = evidenceImage;
     }
 
     // Update is called once per frame
     void Update()
     {
-        int selected = navi.selectedEvidence;
+        
+    }
 
+    public void UpdateImage()
+    {
+        int selected = navi.selectedEvidence;
         Sprite evidenceImage = navi.evidence[selected].evidenceSprite;
+
+        imageDisplay = GetComponent<Image>();
         imageDisplay.sprite = evidenceImage;
     }
 }

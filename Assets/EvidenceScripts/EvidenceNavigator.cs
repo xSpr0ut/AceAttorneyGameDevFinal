@@ -16,12 +16,19 @@ public class EvidenceNavigator : MonoBehaviour
     //private EvidenceProperties prop; ignore this for now
 
     // our first piece of evidence
+    [SerializeField] public GameObject image;
     [SerializeField] public EvidenceSO attorneysBadge;
+
+    // TESTING
+    [SerializeField] public EvidenceSO hairpin;
+    [SerializeField] public EvidenceSO autopsy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        evidence.Add(attorneysBadge);
+        addEvidence(attorneysBadge);
+        addEvidence(hairpin);
+        addEvidence(autopsy);
 
         selectedEvidence = 0;
         evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
@@ -36,6 +43,7 @@ public class EvidenceNavigator : MonoBehaviour
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
             selectedEvidence--;
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+            image.GetComponent<EvidenceImage>().UpdateImage();
 
         }
         if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
@@ -45,5 +53,13 @@ public class EvidenceNavigator : MonoBehaviour
             evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
 
         }
+    }
+
+    public void addEvidence(EvidenceSO evidenceAssignment)
+    {
+
+        evidence.Add(evidenceAssignment);
+        int selection = evidence.Count;
+        evidenceAssignment.evidenceNo = selection;
     }
 }

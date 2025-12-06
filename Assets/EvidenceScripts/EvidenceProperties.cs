@@ -21,11 +21,24 @@ public class EvidenceProperties : MonoBehaviour
     void Start()
     {
         slotColor = GetComponent<Image>();
+        Sprite evidenceimg = evidence.evidenceSprite;
+        Image imageDisplay = image.GetComponent<Image>();
+        imageDisplay.sprite = evidenceimg;
+
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        if (evidence == null)
+        {
+            unselectedBorder.SetActive(false);
+        }
+        else
+        {
+            unselectedBorder.SetActive(true);
+        }
 
         if (selected)
         {
@@ -43,5 +56,10 @@ public class EvidenceProperties : MonoBehaviour
             unselectedBorder.SetActive(true);
 
         }
+    }
+
+    public void AssignEvidence(EvidenceSO evidence)
+    {
+
     }
 }

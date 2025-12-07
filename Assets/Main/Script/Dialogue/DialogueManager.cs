@@ -153,6 +153,9 @@ public class DialogueManager : MonoBehaviour
         if (activeCharacter != null)
         {
             DialogueSystem.instance.dialogueContainer.nameText.text = activeCharacter.characterName;
+
+            //New Part: Activate the game object of the current speaker
+            CharacterManager.Instance.SetActiveSpeaker(activeCharacter);
         }
         else
         {

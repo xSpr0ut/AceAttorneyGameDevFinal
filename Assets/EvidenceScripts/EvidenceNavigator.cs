@@ -9,6 +9,9 @@ public enum EvidenceCategory
 
 public class EvidenceNavigator : MonoBehaviour
 {
+
+    public EvidenceCategory category;
+
     // data structures for evidence management
     [SerializeField] public List<GameObject> evidenceSlot; // 10 existing evidence slots
     public List<EvidenceSO> evidence; // 1-10 existing acquired evidence
@@ -17,16 +20,21 @@ public class EvidenceNavigator : MonoBehaviour
 
     // our first piece of evidence
     [SerializeField] public GameObject image;
+    [SerializeField] public GameObject text;
     [SerializeField] public EvidenceSO attorneysBadge;
 
-    // TESTING
+    // TESTING, DELETE LATER
     [SerializeField] public EvidenceSO hairpin;
     [SerializeField] public EvidenceSO autopsy;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        category = EvidenceCategory.Evidence;
+
         addEvidence(attorneysBadge);
+
+        // TESTING, DELETE LATER
         addEvidence(hairpin);
         addEvidence(autopsy);
 
@@ -37,21 +45,37 @@ public class EvidenceNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+        if (Input.GetKeyDown(KeyCode.E))
         {
-            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-            selectedEvidence--;
-            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
-            image.GetComponent<EvidenceImage>().UpdateImage();
-
+            if (category == EvidenceCategory.Evidence)
+            {
+                category = EvidenceCategory.People;
+            }
+            else
+            {
+                category = EvidenceCategory.Evidence;
+            }
         }
-        if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
-        {
-            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-            selectedEvidence++;
-            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
 
+        if (category == EvidenceCategory.Evidence) { 
+            if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+            {
+                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                selectedEvidence--;
+                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                image.GetComponent<EvidenceImage>().UpdateImage();
+                text.GetComponent<EvidenceText>().UpdateText();
+
+            }
+            if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+            {
+                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                selectedEvidence++;
+                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                image.GetComponent<EvidenceImage>().UpdateImage();
+                text.GetComponent<EvidenceText>().UpdateText();
+
+            }
         }
     }
 
@@ -59,7 +83,11 @@ public class EvidenceNavigator : MonoBehaviour
     {
 
         evidence.Add(evidenceAssignment);
-        int selection = evidence.Count;
-        evidenceAssignment.evidenceNo = selection;
+
+        int evidenceNum = evidence.Count - 1;
+        evidenceAssignment.evidenceNo = evidenceNum + 1;
+
+        GameObject accessSlot = evidenceSlot[evidenceNum];
+        accessSlot.GetComponent<EvidenceProperties>().AssignEvidence(evidenceAssignment);
     }
 }

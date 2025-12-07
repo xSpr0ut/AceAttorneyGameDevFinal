@@ -30,6 +30,9 @@ public class EvidenceProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Sprite evidenceimg = evidence.evidenceSprite;
+        Image imageDisplay = image.GetComponent<Image>();
+        imageDisplay.sprite = evidenceimg;
 
         if (evidence == null)
         {
@@ -58,8 +61,8 @@ public class EvidenceProperties : MonoBehaviour
         }
     }
 
-    public void AssignEvidence(EvidenceSO evidence)
+    public void AssignEvidence(EvidenceSO evidenceAssignment)
     {
-
+        evidence = evidenceAssignment;
     }
 }

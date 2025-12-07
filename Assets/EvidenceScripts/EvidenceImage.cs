@@ -19,7 +19,7 @@ public class EvidenceImage : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+       
     }
 
     public void UpdateImage()

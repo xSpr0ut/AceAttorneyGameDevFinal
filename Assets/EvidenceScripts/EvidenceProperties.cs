@@ -32,10 +32,12 @@ public class EvidenceProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
-        Sprite evidenceimg = evidence.evidenceSprite;
-        Image imageDisplay = image.GetComponent<Image>();
-        imageDisplay.sprite = evidenceimg;
+        if (evidence != null)
+        {
+            Sprite evidenceimg = evidence.evidenceSprite;
+            Image imageDisplay = image.GetComponent<Image>();
+            imageDisplay.sprite = evidenceimg;
+        }
 
         if (evidence == null)
         {

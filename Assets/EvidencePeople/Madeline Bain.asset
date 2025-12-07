@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Madeline Bain
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
+  evidenceNo: -1
   evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceName: 'Madeline Bain (Age: 28)'
+  evidenceDesc: The victim of the case. A celebrity singer who was topping the charts
+    before her death.

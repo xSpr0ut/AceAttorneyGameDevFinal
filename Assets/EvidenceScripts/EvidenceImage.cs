@@ -24,10 +24,21 @@ public class EvidenceImage : MonoBehaviour
 
     public void UpdateImage()
     {
-        int selected = navi.selectedEvidence;
-        Sprite evidenceImage = navi.evidence[selected].evidenceSprite;
+        if (navi.category == EvidenceCategory.Evidence)
+        {
+            int selected = navi.selectedEvidence;
+            Sprite evidenceImage = navi.evidence[selected].evidenceSprite;
 
-        imageDisplay = GetComponent<Image>();
-        imageDisplay.sprite = evidenceImage;
+            imageDisplay = GetComponent<Image>();
+            imageDisplay.sprite = evidenceImage;
+        }
+        else if (navi.category == EvidenceCategory.People)
+        {
+            int selected = navi.selectedEvidence;
+            Sprite evidenceImage = navi.people[selected].evidenceSprite;
+
+            imageDisplay = GetComponent<Image>();
+            imageDisplay.sprite = evidenceImage;
+        }
     }
 }

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Dr. Christina Liu
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
-  evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceNo: 2
+  evidenceSprite: {fileID: 4498990899908587956, guid: 2db4eb02a9fc6d444a5e57e908998c4b, type: 3}
+  evidenceName: 'Dr. Christina Liu (Age: 26)'
+  evidenceDesc: 'My friend and reliable connection for forensics. Head of the crime
+    lab at the local precinct. '

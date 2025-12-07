@@ -139,8 +139,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90697dfc75e2af848b2b356762784fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navi: {fileID: 0}
   selected: 0
   evidence: {fileID: 0}
+  isPeople: 0
   unselectedBorder: {fileID: 4681916254280375464}
   selectedBorder: {fileID: 6919664890761797337}
   selectedTri: {fileID: 7590647773070295552}

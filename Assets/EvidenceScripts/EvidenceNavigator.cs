@@ -11,6 +11,10 @@ public enum EvidenceCategory
 
 public class EvidenceNavigator : MonoBehaviour
 {
+    /* i apologize for how spaghetti everything is
+     * 3 years of cs rly paid off
+     * but feel free to ask about anything
+     */
 
     public EvidenceCategory category;
 
@@ -60,20 +64,27 @@ public class EvidenceNavigator : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.E))
         {
             TextMeshProUGUI categoryTextDisplay = categoryText.GetComponent<TextMeshProUGUI>();
+            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+            peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
             selectedEvidence = 0;
 
             if (category == EvidenceCategory.Evidence)
             {
+                peopleSlot[0].GetComponent<EvidenceProperties>().selected = true;
                 category = EvidenceCategory.People;
                 categoryTextDisplay.text = "People";
                 controller.SetSlotsActive(peopleSlot, evidenceSlot);
             }
             else
             {
+                evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
                 category = EvidenceCategory.Evidence;
                 categoryTextDisplay.text = "Evidence";
                 controller.SetSlotsActive(evidenceSlot, peopleSlot);
             }
+
+            image.GetComponent<EvidenceImage>().UpdateImage();
+            text.GetComponent<EvidenceText>().UpdateText();
         }
 
         if (category == EvidenceCategory.Evidence) { 
@@ -107,7 +118,7 @@ public class EvidenceNavigator : MonoBehaviour
                 text.GetComponent<EvidenceText>().UpdateText();
 
             }
-            if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+            if (selectedEvidence != people.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
             {
                 peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
                 selectedEvidence++;

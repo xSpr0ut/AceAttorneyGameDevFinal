@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Eileen Lore
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
+  evidenceNo: -1
   evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceName: 'Eileen Lore (Age: 26)'
+  evidenceDesc: "The victim\u2019s makeup artist. Used to work under the defendant
+    but was poached by the victim."

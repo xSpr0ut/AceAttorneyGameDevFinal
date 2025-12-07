@@ -22,10 +22,10 @@ public class EvidenceProperties : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        slotColor = GetComponent<Image>();
+        /*slotColor = GetComponent<Image>();
         Sprite evidenceimg = evidence.evidenceSprite;
         Image imageDisplay = image.GetComponent<Image>();
-        imageDisplay.sprite = evidenceimg;
+        imageDisplay.sprite = evidenceimg;*/
 
     }
 

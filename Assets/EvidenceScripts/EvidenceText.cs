@@ -29,13 +29,30 @@ public class EvidenceText : MonoBehaviour
 
     public void UpdateText()
     {
-        int selected = navi.selectedEvidence;
-        string evidenceTitleText = navi.evidence[selected].evidenceName;
-        TextMeshProUGUI textDisplayTitle = title.GetComponent<TextMeshProUGUI>();
-        textDisplayTitle.text = evidenceTitleText;
 
-        string evidenceDescText = navi.evidence[selected].evidenceDesc;
-        TextMeshProUGUI textDisplayDesc = description.GetComponent<TextMeshProUGUI>();
-        textDisplayDesc.text = evidenceDescText;
+        int selected = navi.selectedEvidence;
+
+        if (navi.category == EvidenceCategory.Evidence)
+        {
+            string evidenceTitleText = navi.evidence[selected].evidenceName;
+            TextMeshProUGUI textDisplayTitle = title.GetComponent<TextMeshProUGUI>();
+            textDisplayTitle.text = evidenceTitleText;
+
+            string evidenceDescText = navi.evidence[selected].evidenceDesc;
+            TextMeshProUGUI textDisplayDesc = description.GetComponent<TextMeshProUGUI>();
+            textDisplayDesc.text = evidenceDescText;
+        }
+        else if (navi.category == EvidenceCategory.People)
+        {
+            string evidenceTitleText = navi.people[selected].evidenceName;
+            TextMeshProUGUI textDisplayTitle = title.GetComponent<TextMeshProUGUI>();
+            textDisplayTitle.text = evidenceTitleText;
+
+            string evidenceDescText = navi.people[selected].evidenceDesc;
+            TextMeshProUGUI textDisplayDesc = description.GetComponent<TextMeshProUGUI>();
+            textDisplayDesc.text = evidenceDescText;
+        }
+
+
     }
 }

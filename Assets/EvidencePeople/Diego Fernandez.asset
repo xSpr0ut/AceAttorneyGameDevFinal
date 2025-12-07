@@ -12,8 +12,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a6bf6f4a3f2127c4f855b939287896fa, type: 3}
   m_Name: Diego Fernandez
   m_EditorClassIdentifier: 
-  selected: 0
-  evidenceNo: -1
-  evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  selected: 1
+  evidenceNo: 1
+  evidenceSprite: {fileID: 4301716803304572031, guid: 1791ffc9da440de48ae7bbbfefb46995, type: 3}
+  evidenceName: 'Diego Fernandez (Age: 24)'
+  evidenceDesc: My assistant. He's like my little brother, the way he always makes
+    my head hurt.

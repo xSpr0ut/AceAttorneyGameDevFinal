@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Olaf Kanna
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: 0
+  evidenceNo: -1
   evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidenceName: Olaf Kanna (Age 30)
+  evidenceDesc: "I don\u2019t know much about him, but he seems relevant to the case."

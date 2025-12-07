@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using UnityEngine;
 using UnityEngine.UI;
 using Ink.Runtime;
@@ -21,6 +22,8 @@ public class DialogueManager : MonoBehaviour
 
         // Connect Architect to your DialogueSystem text
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
+
+        SceneManagerScript sm = SceneManagerScript.Instance;
 
         //Automatically go to first line
         ShowFirstLine();
@@ -66,6 +69,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         Debug.Log("END OF STORY");
+        SceneManagerScript sm = SceneManagerScript.Instance;
+        sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
     }
 
     void ShowFirstLine()
@@ -159,4 +164,5 @@ public class DialogueManager : MonoBehaviour
 
         AdvanceStory();
     }
+
 }

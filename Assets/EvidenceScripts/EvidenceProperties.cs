@@ -4,9 +4,11 @@ using UnityEngine.UI;
 public class EvidenceProperties : MonoBehaviour
 
 {
+    [SerializeField] public EvidenceNavigator navi;
 
     public bool selected;
     public EvidenceSO evidence;
+    public bool isPeople;
 
     private Image slotColor;
     private Color colorHex;
@@ -30,6 +32,7 @@ public class EvidenceProperties : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         Sprite evidenceimg = evidence.evidenceSprite;
         Image imageDisplay = image.GetComponent<Image>();
         imageDisplay.sprite = evidenceimg;
@@ -45,7 +48,7 @@ public class EvidenceProperties : MonoBehaviour
 
         if (selected)
         {
-            ColorUtility.TryParseHtmlString("7A906F", out colorHex);
+            //ColorUtility.TryParseHtmlString("7A906F", out colorHex);
             //slotColor = colorHex;
             selectedBorder.SetActive(true);
             selectedTri.SetActive(true);
@@ -61,8 +64,9 @@ public class EvidenceProperties : MonoBehaviour
         }
     }
 
-    public void AssignEvidence(EvidenceSO evidenceAssignment)
+    public void AssignEvidence(EvidenceSO evidenceAssignment, bool isPeoplePara)
     {
         evidence = evidenceAssignment;
+        isPeople = isPeoplePara;
     }
 }

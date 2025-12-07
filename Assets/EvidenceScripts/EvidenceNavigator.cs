@@ -1,5 +1,7 @@
 using UnityEngine;
 using System.Collections.Generic;
+using UnityEngine.UI;
+using TMPro;
 
 public enum EvidenceCategory
 {
@@ -13,8 +15,12 @@ public class EvidenceNavigator : MonoBehaviour
     public EvidenceCategory category;
 
     // data structures for evidence management
+    [SerializeField] public EvidenceController controller;
+    [SerializeField] public GameObject categoryText;
     [SerializeField] public List<GameObject> evidenceSlot; // 10 existing evidence slots
+    [SerializeField] public List<GameObject> peopleSlot;
     public List<EvidenceSO> evidence; // 1-10 existing acquired evidence
+    public List<EvidenceSO> people;
     public int selectedEvidence;
     //private EvidenceProperties prop; ignore this for now
 
@@ -22,6 +28,8 @@ public class EvidenceNavigator : MonoBehaviour
     [SerializeField] public GameObject image;
     [SerializeField] public GameObject text;
     [SerializeField] public EvidenceSO attorneysBadge;
+    [SerializeField] public EvidenceSO assistant;
+    [SerializeField] public EvidenceSO forensicsScientist;
 
     // TESTING, DELETE LATER
     [SerializeField] public EvidenceSO hairpin;
@@ -31,8 +39,12 @@ public class EvidenceNavigator : MonoBehaviour
     void Start()
     {
         category = EvidenceCategory.Evidence;
+        controller.SetSlotsActive(evidenceSlot, peopleSlot);
 
+        // GAME START DEFAULTS
         addEvidence(attorneysBadge);
+        addPeople(assistant);
+        addPeople(forensicsScientist);
 
         // TESTING, DELETE LATER
         addEvidence(hairpin);
@@ -47,13 +59,20 @@ public class EvidenceNavigator : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.E))
         {
+            TextMeshProUGUI categoryTextDisplay = categoryText.GetComponent<TextMeshProUGUI>();
+            selectedEvidence = 0;
+
             if (category == EvidenceCategory.Evidence)
             {
                 category = EvidenceCategory.People;
+                categoryTextDisplay.text = "People";
+                controller.SetSlotsActive(peopleSlot, evidenceSlot);
             }
             else
             {
                 category = EvidenceCategory.Evidence;
+                categoryTextDisplay.text = "Evidence";
+                controller.SetSlotsActive(evidenceSlot, peopleSlot);
             }
         }
 
@@ -77,8 +96,38 @@ public class EvidenceNavigator : MonoBehaviour
 
             }
         }
+        else if (category == EvidenceCategory.People)
+        {
+            if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+            {
+                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                selectedEvidence--;
+                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                image.GetComponent<EvidenceImage>().UpdateImage();
+                text.GetComponent<EvidenceText>().UpdateText();
+
+            }
+            if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+            {
+                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                selectedEvidence++;
+                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                image.GetComponent<EvidenceImage>().UpdateImage();
+                text.GetComponent<EvidenceText>().UpdateText();
+
+            }
+        }
     }
 
+    /* HOW ADDING EVIDENCE WORKS:
+     * 1. Reference the Evidence Navigator and the EvidenceSO object you want to add.
+     * 2. Use the addEvidence function: getComponent<EvidenceNavigator>.addEvidence(EvidenceSO);
+     * 3. It should pop up in your inventory. Be careful not to allow evidence be acquired twice.
+     * 4. You can access the EvidenceSO's data. Check EvidenceSO.cs for all its data types.
+     * 
+     * This applies the same for people, but obviosly it's using the addPeople() function.
+     * Ask Shannon if you have any questions!!
+     */
     public void addEvidence(EvidenceSO evidenceAssignment)
     {
 
@@ -88,6 +137,17 @@ public class EvidenceNavigator : MonoBehaviour
         evidenceAssignment.evidenceNo = evidenceNum + 1;
 
         GameObject accessSlot = evidenceSlot[evidenceNum];
-        accessSlot.GetComponent<EvidenceProperties>().AssignEvidence(evidenceAssignment);
+        accessSlot.GetComponent<EvidenceProperties>().AssignEvidence(evidenceAssignment, false);
+    }
+
+    public void addPeople(EvidenceSO peopleAssignment)
+    {
+        people.Add(peopleAssignment);
+
+        int peopleNum = people.Count - 1;
+        peopleAssignment.evidenceNo = peopleNum + 1;
+
+        GameObject accessSlot = peopleSlot[peopleNum];
+        accessSlot.GetComponent<EvidenceProperties>().AssignEvidence(peopleAssignment, true);
     }
 }

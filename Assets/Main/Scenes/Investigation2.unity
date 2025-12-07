@@ -283,6 +283,96 @@ Transform:
   m_Children: []
   m_Father: {fileID: 2115462529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &195866535
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 195866536}
+  - component: {fileID: 195866539}
+  - component: {fileID: 195866538}
+  - component: {fileID: 195866537}
+  m_Layer: 5
+  m_Name: Dillie
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &195866536
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195866535}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2115462529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -204, y: -53}
+  m_SizeDelta: {x: 235.78, y: 425.74}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &195866537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195866535}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Dillie
+  defaultPortrait: {fileID: 0}
+--- !u!114 &195866538
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195866535}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &195866539
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 195866535}
+  m_CullTransparentMesh: 1
 --- !u!1 &237791564
 GameObject:
   m_ObjectHideFlags: 0
@@ -1552,7 +1642,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Narrator
+  characterName: Dr.Narrator
   defaultPortrait: {fileID: 0}
 --- !u!114 &1024350657
 MonoBehaviour:
@@ -2874,6 +2964,96 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f12fd5dcdaab2489eadd5fd64bd76b77, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1529405110
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1529405111}
+  - component: {fileID: 1529405114}
+  - component: {fileID: 1529405113}
+  - component: {fileID: 1529405112}
+  m_Layer: 5
+  m_Name: Anonymous
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1529405111
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529405110}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2115462529}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -204, y: -53}
+  m_SizeDelta: {x: 235.78, y: 425.74}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1529405112
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529405110}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Anonymous
+  defaultPortrait: {fileID: 0}
+--- !u!114 &1529405113
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529405110}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1529405114
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1529405110}
+  m_CullTransparentMesh: 1
 --- !u!1 &1612622644
 GameObject:
   m_ObjectHideFlags: 0
@@ -3641,6 +3821,8 @@ RectTransform:
   m_Children:
   - {fileID: 2013243637}
   - {fileID: 1024350655}
+  - {fileID: 1529405111}
+  - {fileID: 195866536}
   - {fileID: 1114770101}
   - {fileID: 127312315}
   - {fileID: 677152824}

@@ -208,6 +208,7 @@ GameObject:
   - component: {fileID: 388724322}
   - component: {fileID: 388724321}
   - component: {fileID: 388724320}
+  - component: {fileID: 388724323}
   m_Layer: 5
   m_Name: Rae
   m_TagString: Untagged
@@ -231,7 +232,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -53}
+  m_AnchoredPosition: {x: 14, y: -14}
   m_SizeDelta: {x: 235.78, y: 425.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &388724320
@@ -248,6 +249,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Rae
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &388724321
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -268,7 +270,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: -7922107092191561756, guid: 480609a14ffd341bdb25f2bae2fbfbcc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -286,6 +288,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 388724318}
   m_CullTransparentMesh: 1
+--- !u!225 &388724323
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388724318}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -1379,6 +1393,7 @@ GameObject:
   - component: {fileID: 1227515395}
   - component: {fileID: 1227515394}
   - component: {fileID: 1227515393}
+  - component: {fileID: 1227515396}
   m_Layer: 5
   m_Name: Anna
   m_TagString: Untagged
@@ -1419,6 +1434,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Anna
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1227515394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1432,14 +1448,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1457,6 +1473,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227515391}
   m_CullTransparentMesh: 1
+--- !u!225 &1227515396
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227515391}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1258577774
 GameObject:
   m_ObjectHideFlags: 0
@@ -1548,6 +1576,11 @@ MonoBehaviour:
   inkFile: {fileID: 4900000, guid: 9e247b3308c668946b8dad6387ace493, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
+  crossExaminationChoicePanel: {fileID: 0}
+  forwardPrefab: {fileID: 0}
+  backwardPrefab: {fileID: 0}
+  currentStatementKnot: 
+  currentMode: 0
 --- !u!1 &1327946327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2079,6 +2112,7 @@ GameObject:
   - component: {fileID: 1544341655}
   - component: {fileID: 1544341654}
   - component: {fileID: 1544341653}
+  - component: {fileID: 1544341656}
   m_Layer: 5
   m_Name: Narrator
   m_TagString: Untagged
@@ -2119,6 +2153,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Narrator
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1544341654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2132,14 +2167,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2157,6 +2192,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544341651}
   m_CullTransparentMesh: 1
+--- !u!225 &1544341656
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544341651}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1612622644
 GameObject:
   m_ObjectHideFlags: 0
@@ -2439,6 +2486,7 @@ GameObject:
   - component: {fileID: 1949864153}
   - component: {fileID: 1949864152}
   - component: {fileID: 1949864151}
+  - component: {fileID: 1949864154}
   m_Layer: 5
   m_Name: Nadine
   m_TagString: Untagged
@@ -2462,7 +2510,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -53}
+  m_AnchoredPosition: {x: 13, y: -14}
   m_SizeDelta: {x: 235.78, y: 425.74}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1949864151
@@ -2478,7 +2526,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Nadine
-  defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  defaultPortrait: {fileID: -1287087321981036013, guid: 6b7e5c30dcfc0458b8856ceae9f700c5, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1949864152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2499,7 +2548,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: -7922107092191561756, guid: 480609a14ffd341bdb25f2bae2fbfbcc, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2517,6 +2566,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1949864149}
   m_CullTransparentMesh: 1
+--- !u!225 &1949864154
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1949864149}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1957283063
 GameObject:
   m_ObjectHideFlags: 0
@@ -2671,7 +2732,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013243637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2743,6 +2804,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Furina
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!1 &2036296502
 GameObject:
   m_ObjectHideFlags: 0

@@ -57,7 +57,7 @@ Nothing was out of place as I recall…
 #speaker Anna
 And when did you go retrieve your sunhat?
 
-#Nadine
+#speaker Nadine
 I think I left around 6:15? I'm not sure, because I got lost backstage.
 
 From my past experience rehearsing at the place, it usually took at least five minutes to go backstage from the lounge if it's not crowded. The walk that day was longer than that. 

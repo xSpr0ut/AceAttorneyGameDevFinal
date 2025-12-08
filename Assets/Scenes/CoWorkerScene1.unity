@@ -352,7 +352,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &570680157
 RectTransform:
   m_ObjectHideFlags: 0
@@ -386,6 +386,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Dillie
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &570680159
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,7 +443,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &614584024
 RectTransform:
   m_ObjectHideFlags: 0
@@ -476,6 +477,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Eileen
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &614584026
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1287,7 +1289,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1035785108
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1321,6 +1323,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: David
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1035785110
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1559,6 +1562,7 @@ GameObject:
   - component: {fileID: 1227515395}
   - component: {fileID: 1227515394}
   - component: {fileID: 1227515393}
+  - component: {fileID: 1227515396}
   m_Layer: 5
   m_Name: Anna
   m_TagString: Untagged
@@ -1598,7 +1602,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Anna
-  defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  defaultPortrait: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1227515394
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1612,14 +1617,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1637,6 +1642,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1227515391}
   m_CullTransparentMesh: 1
+--- !u!225 &1227515396
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1227515391}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1241782081
 GameObject:
   m_ObjectHideFlags: 0
@@ -1655,7 +1672,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1241782082
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1689,6 +1706,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Arthur
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1241782084
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1818,6 +1836,11 @@ MonoBehaviour:
   inkFile: {fileID: 4900000, guid: 722c4fb8e0f930446a3461ef935376af, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
+  crossExaminationChoicePanel: {fileID: 0}
+  forwardPrefab: {fileID: 0}
+  backwardPrefab: {fileID: 0}
+  currentStatementKnot: 
+  currentMode: 0
 --- !u!1 &1327946327
 GameObject:
   m_ObjectHideFlags: 0
@@ -2349,6 +2372,7 @@ GameObject:
   - component: {fileID: 1544341655}
   - component: {fileID: 1544341654}
   - component: {fileID: 1544341653}
+  - component: {fileID: 1544341656}
   m_Layer: 5
   m_Name: Narrator
   m_TagString: Untagged
@@ -2389,6 +2413,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Narrator
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1544341654
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2402,14 +2427,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: 0}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -2427,6 +2452,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1544341651}
   m_CullTransparentMesh: 1
+--- !u!225 &1544341656
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1544341651}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &1574808032
 GameObject:
   m_ObjectHideFlags: 0
@@ -2445,7 +2482,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1574808033
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2479,6 +2516,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Olaf
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1574808035
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2805,7 +2843,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1949864150
 RectTransform:
   m_ObjectHideFlags: 0
@@ -2839,6 +2877,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Nadine
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1949864152
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3025,6 +3064,7 @@ GameObject:
   - component: {fileID: 1998586878}
   - component: {fileID: 1998586877}
   - component: {fileID: 1998586876}
+  - component: {fileID: 1998586879}
   m_Layer: 5
   m_Name: Diego
   m_TagString: Untagged
@@ -3048,8 +3088,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -204, y: -53}
-  m_SizeDelta: {x: 235.78, y: 425.74}
+  m_AnchoredPosition: {x: 16, y: -22.47}
+  m_SizeDelta: {x: 330.01, y: 412.81}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1998586876
 MonoBehaviour:
@@ -3065,6 +3105,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Diego
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1998586877
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3085,7 +3126,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  m_Sprite: {fileID: -1707435998457533865, guid: 3831411637d394dbb9ebe015b5a7abaf, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -3103,6 +3144,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1998586874}
   m_CullTransparentMesh: 1
+--- !u!225 &1998586879
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1998586874}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2013243636
 GameObject:
   m_ObjectHideFlags: 0
@@ -3121,7 +3174,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &2013243637
 RectTransform:
   m_ObjectHideFlags: 0
@@ -3193,6 +3246,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Furina
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!1 &2036296502
 GameObject:
   m_ObjectHideFlags: 0

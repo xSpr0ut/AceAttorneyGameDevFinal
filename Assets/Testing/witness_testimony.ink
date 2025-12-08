@@ -1,8 +1,14 @@
+-> Beginning
+== Beginning ==
+#speaker Anna
+#mode Normal
+I want to call John to the stand please.
+Start your testimony. 
 -> Lover_WitnessTestimony
 
 == Lover_WitnessTestimony ==
 #speaker John
-#mode Normal
+#mode WitnessTestimony
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
 
 I saw Mr. Halden hurrying down the street with someone in a hooded coat following behind him. Moments later, I heard a gasp and found him dead in the alley.

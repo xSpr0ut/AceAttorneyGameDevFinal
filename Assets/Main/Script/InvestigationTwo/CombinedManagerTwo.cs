@@ -5,9 +5,9 @@ using UnityEngine.UI;
 using Ink.Runtime;
 using TMPro;
 
-public class CombinedManager : MonoBehaviour
+public class CombinedManagerTwo : MonoBehaviour
 {
-    public static CombinedManager Instance
+    public static CombinedManagerTwo Instance
     {
         get; 
         private set;
@@ -24,12 +24,12 @@ public class CombinedManager : MonoBehaviour
     Character activeCharacter;
 
     [SerializeField] private GameObject dialogue;
-    [SerializeField] private GameObject L, T, M, Z;
-    [SerializeField] private GameObject SpriteL, SpriteT, SpriteM, SpriteZ;
-    public bool playingL = false;
-    public bool playingT = false;
+    [SerializeField] private GameObject M, R, S, L;
+    [SerializeField] private GameObject SpriteM, SpriteR, SpriteS, SpriteL;
     public bool playingM = false;
-    public bool playingZ = false;
+    public bool playingR = false;
+    public bool playingS = false;
+    public bool playingL = false;
 
     private void Awake()
     {
@@ -49,10 +49,10 @@ public class CombinedManager : MonoBehaviour
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
         
         dialogue.SetActive(false);
-        SpriteL.SetActive(false); 
-        SpriteT.SetActive(false); 
-        SpriteM.SetActive(false); 
-        SpriteZ.SetActive(false);
+        SpriteM.SetActive(false);
+        SpriteR.SetActive(false);
+        SpriteS.SetActive(false);
+        SpriteL.SetActive(false);
     }
 
     private void Update()
@@ -87,24 +87,24 @@ public class CombinedManager : MonoBehaviour
             return;
         }
 
-        if (Name == "Letter")
-        {
-            SpriteL.SetActive(true);
-        }
-
-        if (Name == "Table")
-        {
-            SpriteT.SetActive(true);
-        }
-
-        if (Name == "Medkit")
+        if (Name == "Mirror")
         {
             SpriteM.SetActive(true);
         }
 
-        if (Name == "Magazine")
+        if (Name == "Rack")
         {
-            SpriteZ.SetActive(true);
+            SpriteR.SetActive(true);
+        }
+
+        if (Name == "Scanner")
+        {
+            SpriteS.SetActive(true);
+        }
+
+        if (Name == "Letter")
+        {
+            SpriteL.SetActive(true);
         }
 
         story.ResetState();
@@ -135,10 +135,10 @@ public class CombinedManager : MonoBehaviour
         activeDialogue = false;
 
         dialogue.SetActive(false);
-        SpriteL.SetActive(false);
-        SpriteT.SetActive(false);
         SpriteM.SetActive(false);
-        SpriteZ.SetActive(false);
+        SpriteR.SetActive(false);
+        SpriteS.SetActive(false);
+        SpriteL.SetActive(false);
 
         Debug.Log("END OF STORY");
     }
@@ -194,47 +194,47 @@ public class CombinedManager : MonoBehaviour
     {
         if (dialogue.activeInHierarchy)
         {
-            if (L != null)
-            {
-                L.SetActive(false);
-            }
-
-            if (T != null)
-            {
-                T.SetActive(false);
-            }
-
             if (M != null)
             {
                 M.SetActive(false);
             }
 
-            if (Z != null)
+            if (R != null)
             {
-                Z.SetActive(false);
+                R.SetActive(false);
+            }
+
+            if (S != null)
+            {
+                S.SetActive(false);
+            }
+
+            if (L != null)
+            {
+                L.SetActive(false);
             }
         }
 
         else
         {
-            if (L != null)
-            {
-                L.SetActive(true);
-            }
-
-            if (T != null)
-            {
-                T.SetActive(true);
-            }
-
             if (M != null)
             {
                 M.SetActive(true);
             }
 
-            if (Z != null)
+            if (R != null)
             {
-                Z.SetActive(true);
+                R.SetActive(true);
+            }
+
+            if (S != null)
+            {
+                S.SetActive(true);
+            }
+
+            if (L != null)
+            {
+                L.SetActive(true);
             }
         }
     }

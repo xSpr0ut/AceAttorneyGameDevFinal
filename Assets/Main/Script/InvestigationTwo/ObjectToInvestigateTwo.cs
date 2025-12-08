@@ -3,6 +3,7 @@ using UnityEngine;
 public class ObjectToInvestigateTwo : MonoBehaviour
 {
     public string knotName;
+    [SerializeField] private float size;
 
     void Update()
     {
@@ -11,12 +12,12 @@ public class ObjectToInvestigateTwo : MonoBehaviour
 
         if (hit && hit.collider != null)
         {
-            this.transform.localScale = new Vector3(1.05f, 1.05f, 1.05f);
+            this.transform.localScale = new Vector3(size + 0.15f, size + 0.15f, size + 0.15f);
         }
 
         else
         {
-            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            this.transform.localScale = new Vector3(size, size, size);
         }
     }
 

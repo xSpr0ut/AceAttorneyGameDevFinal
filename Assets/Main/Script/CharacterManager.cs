@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 
 public class CharacterManager : MonoBehaviour
@@ -46,5 +47,31 @@ public class CharacterManager : MonoBehaviour
         Debug.LogError("Character not found: " + name);
         return null;
     }
-    //hello
+
+    //Setting Active Speaker
+    public void SetActiveSpeaker(Character speaker)
+    {
+        foreach(Character c in characters.Values)
+        {
+            //Fade in the speaker
+            if(c == speaker)
+            {
+                c.gameObject.SetActive(c == speaker);
+                StartCoroutine(c.FadeTo(1f, 0.25f));
+            }
+
+            //Fade out other character
+            else
+            {
+                StartCoroutine(HideCharacter(c));
+            }
+        }
+    }
+
+    //Fades out coroutine + diable character after fading
+    public IEnumerator HideCharacter(Character c)
+    {
+        yield return StartCoroutine(c.FadeTo(0f, 0.25f)); //fade out effect
+        c.gameObject.SetActive(false);
+    }
 }

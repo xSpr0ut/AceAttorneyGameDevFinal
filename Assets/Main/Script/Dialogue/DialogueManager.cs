@@ -12,9 +12,25 @@ public class DialogueManager : MonoBehaviour
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
 
+    //Cross Examination
+    public Transform crossExaminationChoicePanel;
+    public GameObject forwardPrefab;
+    public GameObject backwardPrefab;
+
+    public string currentStatementKnot = "";
+
     Story story;
     TextArchitect architect;
 
+    //Dialogue Modes
+    public enum DialogueMode 
+    {
+        Normal,
+        CrossExamination
+    }
+
+    public DialogueMode currentMode = DialogueMode.Normal; //normal by default
+    
     void Start()
     {
         // Create Ink story
@@ -40,7 +56,6 @@ public class DialogueManager : MonoBehaviour
                     architect.hurryUp = true;
                 else
                     architect.ForceComplete();
-
                 return;
             }
 
@@ -64,7 +79,12 @@ public class DialogueManager : MonoBehaviour
         // If no more text but there are choices
         if (story.currentChoices.Count > 0)
         {
-            ShowChoices();
+            //ShowChoices();
+
+            if(currentMode == DialogueMode.CrossExamination)
+                ShowCrossExaminationChoices();
+            else if(currentMode == DialogueMode.Normal)
+                ShowChoices();
             return;
         }
 
@@ -79,6 +99,7 @@ public class DialogueManager : MonoBehaviour
         {
             string line = story.Continue();
             ApplyTags();
+
             architect.Build(line);
         }
     }
@@ -105,10 +126,25 @@ public class DialogueManager : MonoBehaviour
                 case "expression":
                     SetExpression(param);
                     break;
+                
+                case "goto":
+                    story.ChoosePathString("Lover_Lines");
+                    break;
 
-                // add more tag types here:
-                // case "emotion": ...
-                // case "portrait": ...
+                case "title":
+                    ShowTitle(param);
+                    break;
+                
+                //Track Current Line
+                case "statement":
+                    currentStatementKnot = param;
+                    break;
+                
+                case "mode":
+                    SetDialogueMode(param);
+                    break;
+
+                //Add more tags here
             }
         }
     }
@@ -122,6 +158,9 @@ public class DialogueManager : MonoBehaviour
         if (activeCharacter != null)
         {
             DialogueSystem.instance.dialogueContainer.nameText.text = activeCharacter.characterName;
+
+            //New Part: Activate the game object of the current speaker
+            CharacterManager.Instance.SetActiveSpeaker(activeCharacter);
         }
         else
         {
@@ -136,6 +175,80 @@ public class DialogueManager : MonoBehaviour
             activeCharacter.SetExpression(expression);
         }
     }
+
+    void ShowTitle(string title)
+    {
+        //TitleCardUI.Instance.Show(title);
+    }
+
+    // -- Cross Examination Input -- //
+    void SetDialogueMode(string modeName)
+    {
+        if (modeName == "Normal")
+        {
+            currentMode = DialogueMode.Normal;
+        }
+        else if (modeName == "CrossExamination")
+        {
+            currentMode = DialogueMode.CrossExamination;
+        }
+
+        Debug.Log("Mode switched to: " + currentMode);
+    }
+
+    // -- Cross Examination Buttons -- //
+    void ShowCrossExaminationChoices()
+    {
+        crossExaminationChoicePanel.gameObject.SetActive(true);
+
+        // Clear out old buttons
+        foreach (Transform child in crossExaminationChoicePanel)
+            Destroy(child.gameObject);
+
+        // One button per choice
+        for (int i = 0; i < story.currentChoices.Count; i++)
+        {
+            Choice c = story.currentChoices[i];
+
+            // Decide WHICH prefab to use for this choice
+            GameObject prefabToUse = null;
+
+            if (c.text.Contains("Next"))
+            {
+                // This choice is the "go forward" option
+                prefabToUse = forwardPrefab;
+            }
+            else if (c.text.Contains("Previous"))
+            {
+                // This choice is the "go back" option
+                prefabToUse = backwardPrefab;
+            }
+            else
+            {
+                // Optional: fallback if you ever have some other text choice here
+                prefabToUse = choiceButtonPrefab;
+            }
+
+            // Instantiate the correct button prefab
+            GameObject buttonObj = Instantiate(prefabToUse, crossExaminationChoicePanel);
+
+            // Your custom script on the prefab
+            ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
+
+            // Hook it up to Ink like usual
+            btn.Init(c.text, i, CrossExamChoiceSelected);
+        }
+    }
+
+    void CrossExamChoiceSelected(int choiceIndex)
+    {
+        crossExaminationChoicePanel.gameObject.SetActive(false);
+
+        story.ChooseChoiceIndex(choiceIndex);
+
+        AdvanceStory();
+    }
+
 
     // ---- Choices ---- //
     void ShowChoices()
@@ -152,7 +265,7 @@ public class DialogueManager : MonoBehaviour
             Choice c = story.currentChoices[i];
             GameObject buttonObj = Instantiate(choiceButtonPrefab, choicePanel);
             ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
-            btn.Init(c.text, i, OnChoiceSelected);
+            btn.Init(c.text, i, OnChoiceSelected); //spawn button
         }
     }
 

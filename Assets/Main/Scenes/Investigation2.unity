@@ -335,6 +335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Dillie
   defaultPortrait: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!114 &195866538
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1355,15 +1356,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 762362378}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 43.607, y: 43.607, z: 43.607}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2115462529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 8.3, y: -1.85}
+  m_AnchoredPosition: {x: 301.61542, y: -67.22767}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &786279335
@@ -1447,7 +1448,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 196, y: -183}
+  m_AnchoredPosition: {x: 196, y: -137}
   m_SizeDelta: {x: 85.45, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &851491778
@@ -1797,6 +1798,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Narrator
   defaultPortrait: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1024350657
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2205,6 +2207,11 @@ MonoBehaviour:
   inkFile: {fileID: 4900000, guid: 698e742ae6882aa46ab47ae7fb0df2e7, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
+  crossExaminationChoicePanel: {fileID: 0}
+  forwardPrefab: {fileID: 0}
+  backwardPrefab: {fileID: 0}
+  currentStatementKnot: 
+  currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2436,15 +2443,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1290664498}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1.15, y: 1.15, z: 1.15}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 41.79004, y: 41.79004, z: 41.79004}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2115462529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -6.955, y: 0.401}
+  m_AnchoredPosition: {x: -252.73834, y: 14.572107}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1300578194
@@ -2474,15 +2481,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1300578194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1.2, y: 1.2, z: 1.2}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 43.607, y: 43.607, z: 43.607}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2115462529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.82, y: 0.74}
+  m_AnchoredPosition: {x: -29.798576, y: 26.890736}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!212 &1300578197
@@ -2670,7 +2677,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 342, y: -183.00017}
+  m_AnchoredPosition: {x: 342, y: -137.00009}
   m_SizeDelta: {x: 85.45, y: 24.76}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1333276376
@@ -3171,6 +3178,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Anonymous
   defaultPortrait: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!114 &1529405113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3471,15 +3479,15 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1656795228}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 1.3, y: 1.3, z: 1.3}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 47.240913, y: 47.240913, z: 47.240913}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 0}
+  m_Father: {fileID: 2115462529}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -4.972, y: -3.995}
+  m_AnchoredPosition: {x: -180.67876, y: -145.17484}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1786909409
@@ -3858,6 +3866,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Anna
   defaultPortrait: {fileID: 0}
+  canvasGroup: {fileID: 0}
 --- !u!1 &2036296502
 GameObject:
   m_ObjectHideFlags: 0
@@ -3983,6 +3992,10 @@ RectTransform:
   - {fileID: 127312315}
   - {fileID: 677152824}
   - {fileID: 237791565}
+  - {fileID: 1300578195}
+  - {fileID: 762362382}
+  - {fileID: 1290664502}
+  - {fileID: 1656795232}
   m_Father: {fileID: 2086185879}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -4006,8 +4019,4 @@ SceneRoots:
   - {fileID: 1403444670}
   - {fileID: 1111739938}
   - {fileID: 1008160074}
-  - {fileID: 1300578195}
-  - {fileID: 762362382}
-  - {fileID: 1290664502}
-  - {fileID: 1656795232}
   - {fileID: 327070109}

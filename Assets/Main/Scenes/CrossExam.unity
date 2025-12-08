@@ -945,6 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: John
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
 --- !u!114 &875769929
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2451,6 +2452,7 @@ GameObject:
   - component: {fileID: 2013243639}
   - component: {fileID: 2013243638}
   - component: {fileID: 2013243640}
+  - component: {fileID: 2013243641}
   m_Layer: 5
   m_Name: Lover
   m_TagString: Untagged
@@ -2529,6 +2531,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: John
   defaultPortrait: {fileID: -5412910156287300836, guid: d73322b46e02f466b8d05a14655704a6, type: 3}
+  canvasGroup: {fileID: 0}
+--- !u!225 &2013243641
+CanvasGroup:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2013243636}
+  m_Enabled: 1
+  m_Alpha: 1
+  m_Interactable: 1
+  m_BlocksRaycasts: 1
+  m_IgnoreParentGroups: 0
 --- !u!1 &2036296502
 GameObject:
   m_ObjectHideFlags: 0

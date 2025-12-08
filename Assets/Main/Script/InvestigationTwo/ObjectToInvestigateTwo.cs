@@ -12,7 +12,7 @@ public class ObjectToInvestigateTwo : MonoBehaviour
 
         if (hit && hit.collider != null)
         {
-            this.transform.localScale = new Vector3(size + 0.15f, size + 0.15f, size + 0.15f);
+            this.transform.localScale = new Vector3(size + size * 0.1f, size + size * 0.1f, size + size * 0.1f);
         }
 
         else

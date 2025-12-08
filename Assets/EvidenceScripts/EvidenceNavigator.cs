@@ -26,7 +26,9 @@ public class EvidenceNavigator : MonoBehaviour
     public List<EvidenceSO> evidence; // 1-10 existing acquired evidence
     public List<EvidenceSO> people;
     public int selectedEvidence;
-    //private EvidenceProperties prop; ignore this for now
+
+    // if there is an image open, you are not allowed to navigate
+    public bool openImage;
 
     // our first piece of evidence
     [SerializeField] public GameObject image;
@@ -38,21 +40,24 @@ public class EvidenceNavigator : MonoBehaviour
     // TESTING, DELETE LATER
     [SerializeField] public EvidenceSO hairpin;
     [SerializeField] public EvidenceSO autopsy;
+    [SerializeField] public EvidenceSO paparazziPhoto;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         category = EvidenceCategory.Evidence;
         controller.SetSlotsActive(evidenceSlot, peopleSlot);
+        openImage = false;
 
         // GAME START DEFAULTS
         addEvidence(attorneysBadge);
         addPeople(assistant);
         addPeople(forensicsScientist);
 
-        // TESTING, DELETE LATER
+        // TESTING, DELETE THESE LATER
         addEvidence(hairpin);
         addEvidence(autopsy);
+        addEvidence(paparazziPhoto);
 
         selectedEvidence = 0;
         evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
@@ -61,71 +66,75 @@ public class EvidenceNavigator : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.E))
+        if (!openImage)
         {
-            TextMeshProUGUI categoryTextDisplay = categoryText.GetComponent<TextMeshProUGUI>();
-            evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-            peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-            selectedEvidence = 0;
+            if (Input.GetKeyDown(KeyCode.R))
+            {
+                TextMeshProUGUI categoryTextDisplay = categoryText.GetComponent<TextMeshProUGUI>();
+                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                selectedEvidence = 0;
+
+                if (category == EvidenceCategory.Evidence)
+                {
+                    peopleSlot[0].GetComponent<EvidenceProperties>().selected = true;
+                    category = EvidenceCategory.People;
+                    categoryTextDisplay.text = "People";
+                    controller.SetSlotsActive(peopleSlot, evidenceSlot);
+                }
+                else
+                {
+                    evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
+                    category = EvidenceCategory.Evidence;
+                    categoryTextDisplay.text = "Evidence";
+                    controller.SetSlotsActive(evidenceSlot, peopleSlot);
+                }
+
+                image.GetComponent<EvidenceImage>().UpdateImage();
+                text.GetComponent<EvidenceText>().UpdateText();
+            }
 
             if (category == EvidenceCategory.Evidence)
             {
-                peopleSlot[0].GetComponent<EvidenceProperties>().selected = true;
-                category = EvidenceCategory.People;
-                categoryTextDisplay.text = "People";
-                controller.SetSlotsActive(peopleSlot, evidenceSlot);
+                if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+                {
+                    evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                    selectedEvidence--;
+                    evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                    image.GetComponent<EvidenceImage>().UpdateImage();
+                    text.GetComponent<EvidenceText>().UpdateText();
+
+                }
+                if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+                {
+                    evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                    selectedEvidence++;
+                    evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                    image.GetComponent<EvidenceImage>().UpdateImage();
+                    text.GetComponent<EvidenceText>().UpdateText();
+
+                }
             }
-            else
+            else if (category == EvidenceCategory.People)
             {
-                evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
-                category = EvidenceCategory.Evidence;
-                categoryTextDisplay.text = "Evidence";
-                controller.SetSlotsActive(evidenceSlot, peopleSlot);
-            }
+                if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
+                {
+                    peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                    selectedEvidence--;
+                    peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                    image.GetComponent<EvidenceImage>().UpdateImage();
+                    text.GetComponent<EvidenceText>().UpdateText();
 
-            image.GetComponent<EvidenceImage>().UpdateImage();
-            text.GetComponent<EvidenceText>().UpdateText();
-        }
+                }
+                if (selectedEvidence != people.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
+                {
+                    peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+                    selectedEvidence++;
+                    peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
+                    image.GetComponent<EvidenceImage>().UpdateImage();
+                    text.GetComponent<EvidenceText>().UpdateText();
 
-        if (category == EvidenceCategory.Evidence) { 
-            if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
-            {
-                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                selectedEvidence--;
-                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
-                image.GetComponent<EvidenceImage>().UpdateImage();
-                text.GetComponent<EvidenceText>().UpdateText();
-
-            }
-            if (selectedEvidence != evidence.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
-            {
-                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                selectedEvidence++;
-                evidenceSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
-                image.GetComponent<EvidenceImage>().UpdateImage();
-                text.GetComponent<EvidenceText>().UpdateText();
-
-            }
-        }
-        else if (category == EvidenceCategory.People)
-        {
-            if (selectedEvidence != 0 && (Input.GetKeyDown(KeyCode.A) || Input.GetKeyDown(KeyCode.LeftArrow)))
-            {
-                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                selectedEvidence--;
-                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
-                image.GetComponent<EvidenceImage>().UpdateImage();
-                text.GetComponent<EvidenceText>().UpdateText();
-
-            }
-            if (selectedEvidence != people.Count - 1 && (Input.GetKeyDown(KeyCode.D) || Input.GetKeyDown(KeyCode.RightArrow)))
-            {
-                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                selectedEvidence++;
-                peopleSlot[selectedEvidence].GetComponent<EvidenceProperties>().selected = true;
-                image.GetComponent<EvidenceImage>().UpdateImage();
-                text.GetComponent<EvidenceText>().UpdateText();
-
+                }
             }
         }
     }

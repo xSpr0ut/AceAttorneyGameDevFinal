@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de794e7f0beee6f4fa4ca52422440bd6
+guid: 3c2543d535c061941992448ab4ad6127
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2455657468421485818
-    second: evidence_autopsy_0
+      213: 1450764738390174424
+    second: evidence_paperazziphoto_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: evidence_autopsy_0
+      name: evidence_paperazziphoto_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 7
-        width: 344
-        height: 344
+        x: 0
+        y: 0
+        width: 3243
+        height: 2160
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60bc3b80b80cbedd0800000000000000
-      internalID: -2455657468421485818
+      spriteID: 8daa864d7d6222410800000000000000
+      internalID: 1450764738390174424
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b52bfcd225da2c46af098ff6dd3edc0
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      evidence_autopsy_0: -2455657468421485818
+      evidence_paperazziphoto_0: 1450764738390174424
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

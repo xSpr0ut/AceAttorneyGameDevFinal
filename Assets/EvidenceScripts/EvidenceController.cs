@@ -9,6 +9,7 @@ public class EvidenceController : MonoBehaviour
 {
     [SerializeField] public EvidenceNavigator navi;
     [SerializeField] public GameObject EvidenceTab;
+    [SerializeField] public GameObject OpenEvidenceImage;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -34,6 +35,8 @@ public class EvidenceController : MonoBehaviour
                 navi.evidenceSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
                 navi.peopleSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
                 navi.selectedEvidence = 0;
+                navi.openImage = false;
+                OpenEvidenceImage.SetActive(false);
    
 
                 TextMeshProUGUI categoryTextDisplay = navi.categoryText.GetComponent<TextMeshProUGUI>();
@@ -44,6 +47,7 @@ public class EvidenceController : MonoBehaviour
 
                 navi.image.GetComponent<EvidenceImage>().UpdateImage();
                 navi.text.GetComponent<EvidenceText>().UpdateText();
+
                 //Debug.Log("diarrhea");
             }
         }

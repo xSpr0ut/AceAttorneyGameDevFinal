@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: de794e7f0beee6f4fa4ca52422440bd6
+guid: ed40a65ec54d775498e85192c9010457
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -2455657468421485818
-    second: evidence_autopsy_0
+      213: -6489052898309254847
+    second: evidence_photo_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: evidence_autopsy_0
+      name: evidence_photo_0
       rect:
         serializedVersion: 2
-        x: 9
-        y: 7
-        width: 344
-        height: 344
+        x: 7
+        y: 8
+        width: 297
+        height: 294
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 60bc3b80b80cbedd0800000000000000
-      internalID: -2455657468421485818
+      spriteID: 141de8bf4c042f5a0800000000000000
+      internalID: -6489052898309254847
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 3b52bfcd225da2c46af098ff6dd3edc0
+    spriteID: 4410c6adb2fd26b4a9b70767ea1febf2
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      evidence_autopsy_0: -2455657468421485818
+      evidence_photo_0: -6489052898309254847
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

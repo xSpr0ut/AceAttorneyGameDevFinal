@@ -19,9 +19,12 @@ public class EvidenceProperties : MonoBehaviour
     [SerializeField] public GameObject selectedTri;
     [SerializeField] public GameObject image;
 
+    [SerializeField] public GameObject OpenEvidenceImage;
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+
         /*slotColor = GetComponent<Image>();
         Sprite evidenceimg = evidence.evidenceSprite;
         Image imageDisplay = image.GetComponent<Image>();
@@ -50,6 +53,25 @@ public class EvidenceProperties : MonoBehaviour
 
         if (selected)
         {
+            // POPUPS
+
+            if (Input.GetKeyDown(KeyCode.Space) && evidence.evidenceName == "Paparazzi Photos")
+            {
+
+                if (!navi.openImage)
+                {
+                    navi.openImage = true;
+                    OpenEvidenceImage.SetActive(true);
+                    Debug.Log("pee");
+                }
+                else
+                {
+                    navi.openImage = false;
+                    OpenEvidenceImage.SetActive(false);
+                }
+            }
+
+
             //ColorUtility.TryParseHtmlString("7A906F", out colorHex);
             //slotColor = colorHex;
             selectedBorder.SetActive(true);

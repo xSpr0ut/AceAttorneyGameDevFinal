@@ -1419,7 +1419,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Witness Testimony
+  m_text: '<fade>Witness Testimony
 
 '
   m_isRightToLeft: 0

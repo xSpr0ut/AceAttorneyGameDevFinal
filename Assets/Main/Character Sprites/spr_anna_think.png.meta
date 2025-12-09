@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 19ca53b809b0a494d983c0f171d0f067
+guid: e55e744b0d037452380900cd0b5706b4
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8639839154369419507
-    second: spr_defendant_closed_0
+      213: 4823983252928198906
+    second: spr_anna_think_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spr_defendant_closed_0
+      name: spr_anna_think_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d07ac4f9010291880800000000000000
-      internalID: -8639839154369419507
+      spriteID: af8f731c53b32f240800000000000000
+      internalID: 4823983252928198906
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7ce4650f7099840d7ac6732026a3953a
+    spriteID: a8aac4524aff24873a230a77602ec6f8
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spr_defendant_closed_0: -8639839154369419507
+      spr_anna_think_0: 4823983252928198906
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

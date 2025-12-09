@@ -67,12 +67,22 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
+    void UpdateCurrentStatementFromInk()
+    {
+        if(story.variablesState["current_statement"] != null)
+        {
+            currentStatementKnot = story.variablesState["current_statement"] as string;
+            Debug.Log(currentStatementKnot);
+        } 
+    }
+
     public void AdvanceStory()
     {
         // If Ink has more text
         if (story.canContinue)
         {
             string line = story.Continue();
+            UpdateCurrentStatementFromInk();
             
             ApplyTags();
 
@@ -165,15 +175,14 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("No character found: " + speakerName);
         }
     }
-
-    //not in use right now
+    
+    //Set Expression Function
     void SetExpression(string expression)
     {
         if (activeCharacter != null)
-        {
             activeCharacter.SetExpression(expression);
-        }
     }
+
 
     //Switching Modes
     private IEnumerator HandleModeSwitch(string modeName)
@@ -272,6 +281,14 @@ public class DialogueManager : MonoBehaviour
     void CrossExamChoiceSelected(int choiceIndex)
     {
         crossExaminationChoicePanel.gameObject.SetActive(false);
+
+        Choice selected = story.currentChoices[choiceIndex];
+
+        //update current line based on the selected choice
+        //string target = selected.pathStringOnChoice;
+        //currentStatementKnot = target;
+
+        //Debug.Log("Current Statement: " + currentStatementKnot);
 
         story.ChooseChoiceIndex(choiceIndex);
 

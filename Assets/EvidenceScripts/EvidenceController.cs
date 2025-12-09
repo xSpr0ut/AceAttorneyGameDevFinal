@@ -10,12 +10,19 @@ public class EvidenceController : MonoBehaviour
     [SerializeField] public EvidenceNavigator navi;
     [SerializeField] public GameObject EvidenceTab;
     [SerializeField] public GameObject OpenEvidenceImage;
+    [SerializeField] public GameObject Present;
+
+    public bool isCrossExaminating;
+    public string presentName;
 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
         EvidenceTab.SetActive(false);
+        Present.SetActive(false);
+
+        isCrossExaminating = false;
     }
 
     // Update is called once per frame
@@ -31,25 +38,18 @@ public class EvidenceController : MonoBehaviour
             {
                 EvidenceTab.SetActive(true);
 
-                // RESET 
-                navi.evidenceSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                navi.peopleSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
-                navi.selectedEvidence = 0;
-                navi.openImage = false;
-                OpenEvidenceImage.SetActive(false);
-   
-
-                TextMeshProUGUI categoryTextDisplay = navi.categoryText.GetComponent<TextMeshProUGUI>();
-                navi.evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
-                navi.category = EvidenceCategory.Evidence;
-                categoryTextDisplay.text = "Evidence";
-                SetSlotsActive(navi.evidenceSlot, navi.peopleSlot);
-
-                navi.image.GetComponent<EvidenceImage>().UpdateImage();
-                navi.text.GetComponent<EvidenceText>().UpdateText();
+                SetTabActive();
 
                 //Debug.Log("diarrhea");
             }
+        }
+
+        if (isCrossExaminating && Input.GetKeyDown(KeyCode.E))
+        {
+
+            presentName = GetEvidence().evidenceName;
+            EvidenceTab.SetActive(false);
+            Present.SetActive(false);
         }
 
     }
@@ -69,5 +69,45 @@ public class EvidenceController : MonoBehaviour
          
         
     }
-}
 
+    public void SetTabActive()
+    {
+        EvidenceTab.SetActive(true);
+
+        // RESET 
+        navi.evidenceSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+        navi.peopleSlot[navi.selectedEvidence].GetComponent<EvidenceProperties>().selected = false;
+        navi.selectedEvidence = 0;
+        navi.openImage = false;
+        OpenEvidenceImage.SetActive(false);
+
+
+        TextMeshProUGUI categoryTextDisplay = navi.categoryText.GetComponent<TextMeshProUGUI>();
+        navi.evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;
+        navi.category = EvidenceCategory.Evidence;
+        categoryTextDisplay.text = "Evidence";
+        SetSlotsActive(navi.evidenceSlot, navi.peopleSlot);
+
+        navi.image.GetComponent<EvidenceImage>().UpdateImage();
+        navi.text.GetComponent<EvidenceText>().UpdateText();
+
+        if (isCrossExaminating)
+        {
+            Present.SetActive(true);
+        }
+    }
+
+    // to obtain name, do [controller].GetEvidence().evidenceName
+    public EvidenceSO GetEvidence()
+    {
+        if (navi.category == EvidenceCategory.Evidence)
+        {
+            return navi.evidence[navi.selectedEvidence];
+        }
+        else
+        {
+            return navi.people[navi.selectedEvidence];
+        }
+        
+    }
+}

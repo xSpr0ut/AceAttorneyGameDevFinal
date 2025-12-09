@@ -4,8 +4,16 @@ VAR current_statement = ""
 == Beginning ==
 #speaker Anna
 #mode Normal
-I want to call John to the stand please.
-Start your testimony. 
+Your honour...
+After this testimony, I want to call someone to the stand.
+
+#speaker Judge
+Who is it that you want to call to the stand?
+
+#speakerAnna
+I want to call Olaf to the stand please.
+What happened that day?
+
 -> Lover_WitnessTestimony
 
 == Lover_WitnessTestimony ==

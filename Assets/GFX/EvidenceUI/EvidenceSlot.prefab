@@ -139,15 +139,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90697dfc75e2af848b2b356762784fef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  navi: {fileID: 0}
   selected: 0
-  evidenceNo: 0
-  evidenceSprite: {fileID: 0}
-  evidenceName: 
-  evidenceDesc: 
+  evidence: {fileID: 0}
+  isPeople: 0
   unselectedBorder: {fileID: 4681916254280375464}
   selectedBorder: {fileID: 6919664890761797337}
   selectedTri: {fileID: 7590647773070295552}
   image: {fileID: 8276565275049899247}
+  OpenEvidenceImage: {fileID: 0}
 --- !u!1 &4681916254280375464
 GameObject:
   m_ObjectHideFlags: 0
@@ -166,7 +166,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1180805254668564762
 RectTransform:
   m_ObjectHideFlags: 0
@@ -266,7 +266,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -902799855
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -297,7 +297,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3830827166296778941
 RectTransform:
   m_ObjectHideFlags: 0
@@ -397,7 +397,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -902799855
-  m_SortingLayer: 2
+  m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -427,7 +427,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &3009784838317407896
 RectTransform:
   m_ObjectHideFlags: 0
@@ -519,8 +519,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0.2, y: 0.8}
-  m_SizeDelta: {x: 47.5122, y: 47.5122}
+  m_AnchoredPosition: {x: 0.084, y: 0.68396}
+  m_SizeDelta: {x: 67.5241, y: 67.524}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &1317842692629999000
 CanvasRenderer:
@@ -550,7 +550,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 86c84f8eb997fd145abc7887a42db51a, type: 3}
+  m_Sprite: {fileID: 5641780002339925326, guid: 347db64c35522604eb87ef9213a8952e, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

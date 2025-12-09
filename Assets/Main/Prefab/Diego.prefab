@@ -103,7 +103,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Diego
   portrait: {fileID: 3347481862086546631}
-  defaultPortrait: {fileID: -7922107092191561756, guid: 480609a14ffd341bdb25f2bae2fbfbcc, type: 3}
+  defaultPortrait: {fileID: -1707435998457533865, guid: 3831411637d394dbb9ebe015b5a7abaf, type: 3}
   expressionList:
   - id: talk
     sprite: {fileID: 2327548166234026827, guid: c7bf9cfe964374d22bec92555c7f1c13, type: 3}

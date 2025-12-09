@@ -1,8 +1,9 @@
 using UnityEngine;
 
-public class ObjectToInvestigate : MonoBehaviour
+public class ObjectToInvestigateTwo : MonoBehaviour
 {
     public string knotName;
+    [SerializeField] private float size;
 
     void Update()
     {
@@ -11,20 +12,20 @@ public class ObjectToInvestigate : MonoBehaviour
 
         if (hit && hit.collider != null)
         {
-            this.transform.localScale = new Vector3(1.05f, 1.05f, 1.05f);
+            this.transform.localScale = new Vector3(size + size * 0.1f, size + size * 0.1f, size + size * 0.1f);
         }
 
         else
         {
-            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            this.transform.localScale = new Vector3(size, size, size);
         }
     }
 
     void OnMouseDown()
     {
-        if (CombinedManager.Instance != null)
+        if (CombinedManagerTwo.Instance != null)
         {
-            CombinedManager.Instance.PlayKnot(knotName);
+            CombinedManagerTwo.Instance.PlayKnot(knotName);
 
             Destroy(this.gameObject);
         }

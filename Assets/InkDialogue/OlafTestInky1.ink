@@ -201,3 +201,140 @@ I will text you the details.
 #speaker Dillie
 Oh, yes! Okay! Bye!
 -> END
+
+== DrLiuPhoneCall ==
+#speaker Anna
+Hello Dr. Liu! I heard that you have some new insight for the case?
+
+#speaker Dr.Liu
+Nice to hear from you again, Ms. Nyugen.
+
+I can’t call you unless there’s an insight? 
+
+Just kidding, haha. Of course I won’t.
+
+Okay but before everything, I’d like to go through what we have on hand again. 
+
+Now don’t argue with me— before the trial, you’ll have to make sure everything is in place. 
+
+#speaker Anna
+…
+
+Okay ma’am.
+
+#speaker Dr.Liu
+Ma’am? I’m only three months older than you!
+
+Anyways, at approximately 6:30 PM, February 8th, 20XX, Madeline Bain was found dead at the backstage of a gala.
+
+She was found by her manager, Kaylee Smith, who witnessed Nadine Kanna, Bain’s famous public rival, fleeing the crime scene was also reported.
+
+#speaker Anna
+Ms. Kanna is my client. I know this well enough…
+
+#speaker Dr.Liu
+The police arrived shortly after, and so, they arrested Ms. Kanna.
+
+#speaker Anna
+And from what I’ve gathered, they also questioned and put under surveillance several others who are related to the victim and the suspected murderer.
+
+#speaker Dr.Liu
+And what I’m about to tell you came straight from my lab, about the victim.
+
+First of all, we got a definite time of death for Bain. It was no earlier than 18:20 that night.
+
+#speaker Anna
+From what she told me and my speculation, Nadine and Kaylee saw the body at around that time! If only Madeline could hold on for a few more minutes...
+
+#speaker Dr.Liu
+Well that’s interesting because the second finding is that she died almost immediately after the attack from significant blood loss.
+
+#speaker Anna
+The death was immediate?
+
+Do you have any info about the cause of death?
+
+#speaker Dr.Liu
+She died from significant blood loss. As for the murder weapon, I don't know yet.
+
+We are still examining the wound and the presumable murder weapon. Before the results are out, I cannot give you any information.
+
+However, I have something else for you.
+
+The victim's knuckles are slightly bruised with scratches all over the hands. They all seemed to be formed before death.
+
+#speaker Anna
+\*What happened before her death? What was she punching?*
+
+This is really important information! Thank you so much Dr. Liu!
+
+#speaker Dr.Liu
+You’re welcome. I’m glad I can help.
+
+-> END
+
+== EileenPhoneCall ==
+
+#speaker Eileen
+H-hello. This is Eileen Lour speaking. I’m not currently taking on new clients. May I ask who this is?
+
+#speaker Anna
+Hello, this is Anna Nyugen, the attorney on Madeline Bain’s case. I am calling to ask about your relationship with the victim.
+
+#speaker Eileen
+Oh… Yes. Kaylee mentioned you briefly.
+
+#speaker Anna
+Really? Kaylee didn’t tell me about you.
+
+#speaker Eileen
+Ah, well, my work isn’t that important.
+
+#speaker Anna
+That’s not true. Madeline wouldn’t have made it this far without you.
+
+#speaker Eileen
+…
+
+#speaker Anna
+My understanding is that Madeline was found in the makeup and dressing room.
+
+#speaker Eileen
+Yes… That- that is what Kaylee told me.
+
+#speaker Anna
+Do you know what she was doing there?
+
+#speaker Eileen
+I-I’m not sure. I think she wanted to do a quick touch-up.
+
+#speaker Narrator
+Sensing Eileen’s nervousness, you decide to ask to speak in person.
+
+#speaker Anna
+Would you be more comfortable speaking in person?
+
+#speaker Eileen
+Um…
+
+#speaker Anna
+We can meet in the makeup room-
+
+#speaker Eileen
+N-no! I don’t want to be there.
+
+It’s scary being there.
+
+#speaker Anna
+I understand. I’m sure you find it very disturbing.
+
+#speaker Anna
+We can meet in Kaylee’s office then. Would that work for you?
+
+#speaker Eileen
+Y-yes. That’s okay.
+
+#speaker Anna
+Wonderful, I will see you then.
+
+-> END

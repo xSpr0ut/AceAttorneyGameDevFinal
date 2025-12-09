@@ -52,7 +52,6 @@ private void Awake()
                 break;
 
             case "CoWorkerScene2":
-                Debug.Log("HELLO! TRANSITIONING TO PHONE SCENE!");
                 LoadScene1("PhoneScene1");
                 break;
             

@@ -107,17 +107,8 @@ public class DialogueManager : MonoBehaviour
         }
 
         Debug.Log("END OF STORY " + SceneManager.GetActiveScene().name);
-
-        if (SceneManagerScript.Instance == null)
-            {
-            Debug.LogError("SceneManagerScript.Instance is NULL!!");
-            return;
-            }
-
-            Debug.Log("Instance exists, continuing...");
-
         SceneManagerScript sm = SceneManagerScript.Instance;
-        Debug.Log("Calling Scene Manager should be done?");
+      //  Debug.Log("Calling Scene Manager should be done?");
         sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
 
         // some reason, this line won't run BUT KEEP IT HERE

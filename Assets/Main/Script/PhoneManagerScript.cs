@@ -63,7 +63,6 @@ public class PhoneManagerScript : MonoBehaviour
     {
         
         phonePanel.SetActive(false);
-        nextSceneButton.SetActive(true);
 
     }
 
@@ -126,6 +125,19 @@ public class PhoneManagerScript : MonoBehaviour
         
     }
 
+    public void OnDoctorButtonDown()
+    {
+        PlayKnot("DrLiuPhoneCall");
+        ClosePhone();
+        
+    }
+
+    public void OnMakeupArtistButtonDown()
+    {
+        PlayKnot("EileenPhoneCall");
+        ClosePhone();
+        
+    }
 
     // DIALOGUE SCRIPT
 
@@ -172,6 +184,7 @@ public class PhoneManagerScript : MonoBehaviour
         }
 
        // Debug.Log("END OF STORY");
+       nextSceneButton.SetActive(true);
        EndDialogue();
     }
 

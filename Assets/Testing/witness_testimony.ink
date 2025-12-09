@@ -9,7 +9,7 @@ Start your testimony.
 -> Lover_WitnessTestimony
 
 == Lover_WitnessTestimony ==
-#speaker John
+#speaker Olaf
 #mode WitnessTestimony
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
 
@@ -27,7 +27,7 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 -> Lover_CrossExamination
 
 == Lover_CrossExamination ==
-#speaker John
+#speaker Olaf
 #mode CrossExamination
 "Start of Cross Examination"
 

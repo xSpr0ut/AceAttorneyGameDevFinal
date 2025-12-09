@@ -203,7 +203,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             //Wait for text animation to play
-            yield return new WaitForSeconds(1.5f);
+            yield return new WaitForSeconds(4f);
 
             //Hide title card
             witnessTestimonyTitle.SetActive(false);

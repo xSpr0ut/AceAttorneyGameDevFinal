@@ -10,7 +10,8 @@ After this testimony, I want to call someone to the stand.
 #speaker Judge
 Who is it that you want to call to the stand?
 
-#speakerAnna
+#speaker Anna
+#expression object
 I want to call Olaf to the stand please.
 What happened that day?
 

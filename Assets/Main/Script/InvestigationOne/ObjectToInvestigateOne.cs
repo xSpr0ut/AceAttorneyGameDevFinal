@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class ObjectToInvestigate : MonoBehaviour
+public class ObjectToInvestigateOne : MonoBehaviour
 {
     public string knotName;
 

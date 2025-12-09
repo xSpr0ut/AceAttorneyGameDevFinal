@@ -1,8 +1,8 @@
 using UnityEngine;
 
-public class ObjectToInvestigate : MonoBehaviour
+public class ObjectToInvestigateTwoOne : MonoBehaviour
 {
-    public string knotname;
+    public string knotName;
     [SerializeField] private float size;
 
     void Update()
@@ -25,7 +25,7 @@ public class ObjectToInvestigate : MonoBehaviour
     {
         if (CombinedManagerTwo.Instance != null)
         {
-            CombinedManagerTwo.Instance.PlayKnot(knotname);
+            CombinedManagerTwo.Instance.PlayKnot(knotName);
 
             Destroy(this.gameObject);
         }

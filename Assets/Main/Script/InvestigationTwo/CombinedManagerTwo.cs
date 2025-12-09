@@ -31,6 +31,9 @@ public class CombinedManagerTwo : MonoBehaviour
     public bool playingS = false;
     public bool playingL = false;
 
+    public AudioSource typeSource;
+    public AudioClip type;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,14 +68,60 @@ public class CombinedManagerTwo : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
             {
                 AdvanceStory();
+
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+        }
+
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+            else
+            {
+                if (typeSource.isPlaying)
+                {
+                    typeSource.Stop();
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
             }
         }
 
@@ -81,6 +130,11 @@ public class CombinedManagerTwo : MonoBehaviour
 
     public void PlayKnot(string Name)
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story == null)
         {
             Debug.Log("Not initiallized");
@@ -132,6 +186,11 @@ public class CombinedManagerTwo : MonoBehaviour
 
     void EndDialogue()
     {
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
         activeDialogue = false;
 
         dialogue.SetActive(false);

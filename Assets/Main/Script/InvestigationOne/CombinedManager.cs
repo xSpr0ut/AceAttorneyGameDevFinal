@@ -1,9 +1,10 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using Ink.Runtime;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class CombinedManager : MonoBehaviour
 {
@@ -29,6 +30,9 @@ public class CombinedManager : MonoBehaviour
     public bool playingT = false;
     public bool playingM = false;
     public bool playingZ = false;
+
+    public AudioSource typeSource;
+    public AudioClip type;
 
     private void Awake()
     {
@@ -63,14 +67,60 @@ public class CombinedManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
             {
                 AdvanceStory();
+
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+        }
+
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+            else
+            {
+                if (typeSource.isPlaying)
+                {
+                    typeSource.Stop();
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
             }
         }
 
@@ -79,6 +129,11 @@ public class CombinedManager : MonoBehaviour
 
     public void PlayKnot(string Name)
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story == null)
         {
             Debug.Log("Not initiallized");
@@ -125,6 +180,11 @@ public class CombinedManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
         activeDialogue = false;
 
         dialogue.SetActive(false);

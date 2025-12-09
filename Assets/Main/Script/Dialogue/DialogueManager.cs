@@ -40,6 +40,7 @@ public class DialogueManager : MonoBehaviour
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
 
         SceneManagerScript sm = SceneManagerScript.Instance;
+        Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
 
         //Automatically go to first line
         ShowFirstLine();
@@ -88,9 +89,24 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("END OF STORY");
+        Debug.Log("END OF STORY " + SceneManager.GetActiveScene().name);
+
+        if (SceneManagerScript.Instance == null)
+            {
+            Debug.LogError("SceneManagerScript.Instance is NULL!!");
+            return;
+            }
+
+            Debug.Log("Instance exists, continuing...");
+
         SceneManagerScript sm = SceneManagerScript.Instance;
+        Debug.Log("Calling Scene Manager should be done?");
         sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
+
+        // some reason, this line won't run BUT KEEP IT HERE
+        // OR IT PREVENTS PREVIOUS LINES NOT RUNNING
+        // Debug.Log("Calling Scene Manager should be done?");
+
     }
 
     void ShowFirstLine()

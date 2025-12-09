@@ -22,10 +22,10 @@ private void Awake()
         DontDestroyOnLoad(gameObject);
     }
 
-    public void LoadScene(string sceneName)
+    public void LoadScene1(string sceneName)
     {
-        SceneManager.LoadScene(sceneName);
         currentScene = sceneName;
+        SceneManager.LoadScene(sceneName);
     }
 
     //     scene management
@@ -33,31 +33,32 @@ private void Awake()
     public void SwitchSceneTime(string sceneName)
     {
 
-        switch (currentScene)
+        currentScene = sceneName;
+        Debug.Log("SCENE MANAGER RUNNING");
+        
+        switch (sceneName)
         {
 
             case "NadineScene1":
-                LoadScene("CoWorkerScene1");
+                LoadScene1("CoWorkerScene1");
                 break;
 
             case "CoWorkerScene1":
-                LoadScene("ManagerScene1");
+                LoadScene1("ManagerScene1");
                 break;
 
             case "ManagerScene1":
-                LoadScene("InvestigationScene1");
+                LoadScene1("InvestigationScene1");
                 break;
 
+            case "CoWorkerScene2":
+                Debug.Log("HELLO! TRANSITIONING TO PHONE SCENE!");
+                LoadScene1("PhoneScene1");
+                break;
             
         }
 
 
-    }
-
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
-    {
-        
     }
 
     // Update is called once per frame
@@ -68,7 +69,8 @@ private void Awake()
         {
             if (Input.GetKeyDown("space")){
                 
-                LoadScene("NadineScene1");
+               // LoadScene("CoWorkerScene2");
+                LoadScene1("NadineScene1");
 
             }
         }

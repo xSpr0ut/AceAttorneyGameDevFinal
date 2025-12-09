@@ -7,12 +7,14 @@ Eileene… you’ve been quiet ever since we left headquarters. Did something ha
 Quiet doesn’t mean something’s wrong, Nadine. It just means I’m thinking.
 
 #speaker Nadine
+#expression hat_open
 You? Thinking? That’s dangerous.
 
 #speaker Eileene
 Funny. Really. I wish humor fixed problems as easily as you pretend it does.
 
 #speaker Nadine
+#expression hat_closed
 Hey, I’m being serious. You look… tense. More than usual.
 
 #speaker Eileene
@@ -42,7 +44,10 @@ So what—someone just walked in and removed it? Without triggering any alerts?
 Unless they had clearance.
 
 #speaker Nadine
+#expression hat_closed
 You think it was internal?
+dkjslfajs;kldfjkl;sadf
+jasdklf;jaskdfj
 
 #speaker Eileene
 I think someone wants this case buried.

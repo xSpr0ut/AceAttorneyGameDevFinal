@@ -28,6 +28,9 @@ public class DialogueManager : MonoBehaviour
     Story story;
     TextArchitect architect;
 
+    public AudioSource typeSource;
+    public AudioClip type;
+
     //Dialogue Modes
     public enum DialogueMode 
     {
@@ -53,7 +56,7 @@ public class DialogueManager : MonoBehaviour
         ShowFirstLine();
     }
 
-    void Update()
+     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Space))
         {
@@ -61,15 +64,51 @@ public class DialogueManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
+
                 return;
             }
 
             AdvanceStory();
         }
+
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
+            }
+        }
     }
+
 
     void UpdateCurrentStatementFromInk()
     {
@@ -111,11 +150,21 @@ public class DialogueManager : MonoBehaviour
       //Debug.Log("Calling Scene Manager should be done?");
         sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
 
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
     }
 
     void ShowFirstLine()
     {
-        if(story.canContinue)
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
+        if (story.canContinue)
         {
             string line = story.Continue();
             ApplyTags();

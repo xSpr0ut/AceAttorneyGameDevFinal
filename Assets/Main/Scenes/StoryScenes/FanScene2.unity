@@ -235,11 +235,15 @@ PrefabInstance:
     - target: {fileID: 3808781949659660248, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: inkFile
       value: 
-      objectReference: {fileID: 4900000, guid: 722c4fb8e0f930446a3461ef935376af, type: 3}
+      objectReference: {fileID: 4900000, guid: ddbe56c2a90af3e4e91dd48dc327b77c, type: 3}
     - target: {fileID: 4524906849824578302, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 63377c63ca6b87b43bcb1b37a65342b3, type: 3}
+      objectReference: {fileID: 2800000, guid: 3363d6453048f8741b38819ddef24bc1, type: 3}
+    - target: {fileID: 8212767287058317376, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_PreserveAspect
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5266176324462144499, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}

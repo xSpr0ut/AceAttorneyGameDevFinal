@@ -15,7 +15,6 @@ public class EvidenceController : MonoBehaviour
     [SerializeField] public GameObject Present;
 
     public bool isCrossExaminating;
-    public bool gameFrozen = false;
     public string presentName;
 
     //Awake
@@ -41,14 +40,12 @@ public class EvidenceController : MonoBehaviour
             if (EvidenceTab.activeInHierarchy)
             {
                 EvidenceTab.SetActive(false);
-                gameFrozen = false;
             }
             else
             {
                 EvidenceTab.SetActive(true);
 
                 SetTabActive();
-                gameFrozen = true;
 
                 //Debug.Log("diarrhea");
             }
@@ -64,9 +61,6 @@ public class EvidenceController : MonoBehaviour
 
             //DialogueManager
             DialogueManager.Instance.OnEvidencePresented(presentName);
-
-            //Unfreeze Dialogue
-            gameFrozen = false;
         }
 
     }

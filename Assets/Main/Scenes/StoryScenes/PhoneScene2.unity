@@ -1527,7 +1527,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &365750648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1826,6 +1826,11 @@ MonoBehaviour:
   choicePanel: {fileID: 1071158819}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   nextSceneButton: {fileID: 2137176118}
+  calledOlaf: 0
+  calledPaparazzi: 0
+  calledDr: 0
+  calledEileen: 0
+  calledFan: 0
 --- !u!61 &514007993
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4242,7 +4247,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1773832201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4309,7 +4314,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 514007992}
         m_TargetAssemblyTypeName: PhoneManagerScript, Assembly-CSharp
-        m_MethodName: OnDoctorButtonDown
+        m_MethodName: OnMakeupArtistButtonDown
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -4604,14 +4609,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e17e29f19ae04d2f9ebad70cf409957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 7874e2c705b43bd42b448a079d2340ee, type: 3}
+  inkFile: {fileID: 4900000, guid: f54215a62116f5441861c76f9d71b54b, type: 3}
   choicePanel: {fileID: 1071158819}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   dialogueRoot: {fileID: 0}
   crossExaminationChoicePanel: {fileID: 0}
   forwardPrefab: {fileID: 0}
   backwardPrefab: {fileID: 0}
+  evidenceController: {fileID: 0}
   currentStatementKnot: 
+  currentCE: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
   typeSource: {fileID: 0}

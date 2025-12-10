@@ -78,6 +78,8 @@ public class PhoneManagerScript : MonoBehaviour
     {
         if(SceneManager.GetActiveScene().name == "PhoneScene1"){
         SceneManager.LoadScene("NadineScene2");
+        } else if(SceneManager.GetActiveScene().name == "PhoneScene2"){
+        SceneManager.LoadScene("FanScene2");
         }
 
     }
@@ -112,6 +114,11 @@ public class PhoneManagerScript : MonoBehaviour
     public void OnOlafButtonDown()
     {
         
+        if(SceneManager.GetActiveScene().name == "PhoneScene2"){
+            PlayKnot("NoAnswer");
+            ClosePhone();
+        } else {
+
     //   dialogueSystem.SetActive(true);
         Characters.SetActive(false);
         PlayKnot("OlafPhoneCall");
@@ -119,29 +126,47 @@ public class PhoneManagerScript : MonoBehaviour
      //   dialogueManager.ShowFirstLine();
         ClosePhone();
         
+        }
+
     }
 
     public void OnPaparazziButtonDown()
     {
+
+         if(SceneManager.GetActiveScene().name == "PhoneScene2"){
+            PlayKnot("NoAnswer");
+            ClosePhone();
+        } else {
+
         PlayKnot("DavidYellowPhoneCall");
         calledPaparazzi = true;
         ClosePhone();
+
+        }
         
     }
 
     public void OnFanButtonDown()
     {
+
         PlayKnot("FanPhoneCall");
-        calledFan= true;
+        calledFan = true;
         ClosePhone();
+
         
     }
 
     public void OnDoctorButtonDown()
     {
+
+        if(SceneManager.GetActiveScene().name == "PhoneScene2"){
+        PlayKnot("NoAnswer");
+        ClosePhone();
+        } else {
         PlayKnot("DrLiuPhoneCall");
         calledDr = true;
         ClosePhone();
+        }
         
     }
 
@@ -157,6 +182,11 @@ public class PhoneManagerScript : MonoBehaviour
     {
          if(SceneManager.GetActiveScene().name == "PhoneScene1"){
             if (calledOlaf && calledPaparazzi && calledDr)
+            {
+                nextSceneButton.SetActive(true);
+            }
+        } else if(SceneManager.GetActiveScene().name == "PhoneScene2"){
+            if (calledFan && calledEileen)
             {
                 nextSceneButton.SetActive(true);
             }

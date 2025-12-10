@@ -66,6 +66,42 @@ public class DialogueManager : MonoBehaviour
             {
                 {"CE3_L4", "Fan Letter"}
             }
+        },
+        {
+            "Olaf_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L3", "ID Scanner"}
+            }
+        },
+        {
+            "Olaf_CE2", new Dictionary<string, string>()
+            {
+                {"CE1_L1", "Paparazzi Photos"}
+            }
+        },
+        {
+            "Dillie_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L2", "Police Report"}
+            }
+        },
+        {
+            "Dillie_CE2", new Dictionary<string, string>()
+            {
+                {"CE2_L3", "Paparazzi Photos"}
+            }
+        },
+        {
+            "Eileen_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L2", "Bloody Hairpin"}
+            }
+        },
+        {
+            "Eileen_CE2", new Dictionary<string, string>()
+            {
+                {"CE1_L4", "Paparazzi Photos"}
+            }
         }
     };
 
@@ -94,22 +130,6 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
-        if(EvidenceController.Instance.gameFrozen)
-        {
-            if(currentMode == DialogueMode.CrossExamination)
-            {
-                crossExaminationChoicePanel.gameObject.SetActive(false);
-            }
-            return;
-        }
-        else
-        {
-            if(currentMode == DialogueMode.CrossExamination)
-            {
-                crossExaminationChoicePanel.gameObject.SetActive(true);
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // If text is still typing

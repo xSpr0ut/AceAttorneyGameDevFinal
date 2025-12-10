@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 4856697536390868953}
   - component: {fileID: 5816203690084063305}
   m_Layer: 5
-  m_Name: Eileene
+  m_Name: Eileen
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Eileene
+  characterName: Eileen
   portrait: {fileID: 8055315312943805898}
   defaultPortrait: {fileID: -5124181637036710369, guid: 4a5c8a1fc06984a85b5e06572db0edd7, type: 3}
   expressionList: []

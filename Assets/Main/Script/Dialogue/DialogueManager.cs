@@ -90,7 +90,13 @@ public class DialogueManager : MonoBehaviour
             {
                 {"CE2_L3", "Paparazzi Photos"}
             }
-        }
+        },
+        {
+            "Eileen_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L2", "Police Report"}
+            }
+        },
     };
 
 
@@ -118,22 +124,6 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
-        if(EvidenceController.Instance.gameFrozen)
-        {
-            if(currentMode == DialogueMode.CrossExamination)
-            {
-                crossExaminationChoicePanel.gameObject.SetActive(false);
-            }
-            return;
-        }
-        else
-        {
-            if(currentMode == DialogueMode.CrossExamination)
-            {
-                crossExaminationChoicePanel.gameObject.SetActive(true);
-            }
-        }
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // If text is still typing

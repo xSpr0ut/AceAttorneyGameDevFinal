@@ -101,7 +101,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterName: Christina
+  characterName: Dr.Liu
   portrait: {fileID: 8322326283439970401}
   defaultPortrait: {fileID: -843794434174168743, guid: 3664ce55f16cf43abbf8c0167b8aa673, type: 3}
   expressionList: []

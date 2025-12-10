@@ -2353,9 +2353,11 @@ MonoBehaviour:
   backwardPrefab: {fileID: 0}
   evidenceController: {fileID: 0}
   currentStatementKnot: 
+  currentCE: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
-  titleShown: 0
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
   currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:
@@ -2423,7 +2425,7 @@ MonoBehaviour:
   typeSource: {fileID: 1259645700}
   type: {fileID: 8300000, guid: 8082fcbde60540849ad62919c02fa86e, type: 3}
   itemCounter: 3
-  buttonToShow: {fileID: 0}
+  buttonToShow: {fileID: 91001952}
 --- !u!82 &1259645700
 AudioSource:
   m_ObjectHideFlags: 0

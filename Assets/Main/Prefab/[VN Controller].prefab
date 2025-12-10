@@ -2982,6 +2982,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6752538882115495540}
     m_Modifications:
+    - target: {fileID: 4841996064264463571, guid: a38fa026af3174cb0965bc33e8fdd20b, type: 3}
+      propertyPath: characterName
+      value: Dr.Liu
+      objectReference: {fileID: 0}
     - target: {fileID: 6236891024982085608, guid: a38fa026af3174cb0965bc33e8fdd20b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5

@@ -6,8 +6,11 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Main/Scenes/StartScene.unity
+    path: Assets/Main/Scenes/StoryScenes/StartScene.unity
     guid: d34af475d6adf4c40b1b6faa7d7e368d
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/NadineScene1.unity
+    guid: 926cfbb91cc51874f9053283cf976600
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

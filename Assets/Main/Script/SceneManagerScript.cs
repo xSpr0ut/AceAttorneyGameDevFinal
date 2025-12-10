@@ -41,6 +41,7 @@ private void Awake()
 
             case "NadineScene1":
                 LoadScene1("CoWorkerScene1");
+               // LoadScene1("CoWorkerScene3");
                 break;
 
             case "CoWorkerScene1":
@@ -85,6 +86,26 @@ private void Awake()
 
             case "ForensicScene3":
                 LoadScene1("CoWorkerScene3");
+                break;
+
+            case "CoWorkerScene3":
+                LoadScene1("CrossExam 1");
+                break;
+
+            case "CrossExam 1":
+                LoadScene1("CrossExam 2");
+                break;
+
+            case "CrossExam 2":
+                LoadScene1("CrossExam 3");
+                break;
+            
+            case "CrossExam 3":
+                LoadScene1("CrossExam 4");
+                break;
+
+            case "CrossExam 4":
+                LoadScene1("PostTrial");
                 break;
 
 

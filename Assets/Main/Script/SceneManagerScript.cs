@@ -63,6 +63,31 @@ private void Awake()
                 LoadScene1("PaparazziScene1");
                 break;
             
+            case "PaparazziScene1":
+                LoadScene1("OlafScene2");
+                break;
+
+            case "OlafScene2":
+                LoadScene1("ManagerScene2");
+                break;
+
+            case "ManagerScene2":
+                LoadScene1("Investigation2");
+                break;
+
+            case "FanScene2":
+                LoadScene1("MakeUpScene2");
+                break;
+
+            case "MakeUpScene2":
+                LoadScene1("ForensicScene3");
+                break;
+
+            case "ForensicScene3":
+                LoadScene1("CoWorkerScene3");
+                break;
+
+
         }
 
 

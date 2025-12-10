@@ -37,7 +37,7 @@ public class CombinedManagerTwo : MonoBehaviour
 
     // count for number of items used
     // so we can #activate the button
-    public int itemCounter = 3;
+    public int itemCounter = 4;
     public GameObject buttonToShow;
     private void Awake()
     {
@@ -56,6 +56,8 @@ public class CombinedManagerTwo : MonoBehaviour
 
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
         
+        buttonToShow.SetActive(false);
+
         dialogue.SetActive(false);
         SpriteM.SetActive(false);
         SpriteR.SetActive(false);
@@ -211,7 +213,7 @@ public class CombinedManagerTwo : MonoBehaviour
         if (itemCounter <= 0)
         {
             buttonToShow.SetActive(true);
-            Debug.Log("Hello");
+            
         }
 
     }

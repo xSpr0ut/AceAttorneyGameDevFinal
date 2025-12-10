@@ -103,12 +103,12 @@ TextureImporter:
       name: spr_lover_0
       rect:
         serializedVersion: 2
-        x: 619
+        x: 0
         y: 0
-        width: 847
-        height: 1053
+        width: 1920
+        height: 1080
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: a38dc040c977946eea77c0a6c163747c
     internalID: 0
     vertices: []
     indices: 

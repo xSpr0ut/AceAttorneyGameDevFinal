@@ -1,30 +1,62 @@
 using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.UI;
 
 public class Character : MonoBehaviour
 {
     public string characterName;
+
+    //Default Portrait for Character
+    public Image portrait;
+
+    //Default Expression
     public Sprite defaultPortrait;
-    public Dictionary<string, Sprite> expressions;
+
+    //Dictionary of Expressions + List to Enter them through Inspector
+    public List<ExpressionEntry> expressionList = new List<ExpressionEntry>();
+    private Dictionary<string, Sprite> expressions = new Dictionary<string, Sprite>();
 
     //Fade In & Fade Out
     public CanvasGroup canvasGroup;
 
     public void Awake()
     {
+        //Create Canvas Group
         if(canvasGroup == null)
            canvasGroup = GetComponent<CanvasGroup>();
+
+        //Build dictionary for quick lookup of expressions
+        foreach (var entry in expressionList)
+            expressions[entry.id.ToLower()] = entry.sprite;
+
+        //Set Default Portrait
+        if(portrait != null)
+            portrait.sprite = defaultPortrait;
     }
 
     //Play Animations, Switch Expression, etc
-    public void SetExpression(string id)
+    public void SetExpression(string expressionID)
     {
-        if (expressions.ContainsKey(id))
+        expressionID = expressionID.ToLower();
+
+        //if expresison is found
+        if(expressions.ContainsKey(expressionID))
         {
-            //example: update portrait ui
-            //DialogueManager.instance.dialogueContainer.portrait.sprite = expressions[id];
+            portrait.sprite = expressions[expressionID];
+            Debug.Log($"{characterName} expression set to {expressionID}");
         }
+        else
+        {
+            Debug.LogWarning($"Expression '{expressionID}' not found for {characterName}");
+        }
+    }
+
+    [System.Serializable]
+    public class ExpressionEntry
+    {
+        public string id;
+        public Sprite sprite;
     }
 
     //Fade to targetAlpha over duration of time

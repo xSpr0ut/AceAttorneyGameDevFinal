@@ -103,12 +103,12 @@ TextureImporter:
       name: Defendant_0
       rect:
         serializedVersion: 2
-        x: 689
+        x: 5
         y: 0
-        width: 527
-        height: 1000
+        width: 1915
+        height: 1073
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 38ef6f3759bc9484da8eb63cb1fcaccd
     internalID: 0
     vertices: []
     indices: 

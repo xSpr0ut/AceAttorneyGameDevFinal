@@ -11,6 +11,8 @@ public class DialogueManager : MonoBehaviour
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
 
+    public CanvasGroup dialogueRoot;
+
     //Cross Examination
     public Transform crossExaminationChoicePanel;
     public GameObject forwardPrefab;
@@ -18,16 +20,18 @@ public class DialogueManager : MonoBehaviour
 
     public string currentStatementKnot = "";
 
+    //Title Screens for Cross Exam + Witness Testimony
+    public GameObject witnessTestimonyTitle;
+    public GameObject crossExaminationTitle;
+
     Story story;
     TextArchitect architect;
-
-    public AudioSource typeSource;
-    public AudioClip type;
 
     //Dialogue Modes
     public enum DialogueMode 
     {
         Normal,
+        WitnessTestimony,
         CrossExamination
     }
 
@@ -53,49 +57,25 @@ public class DialogueManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
-                {
                     architect.hurryUp = true;
 
-                    if (!typeSource.isPlaying)
-                    {
-                        typeSource.PlayOneShot(type);
-                    }
-                }
-
                 else
-                {
                     architect.ForceComplete();
-
-                    if (typeSource.isPlaying)
-                    {
-                        typeSource.Stop();
-                    }
-                }
 
                 return;
             }
 
             AdvanceStory();
         }
+    }
 
-        if (architect.isBuilding)
+    void UpdateCurrentStatementFromInk()
+    {
+        if(story.variablesState["current_statement"] != null)
         {
-            if (!architect.hurryUp)
-            {
-                if (!typeSource.isPlaying)
-                {
-                    typeSource.PlayOneShot(type);
-                }
-            }
-        }
-
-        else
-        {
-            if (typeSource.isPlaying)
-            {
-                typeSource.Stop();
-            }
-        }
+            currentStatementKnot = story.variablesState["current_statement"] as string;
+            Debug.Log(currentStatementKnot);
+        } 
     }
 
     public void AdvanceStory()
@@ -103,12 +83,8 @@ public class DialogueManager : MonoBehaviour
         // If Ink has more text
         if (story.canContinue)
         {
-            if (!typeSource.isPlaying)
-            {
-                typeSource.PlayOneShot(type);
-            }
-
             string line = story.Continue();
+            UpdateCurrentStatementFromInk();
             
             ApplyTags();
 
@@ -138,11 +114,6 @@ public class DialogueManager : MonoBehaviour
 
     void ShowFirstLine()
     {
-        if (!typeSource.isPlaying)
-        {
-            typeSource.PlayOneShot(type);
-        }
-
         if (story.canContinue)
         {
             string line = story.Continue();
@@ -178,10 +149,6 @@ public class DialogueManager : MonoBehaviour
                 case "goto":
                     story.ChoosePathString("Lover_Lines");
                     break;
-
-                case "title":
-                    ShowTitle(param);
-                    break;
                 
                 //Track Current Line
                 case "statement":
@@ -189,7 +156,7 @@ public class DialogueManager : MonoBehaviour
                     break;
                 
                 case "mode":
-                    SetDialogueMode(param);
+                    StartCoroutine(HandleModeSwitch(param));
                     break;
 
                 //Add more tags here
@@ -215,18 +182,45 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("No character found: " + speakerName);
         }
     }
-
+    
+    //Set Expression Function
     void SetExpression(string expression)
     {
         if (activeCharacter != null)
-        {
             activeCharacter.SetExpression(expression);
-        }
     }
 
-    void ShowTitle(string title)
+
+    //Switching Modes
+    private IEnumerator HandleModeSwitch(string modeName)
     {
-        //TitleCardUI.Instance.Show(title);
+        SetDialogueMode(modeName);
+
+        if(currentMode != DialogueMode.Normal)
+        {
+            dialogueRoot.alpha = 0f; //fade
+
+            if(currentMode == DialogueMode.WitnessTestimony)
+            {
+                witnessTestimonyTitle.SetActive(true);
+            }
+            else if(currentMode == DialogueMode.CrossExamination)
+            {
+                crossExaminationTitle.SetActive(true);
+            }
+
+            //Wait for text animation to play
+            yield return new WaitForSeconds(4f);
+
+            //Hide title card
+            witnessTestimonyTitle.SetActive(false);
+            crossExaminationTitle.SetActive(false);
+
+            //Fade text box back in
+            dialogueRoot.alpha = 1f;
+
+            AdvanceStory();
+        }
     }
 
     // -- Cross Examination Input -- //
@@ -236,22 +230,20 @@ public class DialogueManager : MonoBehaviour
         {
             currentMode = DialogueMode.Normal;
         }
+        else if (modeName == "WitnessTestimony")
+        {
+            currentMode = DialogueMode.WitnessTestimony;
+        }
         else if (modeName == "CrossExamination")
         {
             currentMode = DialogueMode.CrossExamination;
         }
-
         Debug.Log("Mode switched to: " + currentMode);
     }
 
     // -- Cross Examination Buttons -- //
     void ShowCrossExaminationChoices()
     {
-        if (!typeSource.isPlaying)
-        {
-            typeSource.PlayOneShot(type);
-        }
-
         crossExaminationChoicePanel.gameObject.SetActive(true);
 
         // Clear out old buttons
@@ -296,6 +288,14 @@ public class DialogueManager : MonoBehaviour
     void CrossExamChoiceSelected(int choiceIndex)
     {
         crossExaminationChoicePanel.gameObject.SetActive(false);
+
+        Choice selected = story.currentChoices[choiceIndex];
+
+        //update current line based on the selected choice
+        //string target = selected.pathStringOnChoice;
+        //currentStatementKnot = target;
+
+        //Debug.Log("Current Statement: " + currentStatementKnot);
 
         story.ChooseChoiceIndex(choiceIndex);
 

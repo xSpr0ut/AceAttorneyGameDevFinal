@@ -1466,7 +1466,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &365750648
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4181,7 +4181,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1773832201
 RectTransform:
   m_ObjectHideFlags: 0
@@ -4553,6 +4553,8 @@ MonoBehaviour:
   currentStatementKnot: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
   currentMode: 0
 --- !u!1 &1836412689
 GameObject:

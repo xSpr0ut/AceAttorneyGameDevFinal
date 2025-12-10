@@ -1,3 +1,4 @@
+-> NadineScene2
 == NadineScene2 ==
 #speaker Anna
 Hello! How have you been? I have some good news for you.

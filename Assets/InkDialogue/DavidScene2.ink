@@ -1,3 +1,4 @@
+-> DavidScene2
 == DavidScene2 ==
 #speaker Anna
 Hello. Thank you for agreeing to meet with me.
@@ -124,7 +125,7 @@ Oh, alright. Here. Madeline gave it to me so we could coordinate for her “papa
 #speaker Narrator
 You’re surprised that David actually had the number.
 
-— Contact Acquired: Eileen Lour —
+— Contact Acquired: Eileen Lore —
 
 #speaker Anna
 Thank you for your help.

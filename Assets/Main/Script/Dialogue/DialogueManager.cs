@@ -11,18 +11,12 @@ public class DialogueManager : MonoBehaviour
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
 
-    public CanvasGroup dialogueRoot;
-
     //Cross Examination
     public Transform crossExaminationChoicePanel;
     public GameObject forwardPrefab;
     public GameObject backwardPrefab;
 
     public string currentStatementKnot = "";
-
-    //Title Screens for Cross Exam + Witness Testimony
-    public GameObject witnessTestimonyTitle;
-    public GameObject crossExaminationTitle;
 
     Story story;
     TextArchitect architect;
@@ -31,7 +25,6 @@ public class DialogueManager : MonoBehaviour
     public enum DialogueMode 
     {
         Normal,
-        WitnessTestimony,
         CrossExamination
     }
 
@@ -69,22 +62,12 @@ public class DialogueManager : MonoBehaviour
         }
     }
 
-    void UpdateCurrentStatementFromInk()
-    {
-        if(story.variablesState["current_statement"] != null)
-        {
-            currentStatementKnot = story.variablesState["current_statement"] as string;
-            Debug.Log(currentStatementKnot);
-        } 
-    }
-
     public void AdvanceStory()
     {
         // If Ink has more text
         if (story.canContinue)
         {
             string line = story.Continue();
-            UpdateCurrentStatementFromInk();
             
             ApplyTags();
 
@@ -149,6 +132,10 @@ public class DialogueManager : MonoBehaviour
                 case "goto":
                     story.ChoosePathString("Lover_Lines");
                     break;
+
+                case "title":
+                    ShowTitle(param);
+                    break;
                 
                 //Track Current Line
                 case "statement":
@@ -156,7 +143,7 @@ public class DialogueManager : MonoBehaviour
                     break;
                 
                 case "mode":
-                    StartCoroutine(HandleModeSwitch(param));
+                    SetDialogueMode(param);
                     break;
 
                 //Add more tags here
@@ -182,45 +169,18 @@ public class DialogueManager : MonoBehaviour
             Debug.LogWarning("No character found: " + speakerName);
         }
     }
-    
-    //Set Expression Function
+
     void SetExpression(string expression)
     {
         if (activeCharacter != null)
+        {
             activeCharacter.SetExpression(expression);
+        }
     }
 
-
-    //Switching Modes
-    private IEnumerator HandleModeSwitch(string modeName)
+    void ShowTitle(string title)
     {
-        SetDialogueMode(modeName);
-
-        if(currentMode != DialogueMode.Normal)
-        {
-            dialogueRoot.alpha = 0f; //fade
-
-            if(currentMode == DialogueMode.WitnessTestimony)
-            {
-                witnessTestimonyTitle.SetActive(true);
-            }
-            else if(currentMode == DialogueMode.CrossExamination)
-            {
-                crossExaminationTitle.SetActive(true);
-            }
-
-            //Wait for text animation to play
-            yield return new WaitForSeconds(4f);
-
-            //Hide title card
-            witnessTestimonyTitle.SetActive(false);
-            crossExaminationTitle.SetActive(false);
-
-            //Fade text box back in
-            dialogueRoot.alpha = 1f;
-
-            AdvanceStory();
-        }
+        //TitleCardUI.Instance.Show(title);
     }
 
     // -- Cross Examination Input -- //
@@ -230,14 +190,11 @@ public class DialogueManager : MonoBehaviour
         {
             currentMode = DialogueMode.Normal;
         }
-        else if (modeName == "WitnessTestimony")
-        {
-            currentMode = DialogueMode.WitnessTestimony;
-        }
         else if (modeName == "CrossExamination")
         {
             currentMode = DialogueMode.CrossExamination;
         }
+
         Debug.Log("Mode switched to: " + currentMode);
     }
 
@@ -288,14 +245,6 @@ public class DialogueManager : MonoBehaviour
     void CrossExamChoiceSelected(int choiceIndex)
     {
         crossExaminationChoicePanel.gameObject.SetActive(false);
-
-        Choice selected = story.currentChoices[choiceIndex];
-
-        //update current line based on the selected choice
-        //string target = selected.pathStringOnChoice;
-        //currentStatementKnot = target;
-
-        //Debug.Log("Current Statement: " + currentStatementKnot);
 
         story.ChooseChoiceIndex(choiceIndex);
 

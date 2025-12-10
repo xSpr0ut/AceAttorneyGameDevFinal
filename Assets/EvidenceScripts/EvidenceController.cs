@@ -7,14 +7,22 @@ using TMPro;
 // this should always exist in game. it controls when the evidence tabs pops up and can be accessed when you wanna add evidence after each discovery.
 public class EvidenceController : MonoBehaviour
 {
+    public static EvidenceController Instance { get; private set; }
+
     [SerializeField] public EvidenceNavigator navi;
     [SerializeField] public GameObject EvidenceTab;
     [SerializeField] public GameObject OpenEvidenceImage;
     [SerializeField] public GameObject Present;
 
     public bool isCrossExaminating;
+    public bool gameFrozen = false;
     public string presentName;
 
+    //Awake
+    void Awake()
+    {
+        Instance = this;
+    }
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -33,23 +41,32 @@ public class EvidenceController : MonoBehaviour
             if (EvidenceTab.activeInHierarchy)
             {
                 EvidenceTab.SetActive(false);
+                gameFrozen = false;
             }
             else
             {
                 EvidenceTab.SetActive(true);
 
                 SetTabActive();
+                gameFrozen = true;
 
                 //Debug.Log("diarrhea");
             }
         }
 
-        if (isCrossExaminating && Input.GetKeyDown(KeyCode.E))
+        if (EvidenceTab.activeInHierarchy && isCrossExaminating && Input.GetKeyDown(KeyCode.E))
         {
 
             presentName = GetEvidence().evidenceName;
+            Debug.Log(presentName);
             EvidenceTab.SetActive(false);
             Present.SetActive(false);
+
+            //DialogueManager
+            DialogueManager.Instance.OnEvidencePresented(presentName);
+
+            //Unfreeze Dialogue
+            gameFrozen = false;
         }
 
     }

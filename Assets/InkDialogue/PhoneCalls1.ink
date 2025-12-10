@@ -3,7 +3,7 @@
 Hello? Who is this?
 
 #speaker Anna
-Hello, this is Anna Nyugen, the attorney on Madeline Bain’s case. I am calling to ask about your relationship with the victim.
+Hello, this is Anna Nguyen, the attorney on Madeline Bain’s case. I am calling to ask about your relationship with the victim.
 
 #speaker Olaf
 How did you get my contact?
@@ -103,7 +103,7 @@ That would be appreciated. Thank you.
 Hello. David speaking. Who am I talking to?
 
 #speaker Anna
-Hello, this is Anna Nyugen. I am calling to ask about Madeline—
+Hello, this is Anna Nguyen. I am calling to ask about Madeline—
 
 #speaker David
 Ah, yes. For business inquiries and payment, could you please send me an email instead?
@@ -155,7 +155,7 @@ Okay. See you then.
 Hello?
 
 #speaker Anna
-Hello, this is Anna Nyugen speaking, the attorney on Madeline Bain’s case. I am calling to ask about—
+Hello, this is Anna Nguyen speaking, the attorney on Madeline Bain’s case. I am calling to ask about—
 
 #speaker Dillie
 OMG! I know you! I saw you walking around just earlier today.
@@ -277,7 +277,7 @@ You’re welcome. I’m glad I can help.
 H-hello. This is Eileen Lore speaking. I’m not currently taking on new clients. May I ask who this is?
 
 #speaker Anna
-Hello, this is Anna Nyugen, the attorney on Madeline Bain’s case. I am calling to ask about your relationship with the victim.
+Hello, this is Anna Nguyen, the attorney on Madeline Bain’s case. I am calling to ask about your relationship with the victim.
 
 #speaker Eileen
 Oh… Yes. Kaylee mentioned you briefly.

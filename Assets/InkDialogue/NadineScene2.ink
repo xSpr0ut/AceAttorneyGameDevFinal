@@ -37,7 +37,9 @@ This could be the case, but I’ve yet to figure out its connection to the death
 
 == Choice_olaf ==
 #speaker Anna
-I called Olaf and got a recorded alibi for you!
+I called Olaf and spoke to him!
+
+He said you were with him at the time of the murder, so he'll be able to testify for you.
 
 We’ve also scheduled to meet in person to discuss the case further.
 

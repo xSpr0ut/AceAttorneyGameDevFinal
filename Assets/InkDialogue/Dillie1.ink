@@ -11,7 +11,7 @@ OMG! I know you! I saw you walking around just earlier today.
 
 Did you call to ask about Madeline?
 
-Did you know I’m a huge fan of hers? I’m Dillie Shino, by the way.
+Did you know I’m a huge fan of hers? I’m Dillie Juno, by the way.
 
 #speaker Anna
 …

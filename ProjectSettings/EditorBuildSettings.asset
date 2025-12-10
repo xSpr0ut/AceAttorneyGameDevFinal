@@ -11,6 +11,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/StoryScenes/NadineScene1.unity
     guid: 926cfbb91cc51874f9053283cf976600
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CoWorkerScene1.unity
+    guid: bbd7f5a194c8f054db38340dc0f21956
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/ManagerScene1.unity
+    guid: 4df22544af45f7247b5b0c35374361ea
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/Investigation1.unity
+    guid: ca908d5b8fbd9844ca5197666edea52d
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CoWorkerScene2.unity
+    guid: ef81bddbd0cda784ea64d273836027be
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/PhoneScene1.unity
+    guid: 36dfd8a2f9c560d4895eefc5c5ed1d65
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

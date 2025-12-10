@@ -1790,7 +1790,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9e17e29f19ae04d2f9ebad70cf409957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  inkFile: {fileID: 4900000, guid: 6c67beee4a2c7be46878face46146b10, type: 3}
+  inkFile: {fileID: 4900000, guid: 2dd8a606472b34ba8980747cac3800c7, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   crossExaminationChoicePanel: {fileID: 0}

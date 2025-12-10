@@ -43,7 +43,7 @@ public class DialogueManager : MonoBehaviour
     //Evidence
     private Dictionary<string, string> contradictions = new Dictionary<string, string>()
     {
-        {"L3", ""}
+        {"L3", "Bloody Hairpin"}
     };
 
     public DialogueMode currentMode = DialogueMode.Normal; //normal by default
@@ -199,6 +199,11 @@ public class DialogueManager : MonoBehaviour
                 case "mode":
                     StartCoroutine(HandleModeSwitch(param));
                     break;
+                
+                case "bg":
+                    BackgroundController.Instance.SetBackground(param);
+                    break;
+                
 
                 //Add more tags here
             }
@@ -263,7 +268,7 @@ public class DialogueManager : MonoBehaviour
                 }
 
                 //Wait for text animation to play
-                yield return new WaitForSeconds(3.9f);
+                yield return new WaitForSeconds(3.88f);
             }
 
             //Hide title card

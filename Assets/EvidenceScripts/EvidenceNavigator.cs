@@ -38,9 +38,9 @@ public class EvidenceNavigator : MonoBehaviour
     [SerializeField] public EvidenceSO forensicsScientist;
 
     // TESTING, DELETE LATER
-    [SerializeField] public EvidenceSO hairpin;
+    /*[SerializeField] public EvidenceSO hairpin;
     [SerializeField] public EvidenceSO autopsy;
-    [SerializeField] public EvidenceSO paparazziPhoto;
+    [SerializeField] public EvidenceSO paparazziPhoto;*/
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -55,9 +55,9 @@ public class EvidenceNavigator : MonoBehaviour
         addPeople(forensicsScientist);
 
         // TESTING, DELETE THESE LATER
-        addEvidence(hairpin);
+        /*addEvidence(hairpin);
         addEvidence(autopsy);
-        addEvidence(paparazziPhoto);
+        addEvidence(paparazziPhoto);*/
 
         selectedEvidence = 0;
         evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;

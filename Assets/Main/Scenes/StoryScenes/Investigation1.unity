@@ -1169,7 +1169,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Texture: {fileID: 2800000, guid: ba206837248b5f340aa7b5082d21b79f, type: 3}
+  m_Texture: {fileID: 2800000, guid: ad95d46b8e5046f4c96c9af20b79c3e8, type: 3}
   m_UVRect:
     serializedVersion: 2
     x: 0
@@ -2353,6 +2353,8 @@ MonoBehaviour:
   currentStatementKnot: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
   currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:

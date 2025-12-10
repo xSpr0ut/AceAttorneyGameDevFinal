@@ -3,6 +3,7 @@ using UnityEditor.Search;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Ink.Runtime;
 
@@ -30,12 +31,14 @@ public class PhoneManagerScript : MonoBehaviour
     Character activeCharacter;
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
+    public GameObject nextSceneButton;
 
 
     // ensures when the scene starts, the phone is off
     void Start()
     {
         phonePanel.SetActive(false);
+        nextSceneButton.SetActive(false);
 
         // Connect Architect to your DialogueSystem text
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
@@ -50,8 +53,10 @@ public class PhoneManagerScript : MonoBehaviour
 
     public void OpenPhone()
     {
-        
+        if(activeDialogue == false){
         phonePanel.SetActive(true);
+        nextSceneButton.SetActive(false);
+        }
 
     }
 
@@ -59,6 +64,13 @@ public class PhoneManagerScript : MonoBehaviour
     {
         
         phonePanel.SetActive(false);
+
+    }
+
+    public void nextScene()
+    {
+        
+        SceneManager.LoadScene("NadineScene2");
 
     }
 
@@ -86,6 +98,9 @@ public class PhoneManagerScript : MonoBehaviour
         AdvanceStory();
     }
 
+    // TO PLAY DIRECTLY FROM THE RESPECTIVE CHARACTER'S
+    // INK KNOT
+
     public void OnOlafButtonDown()
     {
         
@@ -111,6 +126,19 @@ public class PhoneManagerScript : MonoBehaviour
         
     }
 
+    public void OnDoctorButtonDown()
+    {
+        PlayKnot("DrLiuPhoneCall");
+        ClosePhone();
+        
+    }
+
+    public void OnMakeupArtistButtonDown()
+    {
+        PlayKnot("EileenPhoneCall");
+        ClosePhone();
+        
+    }
 
     // DIALOGUE SCRIPT
 
@@ -157,6 +185,7 @@ public class PhoneManagerScript : MonoBehaviour
         }
 
        // Debug.Log("END OF STORY");
+       nextSceneButton.SetActive(true);
        EndDialogue();
     }
 

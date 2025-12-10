@@ -33,6 +33,13 @@ public class PhoneManagerScript : MonoBehaviour
     public GameObject choiceButtonPrefab;
     public GameObject nextSceneButton;
 
+    // checking if they've been called:
+    public bool calledOlaf = false;
+    public bool calledPaparazzi = false;
+    public bool calledDr = false;
+    public bool calledEileen = false;
+    public bool calledFan = false;
+
 
     // ensures when the scene starts, the phone is off
     void Start()
@@ -69,8 +76,9 @@ public class PhoneManagerScript : MonoBehaviour
 
     public void nextScene()
     {
-        
+        if(SceneManager.GetActiveScene().name == "PhoneScene1"){
         SceneManager.LoadScene("NadineScene2");
+        }
 
     }
 
@@ -107,6 +115,7 @@ public class PhoneManagerScript : MonoBehaviour
     //   dialogueSystem.SetActive(true);
         Characters.SetActive(false);
         PlayKnot("OlafPhoneCall");
+        calledOlaf = true;
      //   dialogueManager.ShowFirstLine();
         ClosePhone();
         
@@ -115,6 +124,7 @@ public class PhoneManagerScript : MonoBehaviour
     public void OnPaparazziButtonDown()
     {
         PlayKnot("DavidYellowPhoneCall");
+        calledPaparazzi = true;
         ClosePhone();
         
     }
@@ -122,6 +132,7 @@ public class PhoneManagerScript : MonoBehaviour
     public void OnFanButtonDown()
     {
         PlayKnot("FanPhoneCall");
+        calledFan= true;
         ClosePhone();
         
     }
@@ -129,6 +140,7 @@ public class PhoneManagerScript : MonoBehaviour
     public void OnDoctorButtonDown()
     {
         PlayKnot("DrLiuPhoneCall");
+        calledDr = true;
         ClosePhone();
         
     }
@@ -136,8 +148,19 @@ public class PhoneManagerScript : MonoBehaviour
     public void OnMakeupArtistButtonDown()
     {
         PlayKnot("EileenPhoneCall");
+        calledEileen = true;
         ClosePhone();
         
+    }
+
+    public void showButton()
+    {
+         if(SceneManager.GetActiveScene().name == "PhoneScene1"){
+            if (calledOlaf && calledPaparazzi && calledDr)
+            {
+                nextSceneButton.SetActive(true);
+            }
+        }
     }
 
     // DIALOGUE SCRIPT
@@ -185,7 +208,7 @@ public class PhoneManagerScript : MonoBehaviour
         }
 
        // Debug.Log("END OF STORY");
-       nextSceneButton.SetActive(true);
+       showButton();
        EndDialogue();
     }
 

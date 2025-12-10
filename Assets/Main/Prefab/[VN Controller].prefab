@@ -1545,6 +1545,8 @@ MonoBehaviour:
   currentStatementKnot: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
   currentMode: 0
 --- !u!1 &8528610946876645489
 GameObject:
@@ -2779,6 +2781,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 6752538882115495540}
     m_Modifications:
+    - target: {fileID: 4841996064264463571, guid: a38fa026af3174cb0965bc33e8fdd20b, type: 3}
+      propertyPath: characterName
+      value: Dr.Liu
+      objectReference: {fileID: 0}
     - target: {fileID: 6236891024982085608, guid: a38fa026af3174cb0965bc33e8fdd20b, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -2861,7 +2867,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8735054839736600646, guid: a38fa026af3174cb0965bc33e8fdd20b, type: 3}
       propertyPath: m_Name
-      value: Christina
+      value: DrLiu
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

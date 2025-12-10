@@ -131,6 +131,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
+    - target: {fileID: 1339911429065166466, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3737359307430107408, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.82407135
@@ -173,7 +177,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5408043838581948369, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -235,11 +239,11 @@ PrefabInstance:
     - target: {fileID: 3808781949659660248, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: inkFile
       value: 
-      objectReference: {fileID: 4900000, guid: 722c4fb8e0f930446a3461ef935376af, type: 3}
+      objectReference: {fileID: 4900000, guid: 62df1efcb4730b54c9c52534973bfd6f, type: 3}
     - target: {fileID: 4524906849824578302, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_Texture
       value: 
-      objectReference: {fileID: 2800000, guid: 63377c63ca6b87b43bcb1b37a65342b3, type: 3}
+      objectReference: {fileID: 2800000, guid: 1719254f00d0a4d4483ad142e44f05c0, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5266176324462144499, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}

@@ -334,7 +334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Dillie
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &195866538
 MonoBehaviour:
@@ -1798,7 +1800,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1024350657
 MonoBehaviour:
@@ -2171,6 +2175,7 @@ GameObject:
   - component: {fileID: 1259645698}
   - component: {fileID: 1259645699}
   - component: {fileID: 1259645700}
+  - component: {fileID: 1259645701}
   m_Layer: 0
   m_Name: DialogueManager
   m_TagString: Untagged
@@ -2208,10 +2213,15 @@ MonoBehaviour:
   inkFile: {fileID: 4900000, guid: 698e742ae6882aa46ab47ae7fb0df2e7, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
+  dialogueRoot: {fileID: 0}
   crossExaminationChoicePanel: {fileID: 0}
   forwardPrefab: {fileID: 0}
   backwardPrefab: {fileID: 0}
   currentStatementKnot: 
+  witnessTestimonyTitle: {fileID: 0}
+  crossExaminationTitle: {fileID: 0}
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
   currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:
@@ -2276,6 +2286,10 @@ MonoBehaviour:
   playingT: 0
   playingM: 0
   playingZ: 0
+  typeSource: {fileID: 0}
+  type: {fileID: 0}
+  itemCounter: 3
+  buttonToShow: {fileID: 0}
 --- !u!114 &1259645700
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2302,6 +2316,107 @@ MonoBehaviour:
   playingR: 0
   playingS: 0
   playingL: 0
+  typeSource: {fileID: 1259645701}
+  type: {fileID: 8300000, guid: 8082fcbde60540849ad62919c02fa86e, type: 3}
+  itemCounter: 4
+  buttonToShow: {fileID: 0}
+--- !u!82 &1259645701
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1259645694}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_Resource: {fileID: 8300000, guid: 8082fcbde60540849ad62919c02fa86e, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1290664498
 GameObject:
   m_ObjectHideFlags: 0
@@ -3178,7 +3293,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Anonymous
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1529405113
 MonoBehaviour:
@@ -3866,7 +3983,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Anna
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!1 &2036296502
 GameObject:

@@ -31,7 +31,9 @@ public class CombinedManager : MonoBehaviour
     public bool playingM = false;
     public bool playingZ = false;
 
-
+    public AudioSource typeSource;
+    public AudioClip type;
+    
     // count for number of items used
     // so we can #activate the button
     public int itemCounter = 3;
@@ -72,14 +74,60 @@ public class CombinedManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
             {
                 AdvanceStory();
+
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+        }
+
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+            else
+            {
+                if (typeSource.isPlaying)
+                {
+                    typeSource.Stop();
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
             }
         }
 
@@ -89,6 +137,11 @@ public class CombinedManager : MonoBehaviour
 
     public void PlayKnot(string Name)
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story == null)
         {
             Debug.Log("Not initiallized");
@@ -135,6 +188,11 @@ public class CombinedManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
         activeDialogue = false;
 
         dialogue.SetActive(false);
@@ -152,8 +210,8 @@ public class CombinedManager : MonoBehaviour
         
         if(itemCounter <= 0)
         {
-         buttonToShow.SetActive(true); 
-         Debug.Log("Hello");  
+            buttonToShow.SetActive(true); 
+            Debug.Log("Hello");  
         }
 
     }

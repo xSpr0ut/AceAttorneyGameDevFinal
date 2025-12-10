@@ -232,6 +232,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_fontSize
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 22
+      objectReference: {fileID: 0}
+    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6569807200067617660, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3307029927101565544, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_Name
       value: '[VN Controller]'
@@ -244,6 +264,18 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: 1719254f00d0a4d4483ad142e44f05c0, type: 3}
+    - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+    - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -6569807200067617660, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+    - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

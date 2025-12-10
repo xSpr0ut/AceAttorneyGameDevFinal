@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &845903871949285408
+--- !u!1 &5884667561045001915
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,11 +8,11 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2002926712763144095}
-  - component: {fileID: 6356554161914694746}
-  - component: {fileID: 3883100567863557608}
-  - component: {fileID: 8532736670517844544}
-  - component: {fileID: 701239423708332520}
+  - component: {fileID: 5759321194793312558}
+  - component: {fileID: 5685913869310673969}
+  - component: {fileID: 6174768801024763339}
+  - component: {fileID: 6214762984988838843}
+  - component: {fileID: 3391324275975446498}
   m_Layer: 5
   m_Name: Dillie
   m_TagString: Untagged
@@ -20,13 +20,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!224 &2002926712763144095
+--- !u!224 &5759321194793312558
 RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845903871949285408}
+  m_GameObject: {fileID: 5884667561045001915}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -36,24 +36,41 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -5.6115, y: -3.0215}
-  m_SizeDelta: {x: 380.5723, y: 371.9394}
+  m_AnchoredPosition: {x: -0.50038, y: -0.071884}
+  m_SizeDelta: {x: 799, y: 449.9}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!222 &6356554161914694746
-CanvasRenderer:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845903871949285408}
-  m_CullTransparentMesh: 1
---- !u!114 &3883100567863557608
+--- !u!114 &5685913869310673969
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845903871949285408}
+  m_GameObject: {fileID: 5884667561045001915}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  characterName: Dillie
+  portrait: {fileID: 6214762984988838843}
+  defaultPortrait: {fileID: -4081370814513937842, guid: dc0b7e29fddaf4718a230c830b2ce7b8, type: 3}
+  expressionList: []
+  canvasGroup: {fileID: 0}
+--- !u!222 &6174768801024763339
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884667561045001915}
+  m_CullTransparentMesh: 1
+--- !u!114 &6214762984988838843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5884667561045001915}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
@@ -67,9 +84,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2089340512236829218, guid: 0f91bee83472b0140baee99883c294fc, type: 3}
+  m_Sprite: {fileID: -4081370814513937842, guid: dc0b7e29fddaf4718a230c830b2ce7b8, type: 3}
   m_Type: 0
-  m_PreserveAspect: 1
+  m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
   m_FillAmount: 1
@@ -77,32 +94,15 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!225 &8532736670517844544
+--- !u!225 &3391324275975446498
 CanvasGroup:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845903871949285408}
+  m_GameObject: {fileID: 5884667561045001915}
   m_Enabled: 1
   m_Alpha: 1
   m_Interactable: 1
   m_BlocksRaycasts: 1
   m_IgnoreParentGroups: 0
---- !u!114 &701239423708332520
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 845903871949285408}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c113d3a31ee2d47d5ad9be3f508e02ad, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  characterName: Dillie
-  portrait: {fileID: 3883100567863557608}
-  defaultPortrait: {fileID: -2089340512236829218, guid: 0f91bee83472b0140baee99883c294fc, type: 3}
-  expressionList: []
-  canvasGroup: {fileID: 8532736670517844544}

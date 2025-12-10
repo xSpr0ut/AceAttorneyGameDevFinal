@@ -45,7 +45,7 @@ EditorBuildSettings:
     path: Assets/Main/Scenes/StoryScenes/Investigation2.unity
     guid: 183bb67efe799b046ba62538780496c5
   - enabled: 1
-    path: Assets/Main/Scenes/StoryScenes/PhoneScene2.unity
+    path: Assets/Main/Scenes/StoryScenes/PhoneScene3.unity
     guid: 0412a03c4f1f03b478894bacc0ef71a6
   - enabled: 1
     path: Assets/Main/Scenes/StoryScenes/FanScene2.unity
@@ -59,6 +59,21 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Main/Scenes/StoryScenes/CoWorkerScene3.unity
     guid: 6c3776902b3b4a44da3d0930915be30c
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CrossExam 1.unity
+    guid: e90775d59a4b248caa9ec5df77ae282d
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CrossExam 2.unity
+    guid: 377e984249d932d48a5f623b76c45c85
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CrossExam 3.unity
+    guid: 40e00bbff0c464f7c84d61f245fa6a5c
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/CrossExam 4.unity
+    guid: 5ba8b707449a48e418068206cbad7ca0
+  - enabled: 1
+    path: Assets/Main/Scenes/StoryScenes/PostTrial.unity
+    guid: e7b87df395d0d41dcb3d20cbd4f0e35b
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

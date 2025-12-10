@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Ink.Runtime;
 using TMPro;
 
@@ -31,6 +32,13 @@ public class CombinedManagerTwo : MonoBehaviour
     public bool playingS = false;
     public bool playingL = false;
 
+    public AudioSource typeSource;
+    public AudioClip type;
+
+    // count for number of items used
+    // so we can #activate the button
+    public int itemCounter = 3;
+    public GameObject buttonToShow;
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -65,22 +73,74 @@ public class CombinedManagerTwo : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
             {
                 AdvanceStory();
+
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
             }
         }
 
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+            else
+            {
+                if (typeSource.isPlaying)
+                {
+                    typeSource.Stop();
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
+            }
+        }
+
+        nextButtonShow();
         hideAndShow();
     }
 
     public void PlayKnot(string Name)
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story == null)
         {
             Debug.Log("Not initiallized");
@@ -140,7 +200,28 @@ public class CombinedManagerTwo : MonoBehaviour
         SpriteS.SetActive(false);
         SpriteL.SetActive(false);
 
+        itemCounter--;
+
         Debug.Log("END OF STORY");
+    }
+
+    public void nextButtonShow()
+    {
+
+        if (itemCounter <= 0)
+        {
+            buttonToShow.SetActive(true);
+            Debug.Log("Hello");
+        }
+
+    }
+
+    public void onButtonClick()
+    {
+
+        Debug.Log("IS CLICKED IS CLICKED");
+        SceneManager.LoadScene("PhoneScene2");
+
     }
 
     void ApplyTags()

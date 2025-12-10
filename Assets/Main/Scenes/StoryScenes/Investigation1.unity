@@ -2422,6 +2422,8 @@ MonoBehaviour:
   playingZ: 0
   typeSource: {fileID: 1259645700}
   type: {fileID: 8300000, guid: 8082fcbde60540849ad62919c02fa86e, type: 3}
+  itemCounter: 3
+  buttonToShow: {fileID: 0}
 --- !u!82 &1259645700
 AudioSource:
   m_ObjectHideFlags: 0

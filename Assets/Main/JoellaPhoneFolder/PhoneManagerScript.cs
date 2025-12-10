@@ -53,9 +53,10 @@ public class PhoneManagerScript : MonoBehaviour
 
     public void OpenPhone()
     {
-        
+        if(activeDialogue == false){
         phonePanel.SetActive(true);
         nextSceneButton.SetActive(false);
+        }
 
     }
 

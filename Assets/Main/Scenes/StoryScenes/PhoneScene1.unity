@@ -1822,7 +1822,7 @@ MonoBehaviour:
   dialogueSystem: {fileID: 815976852}
   Characters: {fileID: 66582364}
   dialogueManager: {fileID: 1834965991}
-  inkFile: {fileID: 4900000, guid: 7874e2c705b43bd42b448a079d2340ee, type: 3}
+  inkFile: {fileID: 4900000, guid: b9bb87835a202b043a19f1e7a72403d7, type: 3}
   choicePanel: {fileID: 1071158819}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   nextSceneButton: {fileID: 2137176118}

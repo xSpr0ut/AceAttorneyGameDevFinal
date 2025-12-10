@@ -21,8 +21,6 @@ I see… that makes sense. What would you like to know?
 -> OlafChoices2
 
 == OlafChoices2 ==
-* [Record Conversation]
--> OlafRecordConversation
 + [Relationship with Victim]
 -> OlafRelationshipWithVictim
 + [Where were you]

@@ -1,4 +1,5 @@
 VAR current_statement = ""
+VAR returnPoint = ""
 
 -> Beginning
 == Beginning ==
@@ -43,6 +44,8 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 -> L1
 
 == L1 ==
+#mode CrossExamination
+#speaker Olaf
 #statement L1
 ~ current_statement = "L1"
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
@@ -121,3 +124,43 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 + [Previous]
     -> L6
 -> DONE
+
+== Objection_L4 ==
+
+->DONE
+
+== WrongObjection ==
+#mode Normal
+#speaker Anna
+#expression object
+Your honor! There is a clear contradiction here...
+
+#speaker Judge
+I don't see a contradiction here...
+
+#speaker Anna
+#expression think
+(...)
+(I must have made a mistake...)
+->Reset_Mode
+
+== Reset_Mode ==
+-> L1
+
+== Objection_L2 ==
+#mode Normal
+#speaker Anna
+#expression object
+Take That!
+As you can see here, this piece of evidence contradicts what you say!
+
+#speaker Judge
+What do you mean?
+
+#speaker Anna
+So .... this piece of evidence does this .... so this is why that happened!
+(ok this is going well!)
+->DONE
+
+->DONE
+

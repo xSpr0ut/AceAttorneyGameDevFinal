@@ -21,15 +21,18 @@ public class DialogueManager : MonoBehaviour
     Story story;
     TextArchitect architect;
 
+    public AudioSource typeSource;
+    public AudioClip type;
+
     //Dialogue Modes
-    public enum DialogueMode 
+    public enum DialogueMode
     {
         Normal,
         CrossExamination
     }
 
     public DialogueMode currentMode = DialogueMode.Normal; //normal by default
-    
+
     void Start()
     {
         // Create Ink story
@@ -50,15 +53,48 @@ public class DialogueManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
 
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
 
                 return;
             }
 
             AdvanceStory();
+        }
+
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
+            }
         }
     }
 
@@ -67,8 +103,13 @@ public class DialogueManager : MonoBehaviour
         // If Ink has more text
         if (story.canContinue)
         {
+            if (!typeSource.isPlaying)
+            {
+                typeSource.PlayOneShot(type);
+            }
+
             string line = story.Continue();
-            
+
             ApplyTags();
 
             architect.Build(line);
@@ -80,9 +121,9 @@ public class DialogueManager : MonoBehaviour
         {
             //ShowChoices();
 
-            if(currentMode == DialogueMode.CrossExamination)
+            if (currentMode == DialogueMode.CrossExamination)
                 ShowCrossExaminationChoices();
-            else if(currentMode == DialogueMode.Normal)
+            else if (currentMode == DialogueMode.Normal)
                 ShowChoices();
             return;
         }
@@ -97,6 +138,11 @@ public class DialogueManager : MonoBehaviour
 
     void ShowFirstLine()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story.canContinue)
         {
             string line = story.Continue();
@@ -128,7 +174,7 @@ public class DialogueManager : MonoBehaviour
                 case "expression":
                     SetExpression(param);
                     break;
-                
+
                 case "goto":
                     story.ChoosePathString("Lover_Lines");
                     break;
@@ -136,17 +182,17 @@ public class DialogueManager : MonoBehaviour
                 case "title":
                     ShowTitle(param);
                     break;
-                
+
                 //Track Current Line
                 case "statement":
                     currentStatementKnot = param;
                     break;
-                
+
                 case "mode":
                     SetDialogueMode(param);
                     break;
 
-                //Add more tags here
+                    //Add more tags here
             }
         }
     }
@@ -201,6 +247,11 @@ public class DialogueManager : MonoBehaviour
     // -- Cross Examination Buttons -- //
     void ShowCrossExaminationChoices()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         crossExaminationChoicePanel.gameObject.SetActive(true);
 
         // Clear out old buttons

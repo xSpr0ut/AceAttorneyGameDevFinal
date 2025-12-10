@@ -130,6 +130,8 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
+
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // If text is still typing
@@ -350,6 +352,10 @@ public class DialogueManager : MonoBehaviour
     // -- Cross Examination Input -- //
     void SetDialogueMode(string modeName)
     {
+        //Before siwtching, always clear the buttons
+        ClearCrossExamButtons();
+        crossExaminationChoicePanel.gameObject.SetActive(false);
+
         if (modeName == "Normal")
         {
             currentMode = DialogueMode.Normal;
@@ -418,14 +424,19 @@ public class DialogueManager : MonoBehaviour
         crossExaminationChoicePanel.gameObject.SetActive(false);
 
         //Destroy buttons
-        foreach (Transform child in crossExaminationChoicePanel)
-            Destroy(child.gameObject);
+        ClearCrossExamButtons();
 
         story.ChooseChoiceIndex(choiceIndex);
 
         UpdateCurrentStatementFromInk();
 
         AdvanceStory();
+    }
+
+    void ClearCrossExamButtons()
+    {
+        foreach (Transform child in crossExaminationChoicePanel)
+            Destroy(child.gameObject);
     }
 
     //Wait until text is done to show buttons

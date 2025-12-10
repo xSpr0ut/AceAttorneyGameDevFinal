@@ -2351,11 +2351,11 @@ MonoBehaviour:
   crossExaminationChoicePanel: {fileID: 0}
   forwardPrefab: {fileID: 0}
   backwardPrefab: {fileID: 0}
+  evidenceController: {fileID: 0}
   currentStatementKnot: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
-  typeSource: {fileID: 0}
-  type: {fileID: 0}
+  titleShown: 0
   currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:

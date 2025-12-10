@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Ink.Runtime;
 using TMPro;
 
@@ -60,6 +61,9 @@ public class DialogueManager : MonoBehaviour
 
         // Connect Architect to your DialogueSystem text
         architect = new TextArchitect(DialogueSystem.instance.dialogueContainer.dialogueText);
+
+        SceneManagerScript sm = SceneManagerScript.Instance;
+        Debug.Log("Current Scene: " + SceneManager.GetActiveScene().name);
 
         //Automatically go to first line
         ShowFirstLine();
@@ -150,7 +154,11 @@ public class DialogueManager : MonoBehaviour
             return;
         }
 
-        Debug.Log("END OF STORY");
+        Debug.Log("END OF STORY " + SceneManager.GetActiveScene().name);
+        SceneManagerScript sm = SceneManagerScript.Instance;
+      //Debug.Log("Calling Scene Manager should be done?");
+        sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
+
     }
 
     void ShowFirstLine()

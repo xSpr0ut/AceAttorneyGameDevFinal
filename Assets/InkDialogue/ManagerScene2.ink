@@ -1,3 +1,4 @@
+-> ManagerScene2
 == ManagerScene2 ==
 
 #speaker Narrator
@@ -38,7 +39,7 @@ Because Nadine isn’t Madeline’s killer.
 Kaylee scoffs.
 
 #speaker Anna
-*She didn’t give me this much trouble last time…*
+\*She didn’t give me this much trouble last time…*
 
 You want to find the real culprit, don’t you?
  
@@ -68,11 +69,11 @@ Well then? Go on. What are your questions?
 -> KayleeScene2Choices1
 
 == KayleeScene2Choices1 ==
-Office Access
++ Office Access
 -> OfficeAccessAnswer
-Makeup Room Access
++ Makeup Room Access
 -> MakeupRoomAccessAnswer
-That is all
++ That is all
 -> KayleeQuestioningOver
 
 == OfficeAccessAnswer ==

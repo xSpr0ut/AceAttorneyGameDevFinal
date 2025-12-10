@@ -1,10 +1,10 @@
+using Ink.Runtime;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
-using Ink.Runtime;
 using TMPro;
+using UnityEngine;
+using UnityEngine.Audio;
+using UnityEngine.UI;
 
 public class CombinedManager : MonoBehaviour
 {
@@ -31,11 +31,8 @@ public class CombinedManager : MonoBehaviour
     public bool playingM = false;
     public bool playingZ = false;
 
-
-    // count for number of items used
-    // so we can #activate the button
-    public int itemCounter = 3;
-    public GameObject buttonToShow;
+    public AudioSource typeSource;
+    public AudioClip type;
 
     private void Awake()
     {
@@ -58,8 +55,6 @@ public class CombinedManager : MonoBehaviour
         SpriteT.SetActive(false); 
         SpriteM.SetActive(false); 
         SpriteZ.SetActive(false);
-
-        buttonToShow.SetActive(false);   
     }
 
     private void Update()
@@ -72,23 +67,73 @@ public class CombinedManager : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
+
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
             {
                 AdvanceStory();
+
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
             }
         }
 
-        nextButtonShow();
+        if (architect.isBuilding)
+        {
+            if (!architect.hurryUp)
+            {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+            }
+            else
+            {
+                if (typeSource.isPlaying)
+                {
+                    typeSource.Stop();
+                }
+            }
+        }
+
+        else
+        {
+            if (typeSource.isPlaying)
+            {
+                typeSource.Stop();
+            }
+        }
+
         hideAndShow();
     }
 
     public void PlayKnot(string Name)
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         if (story == null)
         {
             Debug.Log("Not initiallized");
@@ -135,6 +180,11 @@ public class CombinedManager : MonoBehaviour
 
     void EndDialogue()
     {
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
         activeDialogue = false;
 
         dialogue.SetActive(false);
@@ -142,28 +192,7 @@ public class CombinedManager : MonoBehaviour
         SpriteM.SetActive(false);
         SpriteZ.SetActive(false);
 
-        itemCounter--;
-
         Debug.Log("END OF STORY");
-    }
-
-    public void nextButtonShow()
-    {
-        
-        if(itemCounter <= 0)
-        {
-         buttonToShow.SetActive(true); 
-         Debug.Log("Hello");  
-        }
-
-    }
-
-    public void onButtonClick()
-    {
-        
-        Debug.Log("IS CLICKED IS CLICKED");
-        SceneManager.LoadScene("CoWorkerScene2");
-
     }
 
     void ApplyTags()

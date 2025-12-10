@@ -48,7 +48,7 @@ private void Awake()
                 break;
 
             case "ManagerScene1":
-                LoadScene1("InvestigationScene1");
+                LoadScene1("Investigation1");
                 break;
 
             case "CoWorkerScene2":

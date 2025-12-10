@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ using TMPro;
 
 public class DialogueManager : MonoBehaviour
 {
+    public static DialogueManager Instance { get; private set; }
+
     public TextAsset inkFile;
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
@@ -18,8 +21,11 @@ public class DialogueManager : MonoBehaviour
     public Transform crossExaminationChoicePanel;
     public GameObject forwardPrefab;
     public GameObject backwardPrefab;
+    public EvidenceController evidenceController;
 
+    // Vars from Ink Script
     public string currentStatementKnot = "";
+    public string currentCE = "";
 
     //Title Screens for Cross Exam + Witness Testimony
     public GameObject witnessTestimonyTitle;
@@ -39,8 +45,38 @@ public class DialogueManager : MonoBehaviour
         CrossExamination
     }
 
+    //Evidence
+    private Dictionary<string, Dictionary<string, string>> contradictions =
+    new Dictionary<string, Dictionary<string, string>>()
+    {
+        {
+            "Kaylee_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L4", "Autopsy"}
+            }
+        },
+        {
+            "Kaylee_CE2", new Dictionary<string, string>()
+            {
+                {"CE2_L2", "Shattered Mirror"}
+            }
+        },
+        {
+            "Kaylee_CE3", new Dictionary<string, string>()
+            {
+                {"CE3_L4", "Fan Letter"}
+            }
+        }
+    };
+
+
     public DialogueMode currentMode = DialogueMode.Normal; //normal by default
     
+    void Awake()
+    {
+        Instance = this;
+    }
+
     void Start()
     {
         // Create Ink story
@@ -58,6 +94,22 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
+        if(EvidenceController.Instance.gameFrozen)
+        {
+            if(currentMode == DialogueMode.CrossExamination)
+            {
+                crossExaminationChoicePanel.gameObject.SetActive(false);
+            }
+            return;
+        }
+        else
+        {
+            if(currentMode == DialogueMode.CrossExamination)
+            {
+                crossExaminationChoicePanel.gameObject.SetActive(true);
+            }
+        }
+
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // If text is still typing
@@ -89,29 +141,22 @@ public class DialogueManager : MonoBehaviour
             AdvanceStory();
         }
 
-        if (architect.isBuilding)
+        if(currentMode == DialogueMode.CrossExamination)
         {
-            if (!architect.hurryUp)
-            {
-                if (!typeSource.isPlaying)
-                {
-                    typeSource.PlayOneShot(type);
-                }
-            }
+            EvidenceController.Instance.isCrossExaminating = true;
+            //Debug.Log(EvidenceController.Instance.isCrossExaminating);
         }
 
-        else
-        {
-            if (typeSource.isPlaying)
-            {
-                typeSource.Stop();
-            }
-        }
+        //Debug.Log(EvidenceController.Instance.isCrossExaminating);
     }
 
-
+    // Update for Vars from Ink Script
     void UpdateCurrentStatementFromInk()
     {
+        if (story.variablesState["current_ce"] != null)
+        {
+            currentCE = story.variablesState["current_ce"] as string;
+        }
         if(story.variablesState["current_statement"] != null)
         {
             currentStatementKnot = story.variablesState["current_statement"] as string;
@@ -125,11 +170,19 @@ public class DialogueManager : MonoBehaviour
         if (story.canContinue)
         {
             string line = story.Continue();
-            UpdateCurrentStatementFromInk();
-            
+
             ApplyTags();
 
+            //Hide panel while text is typing
+            if(currentMode == DialogueMode.CrossExamination)
+                crossExaminationChoicePanel.gameObject.SetActive(false);
+
+            UpdateCurrentStatementFromInk();
+
             architect.Build(line);
+
+            //Show Panel after text is done
+            StartCoroutine(EnablePanelWhenTypingDone());
             return;
         }
 
@@ -147,7 +200,7 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("END OF STORY " + SceneManager.GetActiveScene().name);
         SceneManagerScript sm = SceneManagerScript.Instance;
-      //Debug.Log("Calling Scene Manager should be done?");
+        //Debug.Log("Calling Scene Manager should be done?");
         sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
 
         if (typeSource.isPlaying)
@@ -196,10 +249,6 @@ public class DialogueManager : MonoBehaviour
                     SetExpression(param);
                     break;
                 
-                case "goto":
-                    story.ChoosePathString("Lover_Lines");
-                    break;
-                
                 //Track Current Line
                 case "statement":
                     currentStatementKnot = param;
@@ -208,6 +257,11 @@ public class DialogueManager : MonoBehaviour
                 case "mode":
                     StartCoroutine(HandleModeSwitch(param));
                     break;
+                
+                case "bg":
+                    BackgroundController.Instance.SetBackground(param);
+                    break;
+                
 
                 //Add more tags here
             }
@@ -260,7 +314,7 @@ public class DialogueManager : MonoBehaviour
             }
 
             //Wait for text animation to play
-            yield return new WaitForSeconds(4f);
+            yield return new WaitForSeconds(1.5f);
 
             //Hide title card
             witnessTestimonyTitle.SetActive(false);
@@ -288,50 +342,54 @@ public class DialogueManager : MonoBehaviour
         {
             currentMode = DialogueMode.CrossExamination;
         }
+
         Debug.Log("Mode switched to: " + currentMode);
     }
 
     // -- Cross Examination Buttons -- //
     void ShowCrossExaminationChoices()
     {
-        crossExaminationChoicePanel.gameObject.SetActive(true);
-
-        // Clear out old buttons
-        foreach (Transform child in crossExaminationChoicePanel)
-            Destroy(child.gameObject);
-
-        // One button per choice
-        for (int i = 0; i < story.currentChoices.Count; i++)
+        if (!crossExaminationTitle.activeSelf)
         {
-            Choice c = story.currentChoices[i];
+            crossExaminationChoicePanel.gameObject.SetActive(true);
 
-            // Decide WHICH prefab to use for this choice
-            GameObject prefabToUse = null;
+            // Clear out old buttons
+            foreach (Transform child in crossExaminationChoicePanel)
+                Destroy(child.gameObject);
 
-            if (c.text.Contains("Next"))
+            // One button per choice
+            for (int i = 0; i < story.currentChoices.Count; i++)
             {
-                // This choice is the "go forward" option
-                prefabToUse = forwardPrefab;
-            }
-            else if (c.text.Contains("Previous"))
-            {
-                // This choice is the "go back" option
-                prefabToUse = backwardPrefab;
-            }
-            else
-            {
-                // Optional: fallback if you ever have some other text choice here
-                prefabToUse = choiceButtonPrefab;
-            }
+                Choice c = story.currentChoices[i];
 
-            // Instantiate the correct button prefab
-            GameObject buttonObj = Instantiate(prefabToUse, crossExaminationChoicePanel);
+                // Decide WHICH prefab to use for this choice
+                GameObject prefabToUse = null;
 
-            // Your custom script on the prefab
-            ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
+                if (c.text.Contains("Next"))
+                {
+                    // This choice is the "go forward" option
+                    prefabToUse = forwardPrefab;
+                }
+                else if (c.text.Contains("Previous"))
+                {
+                    // This choice is the "go back" option
+                    prefabToUse = backwardPrefab;
+                }
+                else
+                {
+                    // Optional: fallback if you ever have some other text choice here
+                    prefabToUse = choiceButtonPrefab;
+                }
 
-            // Hook it up to Ink like usual
-            btn.Init(c.text, i, CrossExamChoiceSelected);
+                // Instantiate the correct button prefab
+                GameObject buttonObj = Instantiate(prefabToUse, crossExaminationChoicePanel);
+
+                // Your custom script on the prefab
+                ChoiceButton btn = buttonObj.GetComponent<ChoiceButton>();
+
+                // Hook it up to Ink like usual
+                btn.Init(c.text, i, CrossExamChoiceSelected);
+            }
         }
     }
 
@@ -348,6 +406,97 @@ public class DialogueManager : MonoBehaviour
         //Debug.Log("Current Statement: " + currentStatementKnot);
 
         story.ChooseChoiceIndex(choiceIndex);
+
+        UpdateCurrentStatementFromInk();
+
+        AdvanceStory();
+    }
+
+    //Wait until text is done to show buttons
+    IEnumerator EnablePanelWhenTypingDone()
+    {
+        //Wait until the text finishes typing
+        while(architect.isBuilding)
+           yield return null;
+        //Re-enable the panel only during cross examination
+        if(currentMode == DialogueMode.CrossExamination)
+            crossExaminationChoicePanel.gameObject.SetActive(true);
+    }
+
+    //Cross Examination Checking Contradictions
+    public bool CheckContradiction(string ceName, string lineNumber, string evidenceName)
+    {
+        if(!contradictions.ContainsKey(ceName))
+        {
+            Debug.Log("No contradictions defined for CE: " + ceName);
+            return false;
+        }
+
+        var ceDict = contradictions[ceName];
+
+        //Does the line have a contradiction?
+        if(!ceDict.ContainsKey(lineNumber))
+        {
+            Debug.Log("this line has no contradiction " + lineNumber);
+            return false;
+        }
+
+        //Get the correct evidence
+        string correctEvidence = ceDict[lineNumber];
+
+        //Compare ignoring case
+        if (string.Equals(correctEvidence, evidenceName, StringComparison.OrdinalIgnoreCase))
+        {
+            Debug.Log("Correct evidence for " + ceName + " line " + lineNumber);
+            return true;
+        }
+
+        Debug.Log("Incorrect evidence for " + ceName + " line " + lineNumber);
+        return false;
+
+    }
+
+    public void OnEvidencePresented(string evidenceName)
+    {
+        string lineNumber = currentStatementKnot;
+
+        bool correct = CheckContradiction(currentCE, lineNumber, evidenceName);
+
+        if(correct)
+        {
+            TriggerCorrectObjection();
+        }
+        else
+        {
+            TriggerWrongPenalty();
+        }
+    }
+
+    void TriggerCorrectObjection()
+    {
+        //Debug.Log("Objection!");
+        string knot = "Objection_" + currentStatementKnot;
+        story.ChoosePathString(knot);
+        AdvanceStory();
+    }
+
+    void TriggerWrongPenalty()
+    {
+        //Extract CE Number, ex. Kaylee_CE1 -> 1
+        int ceNum = 1; // default fallback
+
+        if (!string.IsNullOrEmpty(currentCE) && currentCE.Length > 0)
+        {
+            // Extract last digit (1,2,3)
+            char lastChar = currentCE[currentCE.Length - 1];
+
+            if (char.IsDigit(lastChar))
+                ceNum = lastChar - '0';
+        }
+
+        //select correct wrong objection knot
+        string wrongKnot = "WrongObjection" + ceNum;
+        story.ChoosePathString(wrongKnot);
 
         AdvanceStory();
     }

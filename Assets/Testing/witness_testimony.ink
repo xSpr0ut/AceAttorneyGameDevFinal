@@ -1,17 +1,21 @@
 VAR current_statement = ""
+VAR returnPoint = ""
 
 -> Beginning
 == Beginning ==
 #speaker Anna
 #mode Normal
+#bg defence
 Your honour...
 After this testimony, I want to call someone to the stand.
 
 #speaker Judge
+#bg judge
 Who is it that you want to call to the stand?
 
 #speaker Anna
 #expression object
+#bg defence
 I want to call Olaf to the stand please.
 What happened that day?
 
@@ -20,6 +24,7 @@ What happened that day?
 == Lover_WitnessTestimony ==
 #speaker Olaf
 #mode WitnessTestimony
+#bg witness
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
 
 I saw Mr. Halden hurrying down the street with someone in a hooded coat following behind him. Moments later, I heard a gasp and found him dead in the alley.
@@ -38,11 +43,14 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 == Lover_CrossExamination ==
 #speaker Olaf
 #mode CrossExamination
+#bg witness
 "Start of Cross Examination"
 
 -> L1
 
 == L1 ==
+#mode CrossExamination
+#speaker Olaf
 #statement L1
 ~ current_statement = "L1"
 I understand. I’ll tell you everything I remember—just… please go easy on me, alright?
@@ -121,3 +129,47 @@ Right after the gasp, I heard footsteps—slow ones—like the killer wasn’t i
 + [Previous]
     -> L6
 -> DONE
+
+== Objection_L4 ==
+
+->DONE
+
+== WrongObjection ==
+#mode Normal
+#speaker Anna
+#expression object
+#bg defence
+Your honor! There is a clear contradiction here...
+
+#speaker Judge
+#bg judge
+I don't see a contradiction here...
+
+#speaker Anna
+#expression think
+#bg defence
+(...)
+(I must have made a mistake...)
+->Reset_Mode
+
+== Reset_Mode ==
+-> L1
+
+== Objection_L3 ==
+#mode Normal
+#speaker Anna
+#expression object
+#bg defence
+Take That!
+As you can see here, this piece of evidence contradicts what you say!
+
+#speaker Judge
+#bg judge
+What do you mean?
+
+#speaker Anna
+#bg defence
+So .... this piece of evidence does this .... so this is why that happened!
+(ok this is going well!)
+Yea hairpin!
+->DONE

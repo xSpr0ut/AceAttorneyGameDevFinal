@@ -417,13 +417,9 @@ public class DialogueManager : MonoBehaviour
     {
         crossExaminationChoicePanel.gameObject.SetActive(false);
 
-        Choice selected = story.currentChoices[choiceIndex];
-
-        //update current line based on the selected choice
-        //string target = selected.pathStringOnChoice;
-        //currentStatementKnot = target;
-
-        //Debug.Log("Current Statement: " + currentStatementKnot);
+        //Destroy buttons
+        foreach (Transform child in crossExaminationChoicePanel)
+            Destroy(child.gameObject);
 
         story.ChooseChoiceIndex(choiceIndex);
 

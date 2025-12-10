@@ -94,9 +94,15 @@ public class DialogueManager : MonoBehaviour
         {
             "Eileen_CE1", new Dictionary<string, string>()
             {
-                {"CE1_L2", "Police Report"}
+                {"CE1_L2", "Bloody Hairpin"}
             }
         },
+        {
+            "Eileen_CE2", new Dictionary<string, string>()
+            {
+                {"CE1_L4", "Paparazzi Photos"}
+            }
+        }
     };
 
 

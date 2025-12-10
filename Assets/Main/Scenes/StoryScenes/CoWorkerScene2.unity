@@ -175,6 +175,10 @@ PrefabInstance:
       propertyPath: inkFile
       value: 
       objectReference: {fileID: 4900000, guid: 12737b2d48a79b945a66a0f9a6cb64a9, type: 3}
+    - target: {fileID: 4524906849824578302, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_Texture
+      value: 
+      objectReference: {fileID: 2800000, guid: 63377c63ca6b87b43bcb1b37a65342b3, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5266176324462144499, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}

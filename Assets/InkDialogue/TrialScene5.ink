@@ -49,7 +49,7 @@ Nadine agreed, so you guys HAVE to come now! Maybe we'll play one of her songs!
 Oh dear, that would be funny. I'd like to see you sing them.
 
 #speaker Diego
-Hey, do you doubt me or something? What's that one called again, the one that goes: “Na-na-na-na...”
+Hey, do you doubt me or something? What's that one called again, the one that goes: ï¿½Na-na-na-na...ï¿½
 
 #speaker Dr.Liu
 Anna. A word with you, please.

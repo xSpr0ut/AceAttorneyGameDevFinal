@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,13 +23,13 @@ public class DialogueManager : MonoBehaviour
     public GameObject backwardPrefab;
     public EvidenceController evidenceController;
 
+    // Vars from Ink Script
     public string currentStatementKnot = "";
+    public string currentCE = "";
 
     //Title Screens for Cross Exam + Witness Testimony
     public GameObject witnessTestimonyTitle;
     public GameObject crossExaminationTitle;
-
-    public bool titleShown = false;
 
     Story story;
     TextArchitect architect;
@@ -42,10 +43,29 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Evidence
-    private Dictionary<string, string> contradictions = new Dictionary<string, string>()
+    private Dictionary<string, Dictionary<string, string>> contradictions =
+    new Dictionary<string, Dictionary<string, string>>()
     {
-        {"L3", "Bloody Hairpin"}
+        {
+            "Kaylee_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L4", "Autopsy"}
+            }
+        },
+        {
+            "Kaylee_CE2", new Dictionary<string, string>()
+            {
+                {"CE2_L2", "Shattered Mirror"}
+            }
+        },
+        {
+            "Kaylee_CE3", new Dictionary<string, string>()
+            {
+                {"CE3_L4", "Fan Letter"}
+            }
+        }
     };
+
 
     public DialogueMode currentMode = DialogueMode.Normal; //normal by default
     
@@ -105,14 +125,19 @@ public class DialogueManager : MonoBehaviour
         if(currentMode == DialogueMode.CrossExamination)
         {
             EvidenceController.Instance.isCrossExaminating = true;
-            Debug.Log(EvidenceController.Instance.isCrossExaminating);
+            //Debug.Log(EvidenceController.Instance.isCrossExaminating);
         }
 
-        Debug.Log(EvidenceController.Instance.isCrossExaminating);
+        //Debug.Log(EvidenceController.Instance.isCrossExaminating);
     }
 
+    // Update for Vars from Ink Script
     void UpdateCurrentStatementFromInk()
     {
+        if (story.variablesState["current_ce"] != null)
+        {
+            currentCE = story.variablesState["current_ce"] as string;
+        }
         if(story.variablesState["current_statement"] != null)
         {
             currentStatementKnot = story.variablesState["current_statement"] as string;
@@ -156,7 +181,7 @@ public class DialogueManager : MonoBehaviour
 
         Debug.Log("END OF STORY " + SceneManager.GetActiveScene().name);
         SceneManagerScript sm = SceneManagerScript.Instance;
-      //Debug.Log("Calling Scene Manager should be done?");
+        //Debug.Log("Calling Scene Manager should be done?");
         sm.SwitchSceneTime(SceneManager.GetActiveScene().name);
 
     }
@@ -193,10 +218,6 @@ public class DialogueManager : MonoBehaviour
 
                 case "expression":
                     SetExpression(param);
-                    break;
-                
-                case "goto":
-                    story.ChoosePathString("Lover_Lines");
                     break;
                 
                 //Track Current Line
@@ -258,26 +279,13 @@ public class DialogueManager : MonoBehaviour
             {
                 witnessTestimonyTitle.SetActive(true);
             }
-            else if(currentMode == DialogueMode.CrossExamination && !titleShown)
+            else if(currentMode == DialogueMode.CrossExamination)
             {
                 crossExaminationTitle.SetActive(true);
             }
 
-
-            if (titleShown)
-            {
-                yield return new WaitForSeconds(0f);
-            }
-            else
-            {
-                if(currentMode == DialogueMode.CrossExamination)
-                {
-                    titleShown = true;
-                }
-
-                //Wait for text animation to play
-                yield return new WaitForSeconds(3.88f);
-            }
+            //Wait for text animation to play
+            yield return new WaitForSeconds(1.5f);
 
             //Hide title card
             witnessTestimonyTitle.SetActive(false);
@@ -370,6 +378,8 @@ public class DialogueManager : MonoBehaviour
 
         story.ChooseChoiceIndex(choiceIndex);
 
+        UpdateCurrentStatementFromInk();
+
         AdvanceStory();
     }
 
@@ -385,36 +395,43 @@ public class DialogueManager : MonoBehaviour
     }
 
     //Cross Examination Checking Contradictions
-    public bool CheckContradiction(string lineNumber, string evidenceName)
+    public bool CheckContradiction(string ceName, string lineNumber, string evidenceName)
     {
-        //Does the line have a contradiction?
-        if(!contradictions.ContainsKey(lineNumber))
+        if(!contradictions.ContainsKey(ceName))
         {
-            Debug.Log("this line has no contradiction");
+            Debug.Log("No contradictions defined for CE: " + ceName);
             return false;
         }
 
-        //Get the correct evidence for line
-        string correctEvidence = contradictions[lineNumber];
+        var ceDict = contradictions[ceName];
 
-        //Compare case-insensitive to avoid mistakes
-        if(correctEvidence.ToLower() == evidenceName.ToLower())
+        //Does the line have a contradiction?
+        if(!ceDict.ContainsKey(lineNumber))
         {
-            Debug.Log("Correct evidence presented!");
+            Debug.Log("this line has no contradiction " + lineNumber);
+            return false;
+        }
+
+        //Get the correct evidence
+        string correctEvidence = ceDict[lineNumber];
+
+        //Compare ignoring case
+        if (string.Equals(correctEvidence, evidenceName, StringComparison.OrdinalIgnoreCase))
+        {
+            Debug.Log("Correct evidence for " + ceName + " line " + lineNumber);
             return true;
         }
-        else
-        {
-            Debug.Log("Incorrect evidence.");
-            return false;
-        }
+
+        Debug.Log("Incorrect evidence for " + ceName + " line " + lineNumber);
+        return false;
+
     }
 
     public void OnEvidencePresented(string evidenceName)
     {
         string lineNumber = currentStatementKnot;
 
-        bool correct = CheckContradiction(lineNumber, evidenceName);
+        bool correct = CheckContradiction(currentCE, lineNumber, evidenceName);
 
         if(correct)
         {
@@ -436,12 +453,22 @@ public class DialogueManager : MonoBehaviour
 
     void TriggerWrongPenalty()
     {
-        Debug.Log("This doesn't seem relevant, think again...");
-        string prevKnot = currentStatementKnot;
-        story.ChoosePathString("WrongObjection");
+        //Extract CE Number, ex. Kaylee_CE1 -> 1
+        int ceNum = 1; // default fallback
 
-        //tell ink which knot to return to
-        story.variablesState["returnPoint"] = prevKnot;
+        if (!string.IsNullOrEmpty(currentCE) && currentCE.Length > 0)
+        {
+            // Extract last digit (1,2,3)
+            char lastChar = currentCE[currentCE.Length - 1];
+
+            if (char.IsDigit(lastChar))
+                ceNum = lastChar - '0';
+        }
+
+        //select correct wrong objection knot
+        string wrongKnot = "WrongObjection" + ceNum;
+        story.ChoosePathString(wrongKnot);
+
         AdvanceStory();
     }
 

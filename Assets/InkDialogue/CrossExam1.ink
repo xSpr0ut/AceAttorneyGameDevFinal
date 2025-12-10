@@ -1,6 +1,6 @@
 VAR current_statement = ""
 VAR current_ce = ""
--> Trial1
+-> Kaylee_Cross_Examination_3
 
 == Trial1 ==
 #mode Normal
@@ -63,7 +63,6 @@ She’ll definitely be testifying against my client! Here goes nothing.
 
 
 == Kaylee_Witness_Testimony_1 ==
-~current_ce = "Kaylee_CE1"
 #mode WitnessTestimony
 #speaker Kaylee
 #bg witness
@@ -89,6 +88,7 @@ Maybe there’s a slip-up somewhere?
 
 
 == Kaylee_Cross_Examination_1 ==
+~current_ce = "Kaylee_CE1"
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
@@ -100,14 +100,14 @@ Maybe there’s a slip-up somewhere?
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
-~ current_statement = "L1"
+~ current_statement = "CE1_L1"
 The person who murdered Madeline Bain was undoubtedly no one other than Nadine Kanna.
 + [Next]
     -> A2
 -> DONE
 
 == A2 ==
-~ current_statement = "L2"
+~ current_statement = "CE1_L2"
 The two got into a physical altercation before I entered the room.
 + [Previous]
     -> A1
@@ -116,7 +116,7 @@ The two got into a physical altercation before I entered the room.
 -> DONE
 
 == A3 ==
-~ current_statement = "L3"
+~ current_statement = "CE1_L3"
 I then saw Ms. Kanna ran out of the room. Ms. Bain was on the ground, bleeding out.
 + [Previous]
     -> A2
@@ -125,7 +125,7 @@ I then saw Ms. Kanna ran out of the room. Ms. Bain was on the ground, bleeding o
 -> DONE
 
 == A4 ==
-~ current_statement = "L4"
+~ current_statement = "CE1_L4"
 Ms. Bain looked at me with vengeance in her eyes during her final moments. I knew I had to bring Ms. Kanna to justice.
 + [Previous]
     -> A3
@@ -134,7 +134,7 @@ Ms. Bain looked at me with vengeance in her eyes during her final moments. I kne
 -> DONE
 
 == A5 ==
-~ current_statement = "L5"
+~ current_statement = "CE1_L5"
 So in conclusion, Nadine murdered her. The case can rest.
 + [Previous]
     -> A4
@@ -159,7 +159,7 @@ I don't see a contradiction here...
 ->A1
 
 
-== Objection_L4 ==
+== Objection_CE1_L4 ==
 #mode Normal
 #speaker Arthur
 #bg prosecution
@@ -226,7 +226,6 @@ I apologize, your Honor. I will describe what I saw step-by-step.
 
 == Kaylee_Witness_Testimony_2 ==
 #mode WitnessTestimony
-
 #speaker Kaylee
 #bg witness
 #expression default
@@ -251,9 +250,11 @@ Oh, poor sweet Madeline… what a painful fate to endure…
 This isn’t looking the best for Nadine.
 
 But there’s something weird about her testimony for sure. I just need to put my finger on it!
--> Kaylee_Cross_Examination2
+-> Kaylee_Cross_Examination_2
 
-== Kaylee_Cross_Examination2 ==
+== Kaylee_Cross_Examination_2 ==
+~current_ce = "Kaylee_CE2"
+~ current_statement = ""
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
@@ -265,14 +266,14 @@ But there’s something weird about her testimony for sure. I just need to put m
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
-~ current_statement = "L1"
+~ current_statement = "CE2_L1"
 I was using the restroom next to the beauty room during my preparation for the show.
 + [Next]
     -> B2
 -> DONE
 
 == B2 ==
-~ current_statement = "L2"
+~ current_statement = "CE2_L2"
 Then suddenly, I heard a loud thud in the beauty room followed by rapid footsteps.
 + [Previous]
     -> B1
@@ -281,7 +282,7 @@ Then suddenly, I heard a loud thud in the beauty room followed by rapid footstep
 -> DONE
 
 == B3 ==
-~ current_statement = "L3"
+~ current_statement = "CE2_L3"
 I left the bathroom and saw Nadine rushing out of that room and down the hallway.
 + [Previous]
     -> B2
@@ -290,6 +291,7 @@ I left the bathroom and saw Nadine rushing out of that room and down the hallway
 -> DONE
 
 == B4 ==
+~ current_statement = "CE2_L4"
 When I entered that room, I found a horrific sight… Madeline’s own hairpin was lodged in her throat.
 + [Previous]
     -> B3
@@ -298,6 +300,7 @@ When I entered that room, I found a horrific sight… Madeline’s own hairpin w
 -> DONE
 
 == B5 ==
+~ current_statement = "CE2_L5"
 It was too late to get help. Her heart had already stopped beating. 
 + [Previous]
     -> B4
@@ -306,6 +309,7 @@ It was too late to get help. Her heart had already stopped beating.
 -> DONE
 
 == B6 ==
+~ current_statement = "CE2_L6"
 Oh, poor sweet Madeline… what a painful fate to endure…
 + [Previous]
     -> B5
@@ -327,19 +331,10 @@ I don't see a contradiction here...
 #bg defence
 (...)
 (I must have made a mistake...)
-->A1
-== Wrong_Objection2 ==
+->B1
+
+== Objection_CE2_L2 ==
 #mode Normal
-#speaker Narrator
-Whatever the wrong objection is…
-
-#mode CrossExamination
--> Kaylee_Cross_Examination2
-
-
-== Objection_LineL2 ==
-#mode Normal
-
 #speaker Anna
 #bg defence
 #expression object
@@ -357,7 +352,6 @@ Are you sure you didn’t hear the sound of glass shattering? I’d imagine that
 
 #speaker Kaylee
 #bg witness
-#expression confused
 Ah, you mean the broken mirror in the makeup room? No, I believe that was always there.
 
 #speaker Anna
@@ -367,7 +361,6 @@ And you never bothered to clean up that mess? You know how dangerous glass shard
 
 #speaker Kaylee
 #bg witness
-#expression nervous
 We were in a rush to prepare for the event. Someone was clumsy and accidentally knocked it over.
 
 #speaker Anna
@@ -408,7 +401,6 @@ Please allow the bailiff to escort you out.
 
 #speaker Kaylee
 #bg witness
-#expression panic
 Wait! No, no, no, you don’t understand. This was an honest mistake!
 
 I didn’t hear the mirror shatter. I’m answering to the best of my ability, I swear!
@@ -419,7 +411,6 @@ Please allow me to testify one last time. I haven’t said what happened after I
 #bg defence
 #expression think
 This woman… Fine. She has a point. I do need to hear about what happened after Madeline’s death.
-->DONE
 
 Your Honor, I do wish to hear this witness’s last testimony. I have a feeling this is important.
 
@@ -431,35 +422,27 @@ Your Honor, I do wish to hear this witness’s last testimony. I have a feeling 
 #bg witness
 #expression default
 Thank you, Your Honor. Please allow me to redeem my honor.
+-> Kaylee_Witness_Testimony_3
 
--> Kaylee_Cross_Examination3
-
-
-== Kaylee_Cross_Examination3 ==
-#mode CrossExamination
+== Kaylee_Witness_Testimony_3 ==
+#mode WitnessTestimony
 
 #speaker Kaylee
 #bg witness
-#expression default
 After I saw what happened, I called the local police immediately.
 
-#expression default
 I told them about Ms. Kanna running out of the room, and they arrested her on sight.
 
-#expression sad
 Ms. Bain’s body was transported to the crime lab.
 
-#expression default
 I remember the hairpin was still lodged in her throat.
 
-#expression default
 Police searched the beauty room for additional evidence, and we made sure the entire backstage area was secured.
 
-#expression default
 This meant no one unrelated could roam around the beauty room without being caught, let alone leave or enter the backstage area.
 
-#expression default
 Everyone on site, meaning me, makeup artist Eileen Lore, and Ms. Kanna's brother Olaf Kanna, was taken in for questioning.  
+
 With that being said, there was no opportunity for anyone besides Ms. Kanna to leave the beauty room, so she has to be the culprit!
 
 #speaker Anna
@@ -468,24 +451,102 @@ With that being said, there was no opportunity for anyone besides Ms. Kanna to l
 Hm, wait, if what she’s saying is true, then how did *that* happen?  
 When was the backstage area secured?
 
+-> Kaylee_Cross_Examination_3
+
+== Kaylee_Cross_Examination_3 ==
+~current_ce = "Kaylee_CE3"
+#mode CrossExamination
+#speaker Kaylee
+#bg witness
+#expression default
+
+->C1
+
+== C1 ==
+#mode CrossExamination
+#speaker Kaylee
+#bg witness
+~ current_statement = "CE3_L1"
+After I saw what happened, I called the local police immediately.
++ [Next]
+    -> C2
 -> DONE
 
+== C2 ==
+~ current_statement = "CE3_L2"
+I told them about Nadine running out of the room, and they arrested her on sight.
++ [Previous]
+    -> C1
++ [Next]
+    -> C3
+-> DONE
 
-== Wrong_Objection3 ==
+== C3 ==
+~ current_statement = "CE3_L3"
+Madeline’s body was transported to the crime lab. The hairpin was still lodged in her throat.
++ [Previous]
+    -> C2
++ [Next]
+    -> C4
+-> DONE
+
+== C4 ==
+~ current_statement = "CE3_L4"
+Police searched the beauty room for additional evidence, and we made sure the entire backstage area was secured.
++ [Previous]
+    -> C3
++ [Next]
+    -> C5
+-> DONE
+
+== C5 ==
+~ current_statement = "CE3_L5"
+This meant no one unrelated could roam around the beauty room without being caught, let alone leave or enter the backstage area.
++ [Previous]
+    -> C4
++ [Next]
+    -> C6
+-> DONE
+
+== C6 ==
+~ current_statement = "CE3_L6"
+Everyone on site, meaning me, makeup artist Eileen Lore, and Nadine’s brother Olaf Kanna, were taken in for questioning.
++ [Previous]
+    -> C5
++ [Next]
+    -> C7
+-> DONE
+
+== C7 ==
+~ current_statement = "CE3_L7"
+With that being said, there was no opportunity for anyone besides Nadine to leave the beauty room, so she has to be the culprit!
++ [Previous]
+    -> C6
+-> DONE
+
+== WrongObjection3 ==
 #mode Normal
-#speaker Narrator
-Whatever the wrong objection is…
+#speaker Anna
+#expression object
+#bg defence
+Your honor! There is a clear contradiction here...
 
-#mode CrossExamination
--> Kaylee_Cross_Examination3
+#speaker Judge
+#bg judge
+I don't see a contradiction here...
 
+#speaker Anna
+#expression think
+#bg defence
+(...)
+(I must have made a mistake...)
+->C1
 
-== Objection_LineL5 ==
+== Objection_CE3_L4 ==
 #mode Normal
 
 #speaker Kaylee
 #bg witness
-#expression default
 Around 6:40 PM, I think? Several minutes after the murder had happened.
 
 #speaker Anna
@@ -497,7 +558,6 @@ Could you explain how a fan letter managed to get in after the cancellation anno
 
 #speaker Kaylee
 #bg witness
-#expression confused
 A… a what? What fan letter?
 
 #speaker Anna
@@ -545,7 +605,6 @@ If a fan can sneak in there, then there’s no doubt the culprit had at least on
 
 #speaker Kaylee
 #bg witness
-#expression nervous
 W-What? Well, I was being apprehended… The police told me they secured the area at least…
 
 I wasn’t responsible for that! It was negligence on their part!
@@ -576,7 +635,6 @@ Witness, if there are no other things you’d like to testify to, you are excuse
 
 #speaker Kaylee
 #bg witness
-#expression sad
 Thank you, Your Honor. I hope I wasn’t too much trouble.
 
 #speaker Judge

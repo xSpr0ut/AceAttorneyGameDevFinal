@@ -208,6 +208,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Kaylee
       objectReference: {fileID: 0}
+    - target: {fileID: 3331657757873193038, guid: 65f2ce7a4adc94f80811097bafd62616, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4382059017650079728, guid: 65f2ce7a4adc94f80811097bafd62616, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -452,6 +456,10 @@ PrefabInstance:
     - target: {fileID: 1720687092944038000, guid: 91810746230994e999ad268148208868, type: 3}
       propertyPath: m_Name
       value: Judge
+      objectReference: {fileID: 0}
+    - target: {fileID: 1720687092944038000, guid: 91810746230994e999ad268148208868, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5296731540087180872, guid: 91810746230994e999ad268148208868, type: 3}
       propertyPath: characterName
@@ -1342,6 +1350,50 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1102713990}
     m_Modifications:
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: category
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: evidence.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b3b5fa3e8a62843469b56df3a807f5ca, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[1]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b95c899da01c5c34cad4db98ac60203d, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[2]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 940b9abc505423149beeedc73f4f0800, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[3]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 93cfcec0d2954a14b83c2102bd8ca5b0, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[4]'
+      value: 
+      objectReference: {fileID: 11400000, guid: fbc7ff01ff658dc478ee024b21d4a412, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[5]'
+      value: 
+      objectReference: {fileID: 11400000, guid: e44e39b480c393c43af3cf1783e93d67, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[6]'
+      value: 
+      objectReference: {fileID: 11400000, guid: ca239f36583c52345a4192cd3990e9dc, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[7]'
+      value: 
+      objectReference: {fileID: 11400000, guid: c7f448506a4450e48a4c73e843008371, type: 2}
+    - target: {fileID: 5279567785598302528, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
+      propertyPath: 'evidence.Array.data[8]'
+      value: 
+      objectReference: {fileID: 11400000, guid: 22c7c38556c783449b5837e81d8ac5e9, type: 2}
     - target: {fileID: 5695620500063902534, guid: db603eb5a653448bfa1f68442d25dd91, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.24927984
@@ -1512,7 +1564,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: '<fade>Witness Testimony
+  m_text: 'Witness Testimony
 
 '
   m_isRightToLeft: 0
@@ -1753,9 +1805,9 @@ MonoBehaviour:
   backwardPrefab: {fileID: 2829075342434951720, guid: 9058ecb6f29e94c0eaaa597c9df8f756, type: 3}
   evidenceController: {fileID: 0}
   currentStatementKnot: 
+  currentCE: 
   witnessTestimonyTitle: {fileID: 1215612137}
   crossExaminationTitle: {fileID: 2027397401}
-  titleShown: 0
   currentMode: 0
 --- !u!1 &1327946327
 GameObject:
@@ -1873,6 +1925,10 @@ PrefabInstance:
     - target: {fileID: 5698737073179464364, guid: 756c11547e16642e7bd3f3717e787d52, type: 3}
       propertyPath: m_Name
       value: Anna
+      objectReference: {fileID: 0}
+    - target: {fileID: 5698737073179464364, guid: 756c11547e16642e7bd3f3717e787d52, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 6125351369996093474, guid: 756c11547e16642e7bd3f3717e787d52, type: 3}
       propertyPath: m_Pivot.x
@@ -3088,6 +3144,10 @@ PrefabInstance:
     - target: {fileID: 3216904850619024585, guid: 00ead1314f30741c5a6d909d8c96320b, type: 3}
       propertyPath: m_Name
       value: Arthur
+      objectReference: {fileID: 0}
+    - target: {fileID: 3216904850619024585, guid: 00ead1314f30741c5a6d909d8c96320b, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4796057249154145840, guid: 00ead1314f30741c5a6d909d8c96320b, type: 3}
       propertyPath: expressionList.Array.size

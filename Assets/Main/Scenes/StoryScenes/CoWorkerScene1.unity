@@ -228,54 +228,26 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_fontSize
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: cec248d320d03fe4ca0198c1ad53c482, type: 2}
-    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_fontSizeBase
-      value: 23
-      objectReference: {fileID: 0}
-    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8698761724546390532, guid: cec248d320d03fe4ca0198c1ad53c482, type: 2}
-    - target: {fileID: 2148773274071484729, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_characterSpacing
-      value: -3
-      objectReference: {fileID: 0}
     - target: {fileID: 3307029927101565544, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_Name
       value: '[VN Controller]'
       objectReference: {fileID: 0}
-    - target: {fileID: 3808781949659660248, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: inkFile
-      value: 
-      objectReference: {fileID: 4900000, guid: 722c4fb8e0f930446a3461ef935376af, type: 3}
-    - target: {fileID: 4524906849824578302, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_Texture
-      value: 
-      objectReference: {fileID: 2800000, guid: 63377c63ca6b87b43bcb1b37a65342b3, type: 3}
+    - target: {fileID: 7984011587245354720, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -22.099998
+      objectReference: {fileID: 0}
     - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_fontSize
-      value: 23
+      value: 19
       objectReference: {fileID: 0}
     - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_fontAsset
-      value: 
-      objectReference: {fileID: 11400000, guid: cec248d320d03fe4ca0198c1ad53c482, type: 2}
+      propertyPath: m_margin.z
+      value: 26.005707
+      objectReference: {fileID: 0}
     - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_fontSizeBase
-      value: 23
+      value: 19
       objectReference: {fileID: 0}
-    - target: {fileID: 8230916531353587184, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
-      propertyPath: m_sharedMaterial
-      value: 
-      objectReference: {fileID: -8698761724546390532, guid: cec248d320d03fe4ca0198c1ad53c482, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

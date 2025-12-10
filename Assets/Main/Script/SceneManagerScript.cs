@@ -54,6 +54,14 @@ private void Awake()
             case "CoWorkerScene2":
                 LoadScene1("PhoneScene1");
                 break;
+
+            case "NadineScene2":
+                LoadScene1("ForensicScene1");
+                break;
+
+            case "ForensicScene1":
+                LoadScene1("PaparazziScene1");
+                break;
             
         }
 

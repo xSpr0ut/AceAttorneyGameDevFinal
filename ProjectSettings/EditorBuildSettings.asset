@@ -29,6 +29,12 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/NadineScene2.unity
     guid: 36b928a394f72d9449aef12f214e785a
+  - enabled: 1
+    path: Assets/Scenes/ForensicScene1.unity
+    guid: 180b18d48f8e97c46857047bd8f97fee
+  - enabled: 1
+    path: Assets/Scenes/PaparazziScene1.unity
+    guid: 8eeca2837b448614088c1e62c0b27661
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

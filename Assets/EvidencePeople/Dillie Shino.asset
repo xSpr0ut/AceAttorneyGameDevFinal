@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: -8449960944937801145, guid: ea796c68336d8ba47b938e3d6f4688d3, type: 3}
   evidenceName: 'Dillie Shino (Age: 18)'
   evidenceDesc: A super-fan of the victim before she passed. Snuck onstage around
     the time of the incident.

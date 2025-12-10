@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: 21300000, guid: ed40a65ec54d775498e85192c9010457, type: 3}
   evidenceName: Paparazzi Photos
   evidenceDesc: Photos taken by the Paparazzi of my client. Press space to view.

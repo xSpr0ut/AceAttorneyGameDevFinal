@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: -8082464278445616512, guid: 8ec11912c7fe0d74c8fa0c24c62dccbe, type: 3}
   evidenceName: ID Scanner
   evidenceDesc: "There\u2019s an ID scanner on the door. According to Kaylee, only
     the manager, beauty personnel, and celebrities can access the beauty room; no

@@ -252,6 +252,14 @@ PrefabInstance:
       propertyPath: m_Texture
       value: 
       objectReference: {fileID: 2800000, guid: afb63b0b71ed4e048aad0d44f02d2a1c, type: 3}
+    - target: {fileID: 5023071371533810557, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 333.96
+      objectReference: {fileID: 0}
+    - target: {fileID: 5023071371533810557, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -8.140015
+      objectReference: {fileID: 0}
     - target: {fileID: 7984011587245354720, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -25.900002

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: 4618043300228471936, guid: 54bd91b196832514691fb473fb110b78, type: 3}
   evidenceName: Shattered Mirror
   evidenceDesc: The beauty room mirror stationed for the victim has been shattered
     around the time of the murder. Glass fragments are all over the floor.

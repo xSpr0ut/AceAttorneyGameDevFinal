@@ -834,6 +834,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: Medkit
+  sizex: 1.15
+  sizey: 1.15
 --- !u!212 &521056938
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -1901,6 +1903,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: Magazine
+  sizex: 0.12
+  sizey: 0.12
 --- !u!212 &1065521864
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -2009,7 +2013,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.00921917, y: 0.0061462373}
+  m_Offset: {x: -0.20861483, y: 0.005812168}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -2019,7 +2023,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1.1577649, y: 0.57348466}
+  m_Size: {x: 6.715251, y: 4.730194}
   m_EdgeRadius: 0
 --- !u!1 &1102713989
 GameObject:
@@ -2551,7 +2555,7 @@ RectTransform:
   m_GameObject: {fileID: 1300578194}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 90}
-  m_LocalScale: {x: 0.8243243, y: 0.8243243, z: 0.8243243}
+  m_LocalScale: {x: 0.8, y: 0.8, z: 0.8243243}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -2574,6 +2578,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   knotName: Table
+  sizex: 0.8
+  sizey: 0.8
 --- !u!212 &1300578197
 SpriteRenderer:
   m_ObjectHideFlags: 0

@@ -334,7 +334,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Narrator
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &213851534
 MonoBehaviour:
@@ -715,7 +717,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Kaylee
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &603635309
 MonoBehaviour:
@@ -1648,7 +1652,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Anonymous
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1024350657
 MonoBehaviour:
@@ -2209,10 +2215,15 @@ MonoBehaviour:
   inkFile: {fileID: 4900000, guid: 698e742ae6882aa46ab47ae7fb0df2e7, type: 3}
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
+  dialogueRoot: {fileID: 0}
   crossExaminationChoicePanel: {fileID: 0}
   forwardPrefab: {fileID: 0}
   backwardPrefab: {fileID: 0}
+  evidenceController: {fileID: 0}
   currentStatementKnot: 
+  witnessTestimonyTitle: {fileID: 0}
+  crossExaminationTitle: {fileID: 0}
+  titleShown: 0
   currentMode: 0
 --- !u!114 &1259645697
 MonoBehaviour:
@@ -3119,7 +3130,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Dillie
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1742115145
 MonoBehaviour:
@@ -3534,7 +3547,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   characterName: Anna
+  portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!1 &2036296502
 GameObject:

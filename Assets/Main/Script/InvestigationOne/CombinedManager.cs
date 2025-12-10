@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using Ink.Runtime;
 using TMPro;
 
@@ -30,6 +31,12 @@ public class CombinedManager : MonoBehaviour
     public bool playingM = false;
     public bool playingZ = false;
 
+
+    // count for number of items used
+    // so we can #activate the button
+    public int itemCounter = 3;
+    public GameObject buttonToShow;
+
     private void Awake()
     {
         if (Instance != null && Instance != this)
@@ -51,6 +58,8 @@ public class CombinedManager : MonoBehaviour
         SpriteT.SetActive(false); 
         SpriteM.SetActive(false); 
         SpriteZ.SetActive(false);
+
+        buttonToShow.SetActive(false);   
     }
 
     private void Update()
@@ -74,6 +83,7 @@ public class CombinedManager : MonoBehaviour
             }
         }
 
+        nextButtonShow();
         hideAndShow();
     }
 
@@ -132,7 +142,27 @@ public class CombinedManager : MonoBehaviour
         SpriteM.SetActive(false);
         SpriteZ.SetActive(false);
 
+        itemCounter--;
+
         Debug.Log("END OF STORY");
+    }
+
+    public void nextButtonShow()
+    {
+        
+        if(itemCounter <= 0)
+        {
+         buttonToShow.SetActive(true);   
+        }
+
+    }
+
+    public void onButtonClick()
+    {
+        
+        Debug.Log("IS CLICKED IS CLICKED");
+        SceneManager.LoadScene("CoWorkerScene2");
+
     }
 
     void ApplyTags()

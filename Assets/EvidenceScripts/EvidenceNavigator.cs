@@ -38,9 +38,23 @@ public class EvidenceNavigator : MonoBehaviour
     [SerializeField] public EvidenceSO forensicsScientist;
 
     // TESTING, DELETE LATER
-    /*[SerializeField] public EvidenceSO hairpin;
+    [SerializeField] public EvidenceSO mirror;
+    [SerializeField] public EvidenceSO letter;
+    [SerializeField] public EvidenceSO report;
+    [SerializeField] public EvidenceSO paparazziPhoto;
     [SerializeField] public EvidenceSO autopsy;
-    [SerializeField] public EvidenceSO paparazziPhoto;*/
+    [SerializeField] public EvidenceSO IDScanner;
+    [SerializeField] public EvidenceSO costumes;
+    [SerializeField] public EvidenceSO hairpin;
+
+    [SerializeField] public EvidenceSO defendant;
+    [SerializeField] public EvidenceSO victim;
+    [SerializeField] public EvidenceSO manager;
+    [SerializeField] public EvidenceSO lover;
+    [SerializeField] public EvidenceSO makeupartist;
+    [SerializeField] public EvidenceSO fan;
+    [SerializeField] public EvidenceSO paparazzi;
+    [SerializeField] public EvidenceSO prosecutor;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -54,10 +68,73 @@ public class EvidenceNavigator : MonoBehaviour
         addPeople(assistant);
         addPeople(forensicsScientist);
 
-        // TESTING, DELETE THESE LATER
-        /*addEvidence(hairpin);
-        addEvidence(autopsy);
-        addEvidence(paparazziPhoto);*/
+        //DELETE LATER... bruh
+        if (hairpin != null)
+        {
+            addEvidence(hairpin);
+        }
+        if (report != null)
+        {
+            addEvidence(report);
+        }
+        if (autopsy != null)
+        {
+            addEvidence(autopsy);
+        }
+        if (paparazziPhoto != null)
+        {
+            addEvidence(paparazziPhoto);
+        }
+        if (mirror != null)
+        {
+            addEvidence(mirror);
+        }
+        if (letter != null)
+        {
+            addEvidence(letter);
+        }
+        if (IDScanner != null)
+        {
+            addEvidence(IDScanner);
+        }
+        if (costumes != null)
+        {
+            addEvidence(costumes);
+        }
+        // people
+        if (victim != null)
+        {
+            addPeople(victim);
+        }
+        if (defendant != null)
+        {
+            addPeople(defendant);
+        }
+        if (lover != null)
+        {
+            addPeople(lover);
+        }
+        if (manager != null)
+        {
+            addPeople(manager);
+        }
+        if (paparazzi != null)
+        {
+            addPeople(paparazzi);
+        }
+        if (fan != null)
+        {
+            addPeople(fan);
+        }
+        if (makeupartist != null)
+        {
+            addPeople(makeupartist);
+        }
+        if (prosecutor != null)
+        {
+            addPeople(prosecutor);
+        }
+
 
         selectedEvidence = 0;
         evidenceSlot[0].GetComponent<EvidenceProperties>().selected = true;

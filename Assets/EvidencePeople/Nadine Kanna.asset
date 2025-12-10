@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: Nadine Kanna
   m_EditorClassIdentifier: 
   selected: 0
-  evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceNo: 4
+  evidenceSprite: {fileID: 8127869925763662458, guid: 60403181669d8ab48bdbea78c3e8a246, type: 3}
   evidenceName: 'Nadine Kanna (Age: 29)'
   evidenceDesc: The defendant. A celebrity singer. Had a career rivalry with the
     victim, who allegedly plagiarized music from her.

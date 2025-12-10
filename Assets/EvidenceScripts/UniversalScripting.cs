@@ -10,7 +10,7 @@ public class UniversalScripting : MonoBehaviour
     {
         if (instance != null && instance != this)
         {
-            Destroy(gameObject); return;
+            Destroy(instance.gameObject);
         }
 
         instance = this;

@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: 5421382002806008789, guid: 860c36ac687d6e54c9685c45723060cc, type: 3}
   evidenceName: Costume Rack
   evidenceDesc: A rack with many copies of signature dresses and wigs for Madeline
     Bain and Nadine Kanna.

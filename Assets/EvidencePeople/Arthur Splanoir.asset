@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: -3423607330898449362, guid: 25c833d220ed51a49b9929270303b764, type: 3}
   evidenceName: 'Arthur Splanoir (Age: 35)'
   evidenceDesc: The prosecutor. Known to have prosecuted in many other celebrity
     cases before.

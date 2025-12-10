@@ -78,6 +78,22 @@ MonoBehaviour:
   attorneysBadge: {fileID: 11400000, guid: 22c7c38556c783449b5837e81d8ac5e9, type: 2}
   assistant: {fileID: 11400000, guid: 93de6c1a3e9b72f4ab577722398d2caa, type: 2}
   forensicsScientist: {fileID: 11400000, guid: e94ce88357271164aafac9e67e0c9676, type: 2}
+  mirror: {fileID: 0}
+  letter: {fileID: 0}
+  report: {fileID: 11400000, guid: ca239f36583c52345a4192cd3990e9dc, type: 2}
+  paparazziPhoto: {fileID: 0}
+  autopsy: {fileID: 0}
+  IDScanner: {fileID: 0}
+  costumes: {fileID: 0}
+  hairpin: {fileID: 0}
+  defendant: {fileID: 11400000, guid: 3c014df4a9e48154b938d161a5c18861, type: 2}
+  victim: {fileID: 11400000, guid: 1629226e54514474fa4e610dc332d27e, type: 2}
+  manager: {fileID: 0}
+  lover: {fileID: 0}
+  makeupartist: {fileID: 0}
+  fan: {fileID: 0}
+  paparazzi: {fileID: 0}
+  prosecutor: {fileID: 0}
 --- !u!1 &1343289229250636739
 GameObject:
   m_ObjectHideFlags: 0

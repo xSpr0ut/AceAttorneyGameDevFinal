@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: -663458493888153283, guid: 704f67601d535c242b6c275ced76adf3, type: 3}
   evidenceName: Olaf Kanna (Age 30)
   evidenceDesc: "I don\u2019t know much about him, but he seems relevant to the case."

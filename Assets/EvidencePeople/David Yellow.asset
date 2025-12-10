@@ -14,6 +14,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: 987795777447145577, guid: bc5b714d9cbe35046b8fb86791c2d75d, type: 3}
   evidenceName: 'David Yellow (Age: 32)'
   evidenceDesc: 'A paparazzi who has been submitting photographs of the victim. '

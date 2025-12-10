@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   selected: 0
   evidenceNo: -1
-  evidenceSprite: {fileID: 0}
+  evidenceSprite: {fileID: 6265443448647047904, guid: 2108ba99dcc754e479cdbd43d897b8d9, type: 3}
   evidenceName: Fan Letter
   evidenceDesc: "A fan letter slipped under the door of the beauty room. It reads:
     \u201CSo sad the show got cancelled!!! If you see this PLZ text me Dillie Juno

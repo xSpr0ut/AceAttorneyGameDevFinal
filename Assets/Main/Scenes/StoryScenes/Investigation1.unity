@@ -2418,7 +2418,7 @@ MonoBehaviour:
   playingM: 0
   playingZ: 0
   itemCounter: 3
-  buttonToShow: {fileID: 0}
+  buttonToShow: {fileID: 91001952}
 --- !u!1 &1300578194
 GameObject:
   m_ObjectHideFlags: 0
@@ -2624,7 +2624,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!114 &1403444668
 MonoBehaviour:
   m_ObjectHideFlags: 0

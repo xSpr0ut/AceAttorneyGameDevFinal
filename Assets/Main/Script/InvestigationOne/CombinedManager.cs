@@ -152,7 +152,8 @@ public class CombinedManager : MonoBehaviour
         
         if(itemCounter <= 0)
         {
-         buttonToShow.SetActive(true);   
+         buttonToShow.SetActive(true); 
+         Debug.Log("Hello");  
         }
 
     }

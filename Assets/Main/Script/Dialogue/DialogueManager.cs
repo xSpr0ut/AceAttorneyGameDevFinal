@@ -66,7 +66,20 @@ public class DialogueManager : MonoBehaviour
             {
                 {"CE3_L4", "Fan Letter"}
             }
+        },
+        {
+            "Olaf_CE1", new Dictionary<string, string>()
+            {
+                {"CE1_L3", "ID Card Scanner"}
+            }
+        },
+        {
+            "Olaf_CE2", new Dictionary<string, string>()
+            {
+                {"CE2_L1", "Paparazzi Photo"}
+            }
         }
+
     };
 
 

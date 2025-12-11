@@ -31,6 +31,8 @@ public class DialogueManager : MonoBehaviour
     public GameObject witnessTestimonyTitle;
     public GameObject crossExaminationTitle;
 
+    private DialogueMode lastMode = DialogueMode.Normal;
+
     Story story;
     TextArchitect architect;
 
@@ -196,8 +198,8 @@ public class DialogueManager : MonoBehaviour
             ApplyTags();
 
             //Hide panel while text is typing
-            if(currentMode == DialogueMode.CrossExamination)
-                crossExaminationChoicePanel.gameObject.SetActive(false);
+            // if(currentMode == DialogueMode.CrossExamination)
+            //     //crossExaminationChoicePanel.gameObject.SetActive(false);
 
             UpdateCurrentStatementFromInk();
 
@@ -320,33 +322,42 @@ public class DialogueManager : MonoBehaviour
     //Switching Modes
     private IEnumerator HandleModeSwitch(string modeName)
     {
+
+        DialogueMode newMode = currentMode;
+
+        if(modeName == "Normal") newMode = DialogueMode.Normal;
+        else if(modeName == "WitnessTestimony") newMode = DialogueMode.WitnessTestimony;
+        else if(modeName == "CrossExamination") newMode = DialogueMode.CrossExamination;
+        
+        //if there is no mode change -> don't show titlecard
+        if(newMode == lastMode)
+            yield break;
+        
+        //Switching Modes
         SetDialogueMode(modeName);
-
-        if(currentMode != DialogueMode.Normal)
+        lastMode = newMode;
+        
+        //Only Show this for Title Card Scenes
+        if(newMode == DialogueMode.WitnessTestimony || newMode == DialogueMode.CrossExamination)
         {
-            dialogueRoot.alpha = 0f; //fade
+            //Title Card Logic
+            dialogueRoot.alpha = 0f;
 
-            if(currentMode == DialogueMode.WitnessTestimony)
-            {
+            //Activate the titlecard based on mode
+            if(newMode == DialogueMode.WitnessTestimony)
                 witnessTestimonyTitle.SetActive(true);
-            }
-            else if(currentMode == DialogueMode.CrossExamination)
-            {
+            else if(newMode == DialogueMode.CrossExamination)
                 crossExaminationTitle.SetActive(true);
-            }
-
-            //Wait for text animation to play
+            
             yield return new WaitForSeconds(1.5f);
 
-            //Hide title card
             witnessTestimonyTitle.SetActive(false);
             crossExaminationTitle.SetActive(false);
 
-            //Fade text box back in
             dialogueRoot.alpha = 1f;
-
-            AdvanceStory();
         }
+
+        //AdvanceStory();
     }
 
     // -- Cross Examination Input -- //

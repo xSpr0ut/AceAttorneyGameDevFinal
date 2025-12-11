@@ -4,6 +4,9 @@ public class ObjectToInvestigate : MonoBehaviour
 {
     public string knotName;
 
+    [SerializeField] private float sizex;
+    [SerializeField] private float sizey;
+
     void Update()
     {
         Vector3 pos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
@@ -11,12 +14,12 @@ public class ObjectToInvestigate : MonoBehaviour
 
         if (hit && hit.collider != null)
         {
-            this.transform.localScale = new Vector3(1.5f, 1.5f, 1.5f);
+            this.transform.localScale = new Vector3(sizex + sizex * 0.1f, sizey + sizey * 0.1f, sizex + sizex * 0.1f);
         }
 
         else
         {
-            this.transform.localScale = new Vector3(1.0f, 1.0f, 1.0f);
+            this.transform.localScale = new Vector3(sizex, sizey, sizex);
         }
     }
 

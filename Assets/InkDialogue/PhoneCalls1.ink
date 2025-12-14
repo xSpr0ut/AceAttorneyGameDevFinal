@@ -129,7 +129,13 @@ You’re calling about compensating me for my services, aren’t you?
 #speaker David
 I’m sorry. I think you have the wrong number.
 
--> END
+#speaker Narrator
+The phone call ends.
+
+#speaker Anna
+\*Shoot! Guess I'll have to call again...*
+
+-> DavidYellowPhoneCall
 
 == DavidMeetInPerson ==
 #speaker Anna

@@ -46,7 +46,7 @@ EditorBuildSettings:
     guid: 183bb67efe799b046ba62538780496c5
   - enabled: 1
     path: Assets/Main/Scenes/StoryScenes/PhoneScene2.unity
-    guid: 876dd0fc8ea4f3b49af3c6bb4b10af41
+    guid: e2c7b5d6e5a72554ab8a31285f7386fc
   - enabled: 1
     path: Assets/Main/Scenes/StoryScenes/FanScene2.unity
     guid: d7dafeca5b43c0243956584a3214c72b

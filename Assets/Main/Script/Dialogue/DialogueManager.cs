@@ -132,8 +132,6 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
-
-
         if (Input.GetKeyDown(KeyCode.Space))
         {
             // If text is still typing
@@ -190,9 +188,19 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceStory()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         // If Ink has more text
         if (story.canContinue)
         {
+            if (!typeSource.isPlaying)
+            {
+                typeSource.PlayOneShot(type);
+            }
+
             string line = story.Continue();
 
             ApplyTags();
@@ -564,6 +572,11 @@ public class DialogueManager : MonoBehaviour
         choicePanel.gameObject.SetActive(false);
 
         story.ChooseChoiceIndex(choiceIndex);
+
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
 
         AdvanceStory();
     }

@@ -37,7 +37,8 @@ The only other person I can think of that spends a lot of time with Madeline wou
 #speaker Anna
 I see… Thank you for the information.
 
-Olaf Kanna: Of course. I would like to help in any way I can. I want Madeline to get her justice.
+#speaker Olaf
+Of course. I would like to help in any way I can. I want Madeline to get her justice.
 
 #speaker Anna
 And your sister?

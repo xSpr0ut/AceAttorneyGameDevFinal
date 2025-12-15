@@ -66,6 +66,8 @@ Kaylee cocks her head to the side.
 
 #speaker Kaylee
 Well then? Go on. What are your questions?
+
+#speaker Narrator
 -> KayleeScene2Choices1
 
 == KayleeScene2Choices1 ==

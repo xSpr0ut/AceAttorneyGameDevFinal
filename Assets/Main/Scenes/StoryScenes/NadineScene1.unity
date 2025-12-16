@@ -268,6 +268,10 @@ PrefabInstance:
       propertyPath: typeSource
       value: 
       objectReference: {fileID: 344667375}
+    - target: {fileID: 3808781949659660248, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
+      propertyPath: evidenceTab
+      value: 
+      objectReference: {fileID: 0}
     - target: {fileID: 3905664347297645886, guid: 4e8d38a8c98d256488bbe00a64dfd1f8, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -391,6 +395,10 @@ PrefabInstance:
     - target: {fileID: 4939605542255126875, guid: 3f257b0a73de41b4e9078d6853cff29c, type: 3}
       propertyPath: paparazzi
       value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4963914313576370975, guid: 3f257b0a73de41b4e9078d6853cff29c, type: 3}
+      propertyPath: m_TagString
+      value: EvidenceTab
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

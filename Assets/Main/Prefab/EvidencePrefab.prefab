@@ -512,7 +512,7 @@ GameObject:
   - component: {fileID: 3921997302786757187}
   m_Layer: 0
   m_Name: EvidenceTab
-  m_TagString: Untagged
+  m_TagString: EvidenceTab
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -764,9 +764,22 @@ MonoBehaviour:
   attorneysBadge: {fileID: 11400000, guid: 22c7c38556c783449b5837e81d8ac5e9, type: 2}
   assistant: {fileID: 11400000, guid: 93de6c1a3e9b72f4ab577722398d2caa, type: 2}
   forensicsScientist: {fileID: 11400000, guid: e94ce88357271164aafac9e67e0c9676, type: 2}
-  hairpin: {fileID: 11400000, guid: b95c899da01c5c34cad4db98ac60203d, type: 2}
-  autopsy: {fileID: 11400000, guid: b3b5fa3e8a62843469b56df3a807f5ca, type: 2}
+  mirror: {fileID: 0}
+  letter: {fileID: 0}
+  report: {fileID: 0}
   paparazziPhoto: {fileID: 11400000, guid: e44e39b480c393c43af3cf1783e93d67, type: 2}
+  autopsy: {fileID: 11400000, guid: b3b5fa3e8a62843469b56df3a807f5ca, type: 2}
+  IDScanner: {fileID: 0}
+  costumes: {fileID: 0}
+  hairpin: {fileID: 11400000, guid: b95c899da01c5c34cad4db98ac60203d, type: 2}
+  defendant: {fileID: 0}
+  victim: {fileID: 0}
+  manager: {fileID: 0}
+  lover: {fileID: 0}
+  makeupartist: {fileID: 0}
+  fan: {fileID: 0}
+  paparazzi: {fileID: 0}
+  prosecutor: {fileID: 0}
 --- !u!1 &1940833424916721588
 GameObject:
   m_ObjectHideFlags: 0

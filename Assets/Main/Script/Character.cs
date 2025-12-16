@@ -13,6 +13,9 @@ public class Character : MonoBehaviour
     //Default Expression
     public Sprite defaultPortrait;
 
+    //Sprite Renderer
+    public SpriteRenderer spriteRenderer;
+
     //Dictionary of Expressions + List to Enter them through Inspector
     public List<ExpressionEntry> expressionList = new List<ExpressionEntry>();
     private Dictionary<string, Sprite> expressions = new Dictionary<string, Sprite>();
@@ -73,5 +76,16 @@ public class Character : MonoBehaviour
         }
 
         canvasGroup.alpha = targetAlpha;
+    }
+
+    //Helper function to set alpha of a character (Opacity)
+    public void SetAlpha(float a)
+    {
+        if(spriteRenderer != null)
+        {
+            Color col = spriteRenderer.color;
+            col.a = a;
+            spriteRenderer.color = col;
+        }
     }
 }

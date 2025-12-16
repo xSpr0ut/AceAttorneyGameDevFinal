@@ -535,7 +535,7 @@ defence, what is the meaning behind such an invasive question?
 Your Honor, this may not seem relevant to the case, but you have to trust me, it is.
 
 #speaker Arthur
-#expression think
+#expression talk
 #bg prosecution
 This is invading the witness's privacy. You can't forcibly make someone do that unless you have evidence they're really hiding something.
 
@@ -808,7 +808,7 @@ I pretended to dress up as her and leave the room.
 And yes, I was the one who killed Ms. Bain.
 
 #speaker Arthur
-#expression think
+#expression talk
 #bg prosecution
 ...!
 

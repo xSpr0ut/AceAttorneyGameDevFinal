@@ -11,31 +11,38 @@ public class DialogueManager : MonoBehaviour
 {
     public static DialogueManager Instance { get; private set; }
 
+    [Header("Ink File")]
     public TextAsset inkFile;
+
+    [Header("Choice UI")]
     public Transform choicePanel;
     public GameObject choiceButtonPrefab;
 
     public CanvasGroup dialogueRoot;
 
-    //Cross Examination
+    [Header("Evidence")]
+    public GameObject evidenceTab;
+
+    [Header("Cross Examination UI")]
     public Transform crossExaminationChoicePanel;
     public GameObject forwardPrefab;
     public GameObject backwardPrefab;
     public EvidenceController evidenceController;
 
-    // Vars from Ink Script
-    public string currentStatementKnot = "";
-    public string currentCE = "";
-
     //Title Screens for Cross Exam + Witness Testimony
     public GameObject witnessTestimonyTitle;
     public GameObject crossExaminationTitle;
+
+    [Header("Ink Variables")]
+    public string currentStatementKnot = "";
+    public string currentCE = "";
 
     private DialogueMode lastMode = DialogueMode.Normal;
 
     Story story;
     TextArchitect architect;
 
+    [Header("Audio")]
     public AudioSource typeSource;
     public AudioClip type;
 
@@ -113,6 +120,15 @@ public class DialogueManager : MonoBehaviour
     void Awake()
     {
         Instance = this;
+
+        if(evidenceTab == null)
+        {
+            //Find the EvidenceTab Tag
+            evidenceTab = GameObject.FindGameObjectWithTag("EvidenceTab");
+
+            if(evidenceTab == null)
+            Debug.LogWarning("DialogueManager; EvidenceTab not foudn in scene");
+        }
     }
 
     void Start()
@@ -132,7 +148,9 @@ public class DialogueManager : MonoBehaviour
 
      void Update()
     {
-
+        //Prevent all skipping / advancing in dialogue if the evidence tab is open
+        if (evidenceTab != null && evidenceTab.activeSelf)
+            return;
 
         if (Input.GetKeyDown(KeyCode.Space))
         {

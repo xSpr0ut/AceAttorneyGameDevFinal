@@ -21,6 +21,10 @@ public class CharacterManager : MonoBehaviour
         // Loop through all characters found
         foreach (Character c in chars)
         {
+            //instantly hide all characters
+            c.SetAlpha(0f);
+            c.gameObject.SetActive(false);
+
             //change everything to lower case -> Furina, furina, FURINA will all work
             string key = c.characterName.ToLower();
 

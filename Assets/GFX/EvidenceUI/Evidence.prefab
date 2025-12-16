@@ -88,11 +88,11 @@ MonoBehaviour:
   hairpin: {fileID: 0}
   defendant: {fileID: 11400000, guid: 3c014df4a9e48154b938d161a5c18861, type: 2}
   victim: {fileID: 11400000, guid: 1629226e54514474fa4e610dc332d27e, type: 2}
-  manager: {fileID: 0}
-  lover: {fileID: 0}
+  manager: {fileID: 11400000, guid: 83535dd1b631e884b92ec8438463ff8b, type: 2}
+  lover: {fileID: 11400000, guid: b4115407ed527b74e9b0cfa4d056c6d0, type: 2}
   makeupartist: {fileID: 0}
   fan: {fileID: 0}
-  paparazzi: {fileID: 0}
+  paparazzi: {fileID: 11400000, guid: 8c43ed0e0b198904fa5396c54169131e, type: 2}
   prosecutor: {fileID: 0}
 --- !u!1 &1343289229250636739
 GameObject:

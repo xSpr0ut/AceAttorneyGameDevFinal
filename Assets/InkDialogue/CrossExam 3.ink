@@ -39,7 +39,7 @@ Yes, that was 100% me!
 #expression think
 Quick question. 
 
-#expression talk
+#expression speak
 You went in at a time when the police were patrolling the area. You didn’t even encounter any of them backstage?
 
 #speaker Dillie
@@ -48,6 +48,7 @@ Well, I actually did, but they actually saw me enter the backstage and were chas
 
 #speaker Anna
 #bg defence
+#expression speak
 That makes sense. The people who were apprehended were all people who could’ve been backstage at the time of the murder.
 
 #expression object
@@ -178,7 +179,7 @@ What? B-But, I clearly saw her, I pinky-promise! Why would I lie about something
 
 #speaker Anna
 #bg defence
-#expression talk
+#expression speak
 Are you sure it was after the show’s cancellation announcement?
 
 #speaker Dillie
@@ -198,7 +199,7 @@ I mean, well, now that I think about it, it all happened so fast, I’m not even
 
 #speaker Anna
 #bg defence
-#expresion default
+#expresion speak
 Well then, do you think you can describe in detail the appearance of the person you saw?
 
 #speaker Dillie
@@ -348,7 +349,7 @@ That only happens in crime skits and comic books!
 
 #speaker Anna
 #bg defence
-#expression default
+#expression speak
 Oh, Mr. Splanoir, with all the times I’ve been prepared to back up my claim throughout this trial, you need to learn to accept I’m just better than you.
 
 The is one piece of evidence that proves the person the witness saw was not my client.
@@ -392,6 +393,7 @@ What a neat observation!
 
 #speaker Anna
 #bg defence
+#expression speak
 Wait. Dillie. Hold on…
 
 #speaker Dillie

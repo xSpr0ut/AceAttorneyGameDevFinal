@@ -1457,7 +1457,7 @@ MonoBehaviour:
 
 '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4a2a6105dbd04a25915dd29bd696c66, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1465,7 +1465,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.10980392, g: 0.30980393, b: 0.6392157, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -1690,14 +1690,15 @@ MonoBehaviour:
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   dialogueRoot: {fileID: 1871651563}
+  evidenceTab: {fileID: 0}
   crossExaminationChoicePanel: {fileID: 1393817129}
   forwardPrefab: {fileID: 1462476386806894213, guid: 39fc71eaadf91479aa8ddaccc67b2f63, type: 3}
   backwardPrefab: {fileID: 2829075342434951720, guid: 9058ecb6f29e94c0eaaa597c9df8f756, type: 3}
   evidenceController: {fileID: 0}
-  currentStatementKnot: 
-  currentCE: 
   witnessTestimonyTitle: {fileID: 1215612137}
   crossExaminationTitle: {fileID: 2027397401}
+  currentStatementKnot: 
+  currentCE: 
   typeSource: {fileID: 1259645697}
   type: {fileID: 8300000, guid: 8082fcbde60540849ad62919c02fa86e, type: 3}
   currentMode: 0
@@ -2975,7 +2976,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Cross Examination
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 185c66788f0a8b446a8a4456a11c44f3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: b4a2a6105dbd04a25915dd29bd696c66, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -2983,7 +2984,7 @@ MonoBehaviour:
   m_fontColor32:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
+  m_fontColor: {r: 0.7882353, g: 0.2, b: 0.18039216, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:

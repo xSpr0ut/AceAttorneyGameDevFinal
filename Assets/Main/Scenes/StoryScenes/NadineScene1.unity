@@ -336,6 +336,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4939605542255126875, guid: 3f257b0a73de41b4e9078d6853cff29c, type: 3}
+      propertyPath: lover
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939605542255126875, guid: 3f257b0a73de41b4e9078d6853cff29c, type: 3}
+      propertyPath: manager
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 4939605542255126875, guid: 3f257b0a73de41b4e9078d6853cff29c, type: 3}
+      propertyPath: paparazzi
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

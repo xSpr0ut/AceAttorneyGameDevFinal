@@ -157,6 +157,11 @@ public class DialogueManager : MonoBehaviour
             // If text is still typing
             if (architect.isBuilding)
             {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+
                 if (!architect.hurryUp)
                 {
                     architect.hurryUp = true;
@@ -208,6 +213,11 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceStory()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         // If Ink has more text
         if (story.canContinue)
         {

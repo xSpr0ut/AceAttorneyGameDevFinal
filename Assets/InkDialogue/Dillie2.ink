@@ -26,14 +26,14 @@ My idol is gone!
 Could you not let me—
 
 #speaker Anna
-Ms. Shino, please stay on topic.
+Ms. Juno, please stay on topic.
 
 We are here to discuss Madeline Bain’s murder.
 
 You were there that day, weren’t you?
 
 #speaker Narrator
-Dillie Shino bites her lips and then frowns.
+Dillie bites her lips and then frowns.
 
 #speaker Dillie
 Fine! I’ll tell you what I saw.

@@ -42,7 +42,6 @@ Witness, please state your name and occupation.
 
 #speaker Kaylee
 #bg witness
-#expression default
 My name is Kaylee Smith. I worked as Madeline Bain’s manager for almost three years.
 
 #speaker Arthur
@@ -51,7 +50,6 @@ Now, please tell the court what you witnessed that day.
 
 #speaker Kaylee
 #bg witness
-#expression default
 Yes, of course.
 
 #speaker Anna
@@ -60,13 +58,10 @@ Yes, of course.
 She’ll definitely be testifying against my client! Here goes nothing.
 
 -> Kaylee_Witness_Testimony_1
-
-
 == Kaylee_Witness_Testimony_1 ==
 #mode WitnessTestimony
 #speaker Kaylee
 #bg witness
-#expression default
 The person who murdered Madeline Bain was undoubtedly no one other than Nadine Kanna.
 
 The two got into a physical altercation before I entered the room.
@@ -85,14 +80,11 @@ Wow, straight to the point, huh? She hasn’t even described what she saw proper
 Maybe there’s a slip-up somewhere?
 
 -> Kaylee_Cross_Examination_1
-
-
 == Kaylee_Cross_Examination_1 ==
 ~current_ce = "Kaylee_CE1"
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
-#expression default
 
 ->A1
 
@@ -140,6 +132,7 @@ So in conclusion, Nadine murdered her. The case can rest.
     -> A4
 -> DONE
 
+
 == WrongObjection1 ==
 #mode Normal
 #speaker Anna
@@ -177,7 +170,6 @@ Ms. Smith, you said Ms. Bain looked at you during her final moments? Did she say
 
 #speaker Kaylee
 #bg witness
-#expression default
 Not that I recall. But Ms. Bain stared at me intensely while she bled out slowly on the ground. I thought I could save her.
 
 #speaker Anna
@@ -219,25 +211,19 @@ Fabricating details can get you in legal trouble. This is your last warning.
 
 #speaker Kaylee
 #bg witness
-#expression default
 I apologize, your Honor. I will describe what I saw step-by-step.
 
 -> Kaylee_Witness_Testimony_2
-
 == Kaylee_Witness_Testimony_2 ==
 #mode WitnessTestimony
 #speaker Kaylee
 #bg witness
-#expression default
 I was using the restroom next to the beauty room during my preparation for the show.
 
-#expression surprised
 Then suddenly, I heard a loud thud in the beauty room followed by rapid footsteps.
 
-#expression default
 I left the bathroom and saw Nadine rushing out of that room and down the hallway.
 
-#expression sad
 When I entered that room, I found a horrific sight… Ms. Bain’s own hairpin was lodged in her throat.
 
 It was too late to get help. Her heart had already stopped beating.
@@ -250,7 +236,9 @@ Oh, poor sweet Madeline… what a painful fate to endure…
 This isn’t looking the best for Nadine.
 
 But there’s something weird about her testimony for sure. I just need to put my finger on it!
+
 -> Kaylee_Cross_Examination_2
+
 
 == Kaylee_Cross_Examination_2 ==
 ~current_ce = "Kaylee_CE2"
@@ -258,7 +246,6 @@ But there’s something weird about her testimony for sure. I just need to put m
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
-#expression default
 
 ->B1
 
@@ -315,6 +302,7 @@ Oh, poor sweet Madeline… what a painful fate to endure…
     -> B5
 -> DONE
 
+
 == WrongObjection2 ==
 #mode Normal
 #speaker Anna
@@ -333,6 +321,7 @@ I don't see a contradiction here...
 (I must have made a mistake...)
 ->B1
 
+
 == Objection_CE2_L2 ==
 #mode Normal
 #speaker Anna
@@ -342,12 +331,11 @@ Kaylee, was the loud thud the only thing you heard?
 
 #speaker Kaylee
 #bg witness
-#expression default
 I mean, yes, that is what caused me to enter the room.
 
 #speaker Anna
 #bg defence
-#expression think
+#expression speak
 Are you sure you didn’t hear the sound of glass shattering? I’d imagine that would be louder than a body falling to the ground.
 
 #speaker Kaylee
@@ -356,7 +344,7 @@ Ah, you mean the broken mirror in the makeup room? No, I believe that was always
 
 #speaker Anna
 #bg defence
-#expression think
+#expression object
 And you never bothered to clean up that mess? You know how dangerous glass shards are, right?
 
 #speaker Kaylee
@@ -420,10 +408,9 @@ Your Honor, I do wish to hear this witness’s last testimony. I have a feeling 
 
 #speaker Kaylee
 #bg witness
-#expression default
 Thank you, Your Honor. Please allow me to redeem my honor.
--> Kaylee_Witness_Testimony_3
 
+-> Kaylee_Witness_Testimony_3
 == Kaylee_Witness_Testimony_3 ==
 #mode WitnessTestimony
 
@@ -453,12 +440,12 @@ When was the backstage area secured?
 
 -> Kaylee_Cross_Examination_3
 
+
 == Kaylee_Cross_Examination_3 ==
 ~current_ce = "Kaylee_CE3"
 #mode CrossExamination
 #speaker Kaylee
 #bg witness
-#expression default
 
 ->C1
 
@@ -524,6 +511,7 @@ With that being said, there was no opportunity for anyone besides Nadine to leav
     -> C6
 -> DONE
 
+
 == WrongObjection3 ==
 #mode Normal
 #speaker Anna
@@ -541,6 +529,7 @@ I don't see a contradiction here...
 (...)
 (I must have made a mistake...)
 ->C1
+
 
 == Objection_CE3_L4 ==
 #mode Normal
@@ -579,7 +568,7 @@ I think your little piece of evidence is irrelevant to the case.
 
 #speaker Anna
 #bg defence
-#expression object
+#expression speak
 The contents of the letter prove exactly why it was written after the backstage was closed. Let me read it out loud…
 
 “So sad the show got cancelled! If you see this, please text me — Dillie Juno.”
@@ -587,6 +576,9 @@ The contents of the letter prove exactly why it was written after the backstage 
 This means this note was written after the show was cancelled, which was at 7:00 PM.  
 So this fan slipped it under the door *after* 7:00 PM.
 
+#speaker Anna
+#bg defence
+#expression object
 Do you understand the logic behind that, Mr. Splanoir?  
 Or would you like me to explain it again, but like I’m explaining it to a child?
 
@@ -615,7 +607,7 @@ So you're saying there was someone else on site during this whole situation? A f
 
 #speaker Anna
 #bg defence
-#expression talk
+#expression speak
 Yes. Their name is Dillie Juno. I was able to get in contact with them.
 
 #speaker Judge
@@ -626,7 +618,7 @@ I’d like to hear from them before today’s testimonies are finished.
 
 #speaker Anna
 #bg defence
-#expression default
+#expression speak
 Yes, Your Honor. I will call her to come here as soon as possible.
 
 #speaker Judge

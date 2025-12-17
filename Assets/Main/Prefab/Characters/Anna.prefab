@@ -67,7 +67,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 7607991875720208091, guid: 9df2afef7b15e4730a669d43e2ff2df7, type: 3}
+  m_Sprite: {fileID: 1399314997271828981, guid: 5a8035bddeccd4b5685b79b71de624e0, type: 3}
   m_Type: 0
   m_PreserveAspect: 1
   m_FillCenter: 1
@@ -103,10 +103,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterName: Anna
   portrait: {fileID: 6864006327464249969}
-  defaultPortrait: {fileID: 7607991875720208091, guid: 9df2afef7b15e4730a669d43e2ff2df7, type: 3}
+  defaultPortrait: {fileID: 1399314997271828981, guid: 5a8035bddeccd4b5685b79b71de624e0, type: 3}
   expressionList:
   - id: object
     sprite: {fileID: -1575086073253060164, guid: cc912e8ad547944968d85537b170c45d, type: 3}
   - id: think
     sprite: {fileID: -8639839154369419507, guid: 19ca53b809b0a494d983c0f171d0f067, type: 3}
+  - id: speak
+    sprite: {fileID: 7607991875720208091, guid: 9df2afef7b15e4730a669d43e2ff2df7, type: 3}
   canvasGroup: {fileID: 0}

@@ -490,7 +490,7 @@ It's a very soothing way to pass the time. I also t-thought it wouldn't hurt to 
 #bg defence
 Understood. For someone seemingly so shaken up, I just didn't expect you'd be in the mood for makeup.
 
-#speaker Arthur:
+#speaker Arthur
 #expression talk
 #bg prosecution
 Objection, Your Honor, relevance.
@@ -520,7 +520,7 @@ Objection sustained. defence, please do not spiral into irrelevant conversations
 == Choice ==
 #speaker Judge
 #bg judge
-defence, what is the meaning behind such an invasive question?
+Defence, what is the meaning behind such an invasive question?
 
 #speaker Anna
 #expression speak
@@ -663,6 +663,7 @@ Understood, Your Honor.
 
 From the previous testimony, we've established that someone dressed up as my client and left the beauty room.
 
+#expression object
 Meaning my unproven theory was that they were hiding somewhere in there when the police came.
 
 But with this witness as a suspect, I believe it can actually be possible.

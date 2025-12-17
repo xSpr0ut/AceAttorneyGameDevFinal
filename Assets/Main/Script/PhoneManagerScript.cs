@@ -39,6 +39,9 @@ public class PhoneManagerScript : MonoBehaviour
     public bool calledEileen = false;
     public bool calledFan = false;
 
+    public AudioSource typeSource;
+    public AudioClip type;
+
 
     // ensures when the scene starts, the phone is off
     void Start()
@@ -204,9 +207,23 @@ public class PhoneManagerScript : MonoBehaviour
             if (architect.isBuilding)
             {
                 if (!architect.hurryUp)
+                {
                     architect.hurryUp = true;
+
+                    if (!typeSource.isPlaying)
+                    {
+                        typeSource.PlayOneShot(type);
+                    }
+                }
                 else
+                {
                     architect.ForceComplete();
+
+                    if (typeSource.isPlaying)
+                    {
+                        typeSource.Stop();
+                    }
+                }
             }
 
             else
@@ -216,8 +233,13 @@ public class PhoneManagerScript : MonoBehaviour
         }
 
     }
-        void AdvanceStory()
+    void AdvanceStory()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         // If Ink has more text
         if (story.canContinue)
         {
@@ -243,6 +265,11 @@ public class PhoneManagerScript : MonoBehaviour
 
     void EndDialogue()
     {
+        if (typeSource.isPlaying)
+        {
+            typeSource.Stop();
+        }
+
         activeDialogue = false;
         dialogueSystem.SetActive(false);
 

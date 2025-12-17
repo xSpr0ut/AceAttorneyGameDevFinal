@@ -255,13 +255,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -2084245016189518913, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1205522056926257644, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 1339911429065166466, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3737359307430107408, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_LocalPosition.x

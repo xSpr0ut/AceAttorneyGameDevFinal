@@ -526,6 +526,7 @@ MonoBehaviour:
   characterName: Narrator
   portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &213851534
@@ -1047,6 +1048,7 @@ MonoBehaviour:
   characterName: Kaylee
   portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &603635309
@@ -1844,6 +1846,7 @@ MonoBehaviour:
   characterName: Anonymous
   portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1024350657
@@ -2033,7 +2036,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 15.53}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -2.46, y: -0.87}
+  m_AnchoredPosition: {x: -3.03, y: -0.84}
   m_SizeDelta: {x: 1, y: 1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!61 &1065521866
@@ -2409,14 +2412,15 @@ MonoBehaviour:
   choicePanel: {fileID: 36523559}
   choiceButtonPrefab: {fileID: 7868971992219668920, guid: 40da12b290b2d49218879da9c00d6e6d, type: 3}
   dialogueRoot: {fileID: 0}
+  evidenceTab: {fileID: 0}
   crossExaminationChoicePanel: {fileID: 0}
   forwardPrefab: {fileID: 0}
   backwardPrefab: {fileID: 0}
   evidenceController: {fileID: 0}
-  currentStatementKnot: 
-  currentCE: 
   witnessTestimonyTitle: {fileID: 0}
   crossExaminationTitle: {fileID: 0}
+  currentStatementKnot: 
+  currentCE: 
   typeSource: {fileID: 0}
   type: {fileID: 0}
   currentMode: 0
@@ -2905,13 +2909,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -3265984614630549805, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1205522056926257644, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_Name
       value: AudioManager
       objectReference: {fileID: 0}
     - target: {fileID: 1339911429065166466, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: m_PlayOnAwake
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1339911429065166466, guid: f8800727c10d00e48bbf31abbafebc6f, type: 3}
       propertyPath: BypassReverbZones
@@ -3288,6 +3296,7 @@ MonoBehaviour:
   characterName: Dillie
   portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!114 &1742115145
@@ -3705,6 +3714,7 @@ MonoBehaviour:
   characterName: Anna
   portrait: {fileID: 0}
   defaultPortrait: {fileID: 0}
+  spriteRenderer: {fileID: 0}
   expressionList: []
   canvasGroup: {fileID: 0}
 --- !u!1 &2036296502

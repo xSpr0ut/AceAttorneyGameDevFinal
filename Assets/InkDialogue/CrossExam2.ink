@@ -158,6 +158,7 @@ I don't see a contradiction here...
 
 
 == Objection_CE1_L3 ==
+#mode Normal
 #speaker Anna
 #expression speak
 #bg defence
@@ -198,8 +199,6 @@ Later, she left. That was precisely when the murder happened, so my sister had a
 #bg witness
 
 ->B1
-
-
 
 == B1 ==
 #mode CrossExamination
@@ -281,6 +280,7 @@ I don't see a contradiction here...
 
 
 == Objection_CE2_L1 ==
+#mode Normal
 #speaker Arthur
 #expression talk
 #bg prosecution

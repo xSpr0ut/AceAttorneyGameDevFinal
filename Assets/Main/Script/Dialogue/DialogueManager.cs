@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         {
             "Olaf_CE2", new Dictionary<string, string>()
             {
-                {"CE1_L1", "Paparazzi Photos"}
+                {"CE2_L1", "Paparazzi Photos"}
             }
         },
         {
@@ -103,13 +103,13 @@ public class DialogueManager : MonoBehaviour
         {
             "Eileen_CE1", new Dictionary<string, string>()
             {
-                {"CE1_L2", "Bloody Hairpin"}
+                {"CE1_L6", "Bloody Hairpin"}
             }
         },
         {
             "Eileen_CE2", new Dictionary<string, string>()
             {
-                {"CE1_L4", "Paparazzi Photos"}
+                {"CE2_L4", "Paparazzi Photos"}
             }
         }
     };
@@ -157,6 +157,11 @@ public class DialogueManager : MonoBehaviour
             // If text is still typing
             if (architect.isBuilding)
             {
+                if (!typeSource.isPlaying)
+                {
+                    typeSource.PlayOneShot(type);
+                }
+
                 if (!architect.hurryUp)
                 {
                     architect.hurryUp = true;
@@ -208,6 +213,11 @@ public class DialogueManager : MonoBehaviour
 
     public void AdvanceStory()
     {
+        if (!typeSource.isPlaying)
+        {
+            typeSource.PlayOneShot(type);
+        }
+
         // If Ink has more text
         if (story.canContinue)
         {

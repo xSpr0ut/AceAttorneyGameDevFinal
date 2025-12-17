@@ -85,7 +85,7 @@ public class DialogueManager : MonoBehaviour
         {
             "Olaf_CE2", new Dictionary<string, string>()
             {
-                {"CE1_L1", "Paparazzi Photos"}
+                {"CE2_L1", "Paparazzi Photos"}
             }
         },
         {

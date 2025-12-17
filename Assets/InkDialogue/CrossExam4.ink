@@ -101,7 +101,6 @@ I did Ms. Bain's makeup and hair earlier that day.
 
 
 == A2 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE1_L2"
@@ -118,7 +117,6 @@ Right before the show, she um... She wanted me to do some touch-ups. I was runni
 
 
 == A3 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE1_L3"
@@ -135,7 +133,6 @@ I arrived minutes after the show was supposed to start, and there were police cr
 
 
 == A4 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE1_L4"
@@ -152,7 +149,6 @@ The murder weapon was the hairpin she wore. It had the victim's fingerprints, mi
 
 
 == A5 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE1_L5"
@@ -169,7 +165,6 @@ The first three people make sense, as I work with Ms. Bain's hair and her lover.
 
 
 == A6 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE1_L6"
@@ -203,6 +198,7 @@ I don't see a contradiction here...
 
 
 == Objection_CE1_L6 ==
+#mode Normal
 #speaker Anna
 #expression speak
 #bg defence
@@ -336,7 +332,6 @@ Before making my way to the beauty room, I was reading a m-magazine in the backs
 
 
 == B2 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE2_L2"
@@ -353,7 +348,6 @@ I lost track of time and ended up showing up after 7:00 PM, way later than the t
 
 
 == B3 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE2_L3"
@@ -370,7 +364,6 @@ That was completely my fault, I shouldn't have neglected my duties like that...
 
 
 == B4 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE2_L4"
@@ -387,7 +380,6 @@ But when I showed up to the scene, I saw Ms. Kanna being escorted by the police.
 
 
 == B5 ==
-#mode CrossExamination
 #speaker Eileen
 #bg witness
 ~ current_statement = "CE2_L4"
@@ -421,6 +413,7 @@ I don't see a contradiction here...
 
 
 == Objection_CE2_L4 ==
+#mode Normal
 #speaker Anna
 #expression think
 #bg defence
@@ -586,7 +579,7 @@ Anna shows everyone Ms. Bain's autopsy report and the shattered mirror she found
 #bg defence
 That the victim was the one who broke the mirror right before she was murdered due to her bruised and scratched knuckles.
 
-#expression objection
+#expression object
 This proves there was a struggle before the murder occurred, meaning the murderer probably has visible wounds!
 
 And the way the witness is heavily covered with foundation and covered from head to toe in this warm room raises questions.
@@ -760,7 +753,7 @@ Sorry Ms. Nyugen, these places are searched thoroughly and no trace of the hat h
 
 == Choice22 ==
 #speaker Anna
-#expression objection
+#expression object
 #bg defence
 Eileen, you must be carrying Nadine Kanna's signature hat with you, right here, right now!
 

@@ -157,19 +157,11 @@ public class DialogueManager : MonoBehaviour
             // If text is still typing
             if (architect.isBuilding)
             {
-                if (!typeSource.isPlaying)
-                {
-                    typeSource.PlayOneShot(type);
-                }
-
                 if (!architect.hurryUp)
                 {
                     architect.hurryUp = true;
 
-                    if (!typeSource.isPlaying)
-                    {
-                        typeSource.PlayOneShot(type);
-                    }
+                    
                 }
 
                 else

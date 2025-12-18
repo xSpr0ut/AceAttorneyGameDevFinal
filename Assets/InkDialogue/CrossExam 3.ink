@@ -309,9 +309,9 @@ I would like to address something about this photo that isn’t the obvious time
 == Choice_1 ==
 * [The witness remembered the time wrong]
     -> WrongChoice_1
-* [The witness mistook the victim for someone else]
+* [Witness mistook Ms. Kanna for someone else]
     -> WrongChoice_1
-+ [Someone was impersonating the victim]
++ [Someone was impersonating the Ms. Kanna]
     -> CorrectChoice_1
 
 == WrongChoice_1 ==

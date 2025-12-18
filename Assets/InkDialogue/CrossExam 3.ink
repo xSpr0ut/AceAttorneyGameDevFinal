@@ -311,7 +311,7 @@ I would like to address something about this photo that isn’t the obvious time
     -> WrongChoice_1
 * [Witness mistook victim for someone else]
     -> WrongChoice_1
-+ [Someone was impersonating the victim]
++ [Someone was impersonating Ms. Kanna]
     -> CorrectChoice_1
 
 == WrongChoice_1 ==
@@ -333,7 +333,7 @@ And what could that be?
 #speaker Anna
 #bg defence
 #expression object
-That person she saw…wasn’t my client!
+That person she saw… wasn’t my client!
 
 #expression default
 It was someone donning her signature dress and sunhat.

@@ -41,7 +41,7 @@ private void Awake()
 
             case "NadineScene1":
                 LoadScene1("CoWorkerScene1");
-               // LoadScene1("CoWorkerScene3");
+                //LoadScene1("CrossExam 1");
                 break;
 
             case "CoWorkerScene1":
@@ -121,9 +121,9 @@ private void Awake()
         if(SceneManager.GetActiveScene().name == "StartScene")
         {
             if (Input.GetKeyDown("space")){
-                
-               // LoadScene("CoWorkerScene2");
+
                 LoadScene1("NadineScene1");
+                //LoadScene1("CrossExam 1");
 
             }
         }

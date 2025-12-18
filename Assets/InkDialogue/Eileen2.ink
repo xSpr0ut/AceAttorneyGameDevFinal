@@ -57,10 +57,10 @@ N-no…
 #speaker Anna
 Sensing that you weren’t going to get anything more out of Eileen, you decided to end it here.
 
-#speaker Eileen
 I see… That’s all for now. Thank you for coming all this way.
 
-Makeup Artist: Thank you for having me.
+#speaker Eileen
+Thank you for having me.
 
 -> END
 

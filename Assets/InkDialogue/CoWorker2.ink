@@ -51,7 +51,7 @@ Oh wow that’s great!
 Speaking of this, Dr. Liu from the forensics called and said that there is some new info available. Call her when you get the chance!
 
 #speaker Narrator
-[new contact added: Dr. Liu]
+— new contact added: Dr. Liu —
 
 -> Co_Choice_One
 

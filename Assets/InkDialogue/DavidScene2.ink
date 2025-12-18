@@ -70,7 +70,7 @@ Oh, alright. Here. Madeline gave it to me so we could coordinate for her “Davi
 #speaker Narrator
 You’re surprised the David actually had the number.
 
-— Contact Acquired: Eileen Lour —
+— Contact Acquired: Eileen Lore —
 
 #speaker Anna
 Thank you for your help.
@@ -125,7 +125,7 @@ Oh, alright. Here. Madeline gave it to me so we could coordinate for her “papa
 #speaker Narrator
 You’re surprised that David actually had the number.
 
-— Contact Acquired: Eileen Lour —
+— Contact Acquired: Eileen Lore —
 
 #speaker Anna
 Thank you for your help.

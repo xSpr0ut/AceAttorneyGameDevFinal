@@ -307,11 +307,11 @@ I would like to address something about this photo that isn’t the obvious time
 -> Choice_1
 
 == Choice_1 ==
-* [The witness remembered the time wrong]
+* [Witness remembered the time wrong]
     -> WrongChoice_1
-* [Witness mistook Ms. Kanna for someone else]
+* [Witness mistook victim for someone else]
     -> WrongChoice_1
-+ [Someone was impersonating the Ms. Kanna]
++ [Someone was impersonating the victim]
     -> CorrectChoice_1
 
 == WrongChoice_1 ==
@@ -364,9 +364,9 @@ The detail is:
 * [The timestamp on that photo]
     -> WrongChoice_2
 + [Nadine's sunhat]
-    -> WrongChoice_2
-* [Nadine's gloves]
     -> CorrectChoice_2
+* [Nadine's gloves]
+    -> WrongChoice_2
     
 == WrongChoice_2 ==
 #speaker Anna

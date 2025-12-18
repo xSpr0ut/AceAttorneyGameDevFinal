@@ -161,10 +161,7 @@ public class DialogueManager : MonoBehaviour
                 {
                     architect.hurryUp = true;
 
-                    if (!typeSource.isPlaying)
-                    {
-                        typeSource.PlayOneShot(type);
-                    }
+                    
                 }
 
                 else

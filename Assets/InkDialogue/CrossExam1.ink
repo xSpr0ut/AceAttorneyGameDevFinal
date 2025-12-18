@@ -533,7 +533,6 @@ I don't see a contradiction here...
 
 == Objection_CE3_L4 ==
 #mode Normal
-
 #speaker Kaylee
 #bg witness
 Around 6:40 PM, I think? Several minutes after the murder had happened.
